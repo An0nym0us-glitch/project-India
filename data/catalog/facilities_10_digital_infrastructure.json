@@ -1,0 +1,95 @@
+{
+ "category": "Digital Infrastructure",
+ "note": "Indicative modelling assumptions; see provenance on each entry.",
+ "facilities": [
+  {
+   "id": "fibre_backbone",
+   "name": "Fibre-optic backbone",
+   "category": "Digital Infrastructure",
+   "subcategory": "Telecom networks",
+   "industry": "Telecom",
+   "function": "Telecom networks",
+   "description": "Long-haul optical fibre cable along a corridor.",
+   "purpose": "High-capacity connectivity for data centres, offices and households.",
+   "capexCr": 0.05,
+   "constructionMonths": 6,
+   "landHa": 0,
+   "opexCrPerYear": 0.002,
+   "powerDemandMW": 0,
+   "waterDemandMLD": 0,
+   "constructionJobs": 5,
+   "operationsJobs": {},
+   "outputs": {},
+   "inputs": [],
+   "requires": {
+    "grid": false
+   },
+   "emissions": {},
+   "tags": [
+    "fibre",
+    "telecom_network"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "line",
+   "network": "fibre",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "≈₹3-5 lakh/km (BharatNet-scale)",
+    "source": ""
+   }
+  },
+  {
+   "id": "telecom_node",
+   "name": "Telecom exchange & tower cluster",
+   "category": "Digital Infrastructure",
+   "subcategory": "Telecom networks",
+   "industry": "Telecom",
+   "function": "Telecom networks",
+   "description": "Core exchange, internet exchange point and mobile tower cluster.",
+   "purpose": "Local broadband and mobile service; fibre node.",
+   "capexCr": 200,
+   "constructionMonths": 12,
+   "landHa": 2,
+   "opexCrPerYear": 6.0,
+   "powerDemandMW": 3,
+   "waterDemandMLD": 0,
+   "constructionJobs": 150,
+   "operationsJobs": {
+    "skilled": 100,
+    "engineer": 40
+   },
+   "outputs": {
+    "valueAddedCrPerYear": 120
+   },
+   "inputs": [],
+   "requires": {},
+   "emissions": {},
+   "tags": [
+    "fibre_node",
+    "telecom_network"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [
+    "fibre"
+   ],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative order-of-magnitude modelling assumption",
+    "source": ""
+   }
+  }
+ ]
+}

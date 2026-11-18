@@ -1,0 +1,1708 @@
+{
+ "category": "Technology Manufacturing",
+ "note": "Indicative modelling assumptions; see provenance on each entry.",
+ "facilities": [
+  {
+   "id": "smartphone_plant",
+   "name": "Smartphone manufacturing plant",
+   "category": "Technology Manufacturing",
+   "subcategory": "Consumer electronics",
+   "industry": "Electronics",
+   "function": "Consumer electronics",
+   "description": "High-volume smartphone assembly (~50 million units/yr).",
+   "purpose": "Large-scale electronics jobs and exports.",
+   "capexCr": 2500,
+   "constructionMonths": 18,
+   "landHa": 60,
+   "opexCrPerYear": 75.0,
+   "powerDemandMW": 30,
+   "waterDemandMLD": 2,
+   "constructionJobs": 1250,
+   "operationsJobs": {
+    "unskilled": 25000,
+    "skilled": 4000,
+    "engineer": 800
+   },
+   "outputs": {
+    "goods": [
+     {
+      "good": "smartphone",
+      "qtyPerYear": 50000000
+     }
+    ],
+    "valueAddedCrPerYear": 4000
+   },
+   "inputs": [
+    {
+     "good": "electronic_components",
+     "qtyPerYear": 6000
+    },
+    {
+     "good": "display_panel",
+     "qtyPerYear": 50000000
+    },
+    {
+     "good": "packaged_chips",
+     "qtyPerYear": 4000
+    }
+   ],
+   "requires": {
+    "transport": [
+     "road"
+    ],
+    "tech": {
+     "electronics": 1
+    }
+   },
+   "emissions": {
+    "voc": 50,
+    "co2": 120000
+   },
+   "tags": [
+    "smartphone",
+    "electronics",
+    "labour_intensive",
+    "manufacturing"
+   ],
+   "technologies": [],
+   "risks": [
+    "Low domestic value addition if components are imported",
+    "Dependence on global brands"
+   ],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": false,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Large PLI-scheme assembly plants",
+    "source": ""
+   }
+  },
+  {
+   "id": "laptop_plant",
+   "name": "Laptop & PC manufacturing plant",
+   "category": "Technology Manufacturing",
+   "subcategory": "Consumer electronics",
+   "industry": "Electronics",
+   "function": "Consumer electronics",
+   "description": "Laptop and desktop assembly.",
+   "purpose": "Domestic IT hardware.",
+   "capexCr": 1500,
+   "constructionMonths": 18,
+   "landHa": 30,
+   "opexCrPerYear": 45.0,
+   "powerDemandMW": 15,
+   "waterDemandMLD": 1,
+   "constructionJobs": 750,
+   "operationsJobs": {
+    "unskilled": 6000,
+    "skilled": 2000,
+    "engineer": 400
+   },
+   "outputs": {
+    "goods": [
+     {
+      "good": "laptop",
+      "qtyPerYear": 5000000
+     }
+    ],
+    "valueAddedCrPerYear": 1500
+   },
+   "inputs": [
+    {
+     "good": "electronic_components",
+     "qtyPerYear": 2000
+    },
+    {
+     "good": "display_panel",
+     "qtyPerYear": 5000000
+    },
+    {
+     "good": "cpu",
+     "qtyPerYear": 0
+    },
+    {
+     "good": "packaged_chips",
+     "qtyPerYear": 1500
+    }
+   ],
+   "requires": {
+    "transport": [
+     "road"
+    ],
+    "tech": {
+     "electronics": 1
+    }
+   },
+   "emissions": {
+    "voc": 50,
+    "co2": 60000
+   },
+   "tags": [
+    "laptop",
+    "electronics",
+    "manufacturing"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": false,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative order-of-magnitude modelling assumption",
+    "source": ""
+   }
+  },
+  {
+   "id": "battery_gigafactory",
+   "name": "Battery cell gigafactory (10 GWh)",
+   "category": "Technology Manufacturing",
+   "subcategory": "Batteries",
+   "industry": "Energy storage",
+   "function": "Batteries",
+   "description": "Lithium-ion cell manufacturing.",
+   "purpose": "Cells for EVs and grid storage.",
+   "capexCr": 8000,
+   "constructionMonths": 36,
+   "landHa": 100,
+   "opexCrPerYear": 240.0,
+   "powerDemandMW": 80,
+   "waterDemandMLD": 3,
+   "constructionJobs": 4000,
+   "operationsJobs": {
+    "unskilled": 1500,
+    "skilled": 2000,
+    "engineer": 800,
+    "scientist": 150
+   },
+   "outputs": {
+    "goods": [
+     {
+      "good": "battery_cell",
+      "qtyPerYear": 10000000
+     }
+    ],
+    "valueAddedCrPerYear": 2000
+   },
+   "inputs": [
+    {
+     "good": "lithium",
+     "qtyPerYear": 6500
+    },
+    {
+     "good": "advanced_materials",
+     "qtyPerYear": 600
+    },
+    {
+     "good": "electronic_components",
+     "qtyPerYear": 200
+    }
+   ],
+   "requires": {
+    "transport": [
+     "road"
+    ],
+    "tech": {
+     "automotive_ev": 1,
+     "materials": 2,
+     "energy": 2
+    },
+    "minGridReliability": 0.95
+   },
+   "emissions": {
+    "voc": 50,
+    "co2": 320000
+   },
+   "tags": [
+    "battery",
+    "manufacturing_clean",
+    "manufacturing"
+   ],
+   "technologies": [],
+   "risks": [
+    "Cathode/anode material import dependence",
+    "Fire and chemical hazards"
+   ],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": false,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "ACC PLI ≈₹800-1,000 crore per GWh",
+    "source": ""
+   }
+  },
+  {
+   "id": "ev_plant",
+   "name": "Electric vehicle manufacturing plant",
+   "category": "Technology Manufacturing",
+   "subcategory": "Automotive",
+   "industry": "Automotive",
+   "function": "Automotive",
+   "description": "EV assembly (~200,000 cars/yr).",
+   "purpose": "Clean mobility and automotive jobs.",
+   "capexCr": 5000,
+   "constructionMonths": 30,
+   "landHa": 250,
+   "opexCrPerYear": 150.0,
+   "powerDemandMW": 35,
+   "waterDemandMLD": 2,
+   "constructionJobs": 2500,
+   "operationsJobs": {
+    "unskilled": 2500,
+    "skilled": 3000,
+    "engineer": 800,
+    "scientist": 100
+   },
+   "outputs": {
+    "goods": [
+     {
+      "good": "electric_vehicle",
+      "qtyPerYear": 200000
+     }
+    ],
+    "valueAddedCrPerYear": 3000
+   },
+   "inputs": [
+    {
+     "good": "battery_cell",
+     "qtyPerYear": 10000000
+    },
+    {
+     "good": "steel",
+     "qtyPerYear": 200000
+    },
+    {
+     "good": "electronic_components",
+     "qtyPerYear": 1500
+    },
+    {
+     "good": "packaged_chips",
+     "qtyPerYear": 600
+    }
+   ],
+   "requires": {
+    "transport": [
+     "road",
+     "rail"
+    ],
+    "tech": {
+     "automotive_ev": 2
+    }
+   },
+   "emissions": {
+    "voc": 50,
+    "co2": 140000
+   },
+   "tags": [
+    "ev",
+    "automotive",
+    "manufacturing"
+   ],
+   "technologies": [],
+   "risks": [
+    "Battery supply",
+    "Charging infrastructure needed for demand"
+   ],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": false,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative order-of-magnitude modelling assumption",
+    "source": ""
+   }
+  },
+  {
+   "id": "robotics_factory",
+   "name": "Robotics factory",
+   "category": "Technology Manufacturing",
+   "subcategory": "Automation",
+   "industry": "Robotics",
+   "function": "Automation",
+   "description": "Industrial robot arms and controllers.",
+   "purpose": "Productivity for all manufacturing.",
+   "capexCr": 1000,
+   "constructionMonths": 24,
+   "landHa": 20,
+   "opexCrPerYear": 30.0,
+   "powerDemandMW": 10,
+   "waterDemandMLD": 1,
+   "constructionJobs": 500,
+   "operationsJobs": {
+    "unskilled": 300,
+    "skilled": 800,
+    "engineer": 600,
+    "scientist": 150
+   },
+   "outputs": {
+    "goods": [
+     {
+      "good": "robots",
+      "qtyPerYear": 5000
+     }
+    ],
+    "valueAddedCrPerYear": 600,
+    "researchPoints": {
+     "robotics_automation": 15
+    }
+   },
+   "inputs": [
+    {
+     "good": "electronic_components",
+     "qtyPerYear": 300
+    },
+    {
+     "good": "steel",
+     "qtyPerYear": 10000
+    },
+    {
+     "good": "packaged_chips",
+     "qtyPerYear": 200
+    }
+   ],
+   "requires": {
+    "transport": [
+     "road"
+    ],
+    "tech": {
+     "robotics_automation": 2,
+     "electronics": 2
+    }
+   },
+   "emissions": {
+    "voc": 50,
+    "co2": 40000
+   },
+   "tags": [
+    "robotics",
+    "automation",
+    "manufacturing"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": false,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative order-of-magnitude modelling assumption",
+    "source": ""
+   }
+  },
+  {
+   "id": "automation_equipment",
+   "name": "Industrial automation equipment plant",
+   "category": "Technology Manufacturing",
+   "subcategory": "Automation",
+   "industry": "Robotics",
+   "function": "Automation",
+   "description": "PLCs, drives, sensors and SCADA systems.",
+   "purpose": "Automation for industry and utilities.",
+   "capexCr": 800,
+   "constructionMonths": 18,
+   "landHa": 15,
+   "opexCrPerYear": 24.0,
+   "powerDemandMW": 8,
+   "waterDemandMLD": 0.5,
+   "constructionJobs": 400,
+   "operationsJobs": {
+    "unskilled": 300,
+    "skilled": 700,
+    "engineer": 400,
+    "scientist": 50
+   },
+   "outputs": {
+    "goods": [
+     {
+      "good": "automation_systems",
+      "qtyPerYear": 1500
+     }
+    ],
+    "valueAddedCrPerYear": 500
+   },
+   "inputs": [
+    {
+     "good": "electronic_components",
+     "qtyPerYear": 400
+    },
+    {
+     "good": "packaged_chips",
+     "qtyPerYear": 300
+    }
+   ],
+   "requires": {
+    "transport": [
+     "road"
+    ],
+    "tech": {
+     "robotics_automation": 1,
+     "electronics": 2
+    }
+   },
+   "emissions": {
+    "voc": 50,
+    "co2": 32000
+   },
+   "tags": [
+    "automation",
+    "manufacturing"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": false,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative order-of-magnitude modelling assumption",
+    "source": ""
+   }
+  },
+  {
+   "id": "drone_factory",
+   "name": "Drone manufacturing",
+   "category": "Technology Manufacturing",
+   "subcategory": "Aerospace",
+   "industry": "Aerospace",
+   "function": "Aerospace",
+   "description": "Civil and defence UAV manufacturing.",
+   "purpose": "Agriculture, logistics, surveillance.",
+   "capexCr": 300,
+   "constructionMonths": 12,
+   "landHa": 10,
+   "opexCrPerYear": 9.0,
+   "powerDemandMW": 3,
+   "waterDemandMLD": 0.2,
+   "constructionJobs": 150,
+   "operationsJobs": {
+    "unskilled": 200,
+    "skilled": 300,
+    "engineer": 200,
+    "scientist": 30
+   },
+   "outputs": {
+    "goods": [
+     {
+      "good": "drones",
+      "qtyPerYear": 20000
+     }
+    ],
+    "valueAddedCrPerYear": 250
+   },
+   "inputs": [
+    {
+     "good": "electronic_components",
+     "qtyPerYear": 200
+    },
+    {
+     "good": "battery_cell",
+     "qtyPerYear": 200000
+    },
+    {
+     "good": "advanced_materials",
+     "qtyPerYear": 50
+    }
+   ],
+   "requires": {
+    "transport": [
+     "road"
+    ],
+    "tech": {
+     "aerospace_space": 1,
+     "electronics": 1
+    }
+   },
+   "emissions": {
+    "voc": 50,
+    "co2": 12000
+   },
+   "tags": [
+    "drones",
+    "aerospace",
+    "manufacturing"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": false,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative order-of-magnitude modelling assumption",
+    "source": ""
+   }
+  },
+  {
+   "id": "aerospace_plant",
+   "name": "Aerospace manufacturing plant",
+   "category": "Technology Manufacturing",
+   "subcategory": "Aerospace",
+   "industry": "Aerospace",
+   "function": "Aerospace",
+   "description": "Aero-structures, engines components and aircraft assembly.",
+   "purpose": "Strategic and export-oriented aerospace industry.",
+   "capexCr": 5000,
+   "constructionMonths": 42,
+   "landHa": 200,
+   "opexCrPerYear": 150.0,
+   "powerDemandMW": 30,
+   "waterDemandMLD": 2,
+   "constructionJobs": 2500,
+   "operationsJobs": {
+    "unskilled": 800,
+    "skilled": 2500,
+    "engineer": 1500,
+    "scientist": 200
+   },
+   "outputs": {
+    "goods": [
+     {
+      "good": "aircraft_components",
+      "qtyPerYear": 2500
+     }
+    ],
+    "valueAddedCrPerYear": 2000
+   },
+   "inputs": [
+    {
+     "good": "aluminium",
+     "qtyPerYear": 20000
+    },
+    {
+     "good": "advanced_materials",
+     "qtyPerYear": 400
+    },
+    {
+     "good": "electronic_components",
+     "qtyPerYear": 300
+    }
+   ],
+   "requires": {
+    "transport": [
+     "road",
+     "airport"
+    ],
+    "tech": {
+     "aerospace_space": 2,
+     "materials": 2
+    },
+    "supporting": [
+     {
+      "tag": "airport",
+      "count": 1,
+      "radiusKm": 100,
+      "why": "Aircraft assembly needs runway access"
+     }
+    ]
+   },
+   "emissions": {
+    "voc": 50,
+    "co2": 120000
+   },
+   "tags": [
+    "aerospace",
+    "manufacturing"
+   ],
+   "technologies": [],
+   "risks": [
+    "Long certification cycles"
+   ],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": false,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative order-of-magnitude modelling assumption",
+    "source": ""
+   }
+  },
+  {
+   "id": "satellite_factory",
+   "name": "Satellite manufacturing facility",
+   "category": "Technology Manufacturing",
+   "subcategory": "Space",
+   "industry": "Space",
+   "function": "Space",
+   "description": "Satellite integration and test (clean rooms, thermal-vacuum).",
+   "purpose": "Communications, navigation and Earth-observation satellites.",
+   "capexCr": 1500,
+   "constructionMonths": 30,
+   "landHa": 30,
+   "opexCrPerYear": 45.0,
+   "powerDemandMW": 10,
+   "waterDemandMLD": 0.5,
+   "constructionJobs": 750,
+   "operationsJobs": {
+    "unskilled": 100,
+    "skilled": 500,
+    "engineer": 700,
+    "scientist": 300
+   },
+   "outputs": {
+    "goods": [
+     {
+      "good": "satellites",
+      "qtyPerYear": 20
+     }
+    ],
+    "valueAddedCrPerYear": 900,
+    "researchPoints": {
+     "aerospace_space": 20
+    }
+   },
+   "inputs": [
+    {
+     "good": "electronic_components",
+     "qtyPerYear": 200
+    },
+    {
+     "good": "advanced_materials",
+     "qtyPerYear": 100
+    },
+    {
+     "good": "packaged_chips",
+     "qtyPerYear": 100
+    }
+   ],
+   "requires": {
+    "transport": [
+     "road",
+     "airport"
+    ],
+    "tech": {
+     "aerospace_space": 2,
+     "electronics": 2
+    }
+   },
+   "emissions": {
+    "voc": 50,
+    "co2": 40000
+   },
+   "tags": [
+    "satellite",
+    "space",
+    "manufacturing"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": false,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative order-of-magnitude modelling assumption",
+    "source": ""
+   }
+  },
+  {
+   "id": "defence_electronics",
+   "name": "Defence electronics plant",
+   "category": "Technology Manufacturing",
+   "subcategory": "Defence",
+   "industry": "Defence",
+   "function": "Defence",
+   "description": "Radars, communications and electronic-warfare systems.",
+   "purpose": "Strategic autonomy in defence systems.",
+   "capexCr": 2000,
+   "constructionMonths": 30,
+   "landHa": 50,
+   "opexCrPerYear": 60.0,
+   "powerDemandMW": 12,
+   "waterDemandMLD": 1,
+   "constructionJobs": 1000,
+   "operationsJobs": {
+    "unskilled": 300,
+    "skilled": 1200,
+    "engineer": 1200,
+    "scientist": 300
+   },
+   "outputs": {
+    "goods": [
+     {
+      "good": "defence_electronics",
+      "qtyPerYear": 2000
+     }
+    ],
+    "valueAddedCrPerYear": 1200,
+    "researchPoints": {
+     "electronics": 10
+    }
+   },
+   "inputs": [
+    {
+     "good": "electronic_components",
+     "qtyPerYear": 500
+    },
+    {
+     "good": "packaged_chips",
+     "qtyPerYear": 300
+    }
+   ],
+   "requires": {
+    "transport": [
+     "road"
+    ],
+    "tech": {
+     "electronics": 2,
+     "telecom": 2
+    }
+   },
+   "emissions": {
+    "voc": 50,
+    "co2": 48000
+   },
+   "tags": [
+    "defence",
+    "electronics",
+    "manufacturing"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": false,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative order-of-magnitude modelling assumption",
+    "source": ""
+   }
+  },
+  {
+   "id": "telecom_equipment",
+   "name": "Telecommunications equipment factory",
+   "category": "Technology Manufacturing",
+   "subcategory": "Telecom",
+   "industry": "Telecom",
+   "function": "Telecom",
+   "description": "4G/5G radio, core-network and transmission equipment.",
+   "purpose": "Trusted domestic telecom supply.",
+   "capexCr": 1500,
+   "constructionMonths": 24,
+   "landHa": 25,
+   "opexCrPerYear": 45.0,
+   "powerDemandMW": 10,
+   "waterDemandMLD": 1,
+   "constructionJobs": 750,
+   "operationsJobs": {
+    "unskilled": 500,
+    "skilled": 1200,
+    "engineer": 800,
+    "scientist": 150
+   },
+   "outputs": {
+    "goods": [
+     {
+      "good": "telecom_equipment",
+      "qtyPerYear": 2500
+     }
+    ],
+    "valueAddedCrPerYear": 1200,
+    "researchPoints": {
+     "telecom": 15
+    }
+   },
+   "inputs": [
+    {
+     "good": "electronic_components",
+     "qtyPerYear": 600
+    },
+    {
+     "good": "packaged_chips",
+     "qtyPerYear": 500
+    }
+   ],
+   "requires": {
+    "transport": [
+     "road"
+    ],
+    "tech": {
+     "telecom": 2,
+     "electronics": 2
+    }
+   },
+   "emissions": {
+    "voc": 50,
+    "co2": 40000
+   },
+   "tags": [
+    "telecom",
+    "electronics",
+    "manufacturing"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": false,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative order-of-magnitude modelling assumption",
+    "source": ""
+   }
+  },
+  {
+   "id": "fibre_optic_plant",
+   "name": "Fibre-optic cable manufacturing",
+   "category": "Technology Manufacturing",
+   "subcategory": "Telecom",
+   "industry": "Telecom",
+   "function": "Telecom",
+   "description": "Optical preform, fibre drawing and cable plant.",
+   "purpose": "Fibre for national broadband backbones.",
+   "capexCr": 800,
+   "constructionMonths": 18,
+   "landHa": 20,
+   "opexCrPerYear": 24.0,
+   "powerDemandMW": 15,
+   "waterDemandMLD": 1,
+   "constructionJobs": 400,
+   "operationsJobs": {
+    "unskilled": 400,
+    "skilled": 400,
+    "engineer": 150,
+    "scientist": 20
+   },
+   "outputs": {
+    "goods": [
+     {
+      "good": "optical_fibre",
+      "qtyPerYear": 20000000
+     }
+    ],
+    "valueAddedCrPerYear": 400
+   },
+   "inputs": [
+    {
+     "good": "quartz",
+     "qtyPerYear": 2000
+    },
+    {
+     "good": "chemicals",
+     "qtyPerYear": 50
+    }
+   ],
+   "requires": {
+    "transport": [
+     "road"
+    ],
+    "tech": {
+     "telecom": 1,
+     "materials": 1
+    }
+   },
+   "emissions": {
+    "voc": 50,
+    "co2": 60000
+   },
+   "tags": [
+    "fibre_manufacturing",
+    "telecom",
+    "manufacturing"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": false,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative order-of-magnitude modelling assumption",
+    "source": ""
+   }
+  },
+  {
+   "id": "advanced_materials_plant",
+   "name": "Advanced materials plant",
+   "category": "Technology Manufacturing",
+   "subcategory": "Materials",
+   "industry": "Materials",
+   "function": "Materials",
+   "description": "Carbon fibre, specialty alloys, ceramics and battery materials.",
+   "purpose": "Inputs for aerospace, batteries and semiconductors.",
+   "capexCr": 2000,
+   "constructionMonths": 30,
+   "landHa": 50,
+   "opexCrPerYear": 60.0,
+   "powerDemandMW": 40,
+   "waterDemandMLD": 3,
+   "constructionJobs": 1000,
+   "operationsJobs": {
+    "unskilled": 400,
+    "skilled": 700,
+    "engineer": 400,
+    "scientist": 150
+   },
+   "outputs": {
+    "goods": [
+     {
+      "good": "advanced_materials",
+      "qtyPerYear": 2000
+     }
+    ],
+    "valueAddedCrPerYear": 800,
+    "researchPoints": {
+     "materials": 15
+    }
+   },
+   "inputs": [
+    {
+     "good": "chemicals",
+     "qtyPerYear": 400
+    },
+    {
+     "good": "rare_earths",
+     "qtyPerYear": 500
+    },
+    {
+     "good": "aluminium",
+     "qtyPerYear": 5000
+    }
+   ],
+   "requires": {
+    "transport": [
+     "road"
+    ],
+    "tech": {
+     "materials": 2
+    }
+   },
+   "emissions": {
+    "voc": 300,
+    "nox": 200,
+    "co2": 250000
+   },
+   "tags": [
+    "advanced_materials",
+    "materials",
+    "manufacturing"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": false,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative order-of-magnitude modelling assumption",
+    "source": ""
+   }
+  },
+  {
+   "id": "solar_module_plant",
+   "name": "Solar cell & module factory (2 GW/yr)",
+   "category": "Technology Manufacturing",
+   "subcategory": "Clean-tech",
+   "industry": "Clean energy",
+   "function": "Clean-tech",
+   "description": "Solar cell and module manufacturing.",
+   "purpose": "Domestic solar supply chain.",
+   "capexCr": 1500,
+   "constructionMonths": 18,
+   "landHa": 40,
+   "opexCrPerYear": 45.0,
+   "powerDemandMW": 30,
+   "waterDemandMLD": 2,
+   "constructionJobs": 750,
+   "operationsJobs": {
+    "unskilled": 1500,
+    "skilled": 800,
+    "engineer": 200,
+    "scientist": 20
+   },
+   "outputs": {
+    "goods": [
+     {
+      "good": "solar_module",
+      "qtyPerYear": 2000
+     }
+    ],
+    "valueAddedCrPerYear": 600
+   },
+   "inputs": [
+    {
+     "good": "polysilicon",
+     "qtyPerYear": 5000
+    },
+    {
+     "good": "aluminium",
+     "qtyPerYear": 15000
+    },
+    {
+     "good": "chemicals",
+     "qtyPerYear": 100
+    }
+   ],
+   "requires": {
+    "transport": [
+     "road"
+    ],
+    "tech": {
+     "energy": 1,
+     "electronics": 1
+    }
+   },
+   "emissions": {
+    "voc": 50,
+    "co2": 120000
+   },
+   "tags": [
+    "solar_manufacturing",
+    "manufacturing_clean",
+    "manufacturing"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": false,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative order-of-magnitude modelling assumption",
+    "source": ""
+   }
+  },
+  {
+   "id": "rare_earth_magnet",
+   "name": "Rare-earth permanent magnet plant",
+   "category": "Technology Manufacturing",
+   "subcategory": "Materials",
+   "industry": "Materials",
+   "function": "Materials",
+   "description": "NdFeB magnet manufacturing.",
+   "purpose": "Magnets for EV motors, wind turbines, electronics.",
+   "capexCr": 1200,
+   "constructionMonths": 24,
+   "landHa": 20,
+   "opexCrPerYear": 36.0,
+   "powerDemandMW": 20,
+   "waterDemandMLD": 1,
+   "constructionJobs": 600,
+   "operationsJobs": {
+    "unskilled": 200,
+    "skilled": 400,
+    "engineer": 200,
+    "scientist": 50
+   },
+   "outputs": {
+    "goods": [
+     {
+      "good": "rare_earth_magnets",
+      "qtyPerYear": 5000
+     }
+    ],
+    "valueAddedCrPerYear": 400
+   },
+   "inputs": [
+    {
+     "good": "rare_earths",
+     "qtyPerYear": 1500
+    },
+    {
+     "good": "steel",
+     "qtyPerYear": 3000
+    }
+   ],
+   "requires": {
+    "transport": [
+     "road"
+    ],
+    "tech": {
+     "materials": 2
+    }
+   },
+   "emissions": {
+    "voc": 50,
+    "co2": 80000
+   },
+   "tags": [
+    "magnets",
+    "materials",
+    "manufacturing"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": false,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative order-of-magnitude modelling assumption",
+    "source": ""
+   }
+  },
+  {
+   "id": "quantum_centre",
+   "name": "Quantum computing research centre",
+   "category": "Technology Manufacturing",
+   "subcategory": "Research",
+   "industry": "Quantum",
+   "function": "Research",
+   "description": "Superconducting/photonic qubit research with cryogenic labs.",
+   "purpose": "Long-term quantum computing, sensing and communication capability.",
+   "capexCr": 1500,
+   "constructionMonths": 36,
+   "landHa": 10,
+   "opexCrPerYear": 150,
+   "powerDemandMW": 10,
+   "waterDemandMLD": 0,
+   "constructionJobs": 300,
+   "operationsJobs": {
+    "skilled": 100,
+    "engineer": 150,
+    "scientist": 300
+   },
+   "outputs": {
+    "researchPoints": {
+     "quantum": 50,
+     "materials": 5
+    }
+   },
+   "inputs": [],
+   "requires": {
+    "transport": [
+     "fibre"
+    ],
+    "minGridReliability": 0.99,
+    "supporting": [
+     {
+      "tag": "research_university",
+      "count": 1,
+      "radiusKm": 0,
+      "why": "Quantum research needs physicists and engineers from research universities"
+     }
+    ]
+   },
+   "emissions": {},
+   "tags": [
+    "quantum",
+    "research"
+   ],
+   "technologies": [],
+   "risks": [
+    "Very long time to practical applications",
+    "Talent scarcity"
+   ],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "National Quantum Mission (₹6,003 crore over 8 years) scale",
+    "source": ""
+   }
+  },
+  {
+   "id": "materials_research",
+   "name": "Advanced materials research institute",
+   "category": "Technology Manufacturing",
+   "subcategory": "Research",
+   "industry": "Materials",
+   "function": "Research",
+   "description": "Metallurgy, ceramics, polymers and nano-materials research.",
+   "purpose": "Foundation for semiconductors, aerospace and energy.",
+   "capexCr": 600,
+   "constructionMonths": 24,
+   "landHa": 10,
+   "opexCrPerYear": 70,
+   "powerDemandMW": 6,
+   "waterDemandMLD": 0,
+   "constructionJobs": 300,
+   "operationsJobs": {
+    "skilled": 100,
+    "engineer": 100,
+    "scientist": 300
+   },
+   "outputs": {
+    "researchPoints": {
+     "materials": 45,
+     "heavy_industry": 10
+    }
+   },
+   "inputs": [],
+   "requires": {},
+   "emissions": {},
+   "tags": [
+    "materials_research",
+    "research"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative order-of-magnitude modelling assumption",
+    "source": ""
+   }
+  },
+  {
+   "id": "aerospace_research",
+   "name": "Aerospace & space research centre",
+   "category": "Technology Manufacturing",
+   "subcategory": "Research",
+   "industry": "Space",
+   "function": "Research",
+   "description": "Propulsion, avionics and space-systems research.",
+   "purpose": "Builds aerospace and space capability.",
+   "capexCr": 1000,
+   "constructionMonths": 30,
+   "landHa": 100,
+   "opexCrPerYear": 120,
+   "powerDemandMW": 8,
+   "waterDemandMLD": 0,
+   "constructionJobs": 500,
+   "operationsJobs": {
+    "skilled": 200,
+    "engineer": 300,
+    "scientist": 400
+   },
+   "outputs": {
+    "researchPoints": {
+     "aerospace_space": 50
+    }
+   },
+   "inputs": [],
+   "requires": {},
+   "emissions": {},
+   "tags": [
+    "aerospace_research",
+    "research"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative order-of-magnitude modelling assumption",
+    "source": ""
+   }
+  },
+  {
+   "id": "energy_research",
+   "name": "Energy technology research centre",
+   "category": "Technology Manufacturing",
+   "subcategory": "Research",
+   "industry": "Energy",
+   "function": "Research",
+   "description": "Batteries, grid, hydrogen and renewable energy research.",
+   "purpose": "Clean-energy capability.",
+   "capexCr": 500,
+   "constructionMonths": 24,
+   "landHa": 20,
+   "opexCrPerYear": 60,
+   "powerDemandMW": 5,
+   "waterDemandMLD": 0,
+   "constructionJobs": 300,
+   "operationsJobs": {
+    "skilled": 100,
+    "engineer": 150,
+    "scientist": 250
+   },
+   "outputs": {
+    "researchPoints": {
+     "energy": 45,
+     "automotive_ev": 10
+    }
+   },
+   "inputs": [],
+   "requires": {},
+   "emissions": {},
+   "tags": [
+    "energy_research",
+    "research"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative order-of-magnitude modelling assumption",
+    "source": ""
+   }
+  },
+  {
+   "id": "nuclear_research",
+   "name": "Nuclear research centre",
+   "category": "Technology Manufacturing",
+   "subcategory": "Research",
+   "industry": "Nuclear",
+   "function": "Research",
+   "description": "Reactor physics, fuel cycle and nuclear safety research with research reactor.",
+   "purpose": "Nuclear power and medical isotope capability.",
+   "capexCr": 2500,
+   "constructionMonths": 60,
+   "landHa": 300,
+   "opexCrPerYear": 250,
+   "powerDemandMW": 20,
+   "waterDemandMLD": 10,
+   "constructionJobs": 1500,
+   "operationsJobs": {
+    "unskilled": 200,
+    "skilled": 500,
+    "engineer": 700,
+    "scientist": 800
+   },
+   "outputs": {
+    "researchPoints": {
+     "nuclear": 60,
+     "materials": 10
+    }
+   },
+   "inputs": [],
+   "requires": {},
+   "emissions": {},
+   "tags": [
+    "nuclear_research",
+    "research"
+   ],
+   "technologies": [],
+   "risks": [
+    "Safety and safeguards obligations"
+   ],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative order-of-magnitude modelling assumption",
+    "source": ""
+   }
+  },
+  {
+   "id": "electronics_design_centre",
+   "name": "Electronics & chip design centre",
+   "category": "Technology Manufacturing",
+   "subcategory": "Research",
+   "industry": "Electronics",
+   "function": "Research",
+   "description": "VLSI design, EDA and embedded systems centre.",
+   "purpose": "Design capability for chips and systems.",
+   "capexCr": 300,
+   "constructionMonths": 12,
+   "landHa": 3,
+   "opexCrPerYear": 60,
+   "powerDemandMW": 3,
+   "waterDemandMLD": 0,
+   "constructionJobs": 150,
+   "operationsJobs": {
+    "skilled": 100,
+    "engineer": 500,
+    "scientist": 150
+   },
+   "outputs": {
+    "researchPoints": {
+     "electronics": 30,
+     "semiconductor": 15,
+     "computing_ai": 5
+    }
+   },
+   "inputs": [],
+   "requires": {
+    "transport": [
+     "fibre"
+    ]
+   },
+   "emissions": {},
+   "tags": [
+    "chip_design",
+    "research"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative order-of-magnitude modelling assumption",
+    "source": ""
+   }
+  },
+  {
+   "id": "telecom_research",
+   "name": "Telecom research centre",
+   "category": "Technology Manufacturing",
+   "subcategory": "Research",
+   "industry": "Telecom",
+   "function": "Research",
+   "description": "5G/6G, optical networking and satellite communications research.",
+   "purpose": "Telecom capability.",
+   "capexCr": 400,
+   "constructionMonths": 18,
+   "landHa": 5,
+   "opexCrPerYear": 50,
+   "powerDemandMW": 3,
+   "waterDemandMLD": 0,
+   "constructionJobs": 150,
+   "operationsJobs": {
+    "skilled": 100,
+    "engineer": 250,
+    "scientist": 150
+   },
+   "outputs": {
+    "researchPoints": {
+     "telecom": 45
+    }
+   },
+   "inputs": [],
+   "requires": {},
+   "emissions": {},
+   "tags": [
+    "telecom_research",
+    "research"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative order-of-magnitude modelling assumption",
+    "source": ""
+   }
+  },
+  {
+   "id": "robotics_research",
+   "name": "Robotics & automation research centre",
+   "category": "Technology Manufacturing",
+   "subcategory": "Research",
+   "industry": "Robotics",
+   "function": "Research",
+   "description": "Robotics, control systems and AI-for-manufacturing research.",
+   "purpose": "Automation capability.",
+   "capexCr": 400,
+   "constructionMonths": 18,
+   "landHa": 5,
+   "opexCrPerYear": 50,
+   "powerDemandMW": 3,
+   "waterDemandMLD": 0,
+   "constructionJobs": 150,
+   "operationsJobs": {
+    "skilled": 80,
+    "engineer": 250,
+    "scientist": 150
+   },
+   "outputs": {
+    "researchPoints": {
+     "robotics_automation": 45,
+     "computing_ai": 5
+    }
+   },
+   "inputs": [],
+   "requires": {},
+   "emissions": {},
+   "tags": [
+    "robotics_research",
+    "research"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative order-of-magnitude modelling assumption",
+    "source": ""
+   }
+  },
+  {
+   "id": "auto_research",
+   "name": "Automotive & EV research centre",
+   "category": "Technology Manufacturing",
+   "subcategory": "Research",
+   "industry": "Automotive",
+   "function": "Research",
+   "description": "Powertrain, battery-systems and vehicle-safety research.",
+   "purpose": "EV and automotive capability.",
+   "capexCr": 400,
+   "constructionMonths": 18,
+   "landHa": 30,
+   "opexCrPerYear": 50,
+   "powerDemandMW": 4,
+   "waterDemandMLD": 0,
+   "constructionJobs": 200,
+   "operationsJobs": {
+    "skilled": 100,
+    "engineer": 250,
+    "scientist": 120
+   },
+   "outputs": {
+    "researchPoints": {
+     "automotive_ev": 45,
+     "energy": 5
+    }
+   },
+   "inputs": [],
+   "requires": {},
+   "emissions": {},
+   "tags": [
+    "auto_research",
+    "research"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative order-of-magnitude modelling assumption",
+    "source": ""
+   }
+  },
+  {
+   "id": "industrial_research",
+   "name": "Industrial technology institute",
+   "category": "Technology Manufacturing",
+   "subcategory": "Research",
+   "industry": "Industry",
+   "function": "Research",
+   "description": "Process engineering, metallurgy and manufacturing systems research.",
+   "purpose": "Heavy-industry capability.",
+   "capexCr": 400,
+   "constructionMonths": 18,
+   "landHa": 20,
+   "opexCrPerYear": 50,
+   "powerDemandMW": 4,
+   "waterDemandMLD": 0,
+   "constructionJobs": 200,
+   "operationsJobs": {
+    "skilled": 120,
+    "engineer": 250,
+    "scientist": 100
+   },
+   "outputs": {
+    "researchPoints": {
+     "heavy_industry": 45,
+     "materials": 5
+    }
+   },
+   "inputs": [],
+   "requires": {},
+   "emissions": {},
+   "tags": [
+    "industrial_research",
+    "research"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative order-of-magnitude modelling assumption",
+    "source": ""
+   }
+  }
+ ]
+}

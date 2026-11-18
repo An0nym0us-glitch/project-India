@@ -1,0 +1,982 @@
+{
+ "category": "Heavy Industry & Mining",
+ "note": "Indicative modelling assumptions; see provenance on each entry.",
+ "facilities": [
+  {
+   "id": "coal_mine",
+   "name": "Coal mine (10 Mtpa opencast)",
+   "category": "Heavy Industry & Mining",
+   "subcategory": "Mining",
+   "industry": "Mining",
+   "function": "Mining",
+   "description": "Opencast coal mine with washery.",
+   "purpose": "Domestic raw-material supply.",
+   "capexCr": 1500,
+   "constructionMonths": 30,
+   "landHa": 1500,
+   "opexCrPerYear": 45.0,
+   "powerDemandMW": 5,
+   "waterDemandMLD": 2,
+   "constructionJobs": 1500,
+   "operationsJobs": {
+    "unskilled": 1500,
+    "skilled": 800,
+    "engineer": 100
+   },
+   "outputs": {
+    "goods": [
+     {
+      "good": "coal",
+      "qtyPerYear": 10000000
+     }
+    ],
+    "valueAddedCrPerYear": 800.0
+   },
+   "inputs": [],
+   "requires": {
+    "states": [
+     "Jharkhand",
+     "Odisha",
+     "Chhattisgarh",
+     "West Bengal",
+     "Madhya Pradesh",
+     "Telangana",
+     "Maharashtra",
+     "Uttar Pradesh"
+    ],
+    "statesSource": "Indian Bureau of Mines / Ministry of Coal (state-level occurrence, indicative)",
+    "transport": [
+     "rail"
+    ]
+   },
+   "emissions": {
+    "pm10": 3000,
+    "pm25": 600,
+    "co2": 300000,
+    "nox": 500
+   },
+   "tags": [
+    "mining",
+    "coal_mine"
+   ],
+   "technologies": [],
+   "risks": [
+    "Displacement and forest loss",
+    "Dust and water pollution",
+    "Requires geological exploration (deposit data not bundled)"
+   ],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": false,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative",
+    "source": ""
+   }
+  },
+  {
+   "id": "iron_ore_mine",
+   "name": "Iron ore mine (10 Mtpa)",
+   "category": "Heavy Industry & Mining",
+   "subcategory": "Mining",
+   "industry": "Mining",
+   "function": "Mining",
+   "description": "Mechanised iron-ore mine.",
+   "purpose": "Domestic raw-material supply.",
+   "capexCr": 1200,
+   "constructionMonths": 30,
+   "landHa": 1500,
+   "opexCrPerYear": 36.0,
+   "powerDemandMW": 5,
+   "waterDemandMLD": 2,
+   "constructionJobs": 1500,
+   "operationsJobs": {
+    "unskilled": 1000,
+    "skilled": 500,
+    "engineer": 80
+   },
+   "outputs": {
+    "goods": [
+     {
+      "good": "iron_ore",
+      "qtyPerYear": 10000000
+     }
+    ],
+    "valueAddedCrPerYear": 1600.0
+   },
+   "inputs": [],
+   "requires": {
+    "states": [
+     "Odisha",
+     "Chhattisgarh",
+     "Karnataka",
+     "Jharkhand",
+     "Goa"
+    ],
+    "statesSource": "Indian Bureau of Mines / Ministry of Coal (state-level occurrence, indicative)",
+    "transport": [
+     "rail"
+    ]
+   },
+   "emissions": {
+    "pm10": 2500,
+    "pm25": 400,
+    "co2": 150000
+   },
+   "tags": [
+    "mining",
+    "iron_ore_mine"
+   ],
+   "technologies": [],
+   "risks": [
+    "Displacement and forest loss",
+    "Dust and water pollution",
+    "Requires geological exploration (deposit data not bundled)"
+   ],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": false,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative",
+    "source": ""
+   }
+  },
+  {
+   "id": "limestone_quarry",
+   "name": "Limestone quarry (5 Mtpa)",
+   "category": "Heavy Industry & Mining",
+   "subcategory": "Mining",
+   "industry": "Mining",
+   "function": "Mining",
+   "description": "Limestone quarry for cement and steel.",
+   "purpose": "Domestic raw-material supply.",
+   "capexCr": 300,
+   "constructionMonths": 30,
+   "landHa": 1500,
+   "opexCrPerYear": 9.0,
+   "powerDemandMW": 5,
+   "waterDemandMLD": 2,
+   "constructionJobs": 1500,
+   "operationsJobs": {
+    "unskilled": 400,
+    "skilled": 150,
+    "engineer": 20
+   },
+   "outputs": {
+    "goods": [
+     {
+      "good": "limestone",
+      "qtyPerYear": 5000000
+     }
+    ],
+    "valueAddedCrPerYear": 100.0
+   },
+   "inputs": [],
+   "requires": {
+    "states": [
+     "Rajasthan",
+     "Madhya Pradesh",
+     "Andhra Pradesh",
+     "Telangana",
+     "Karnataka",
+     "Gujarat",
+     "Chhattisgarh",
+     "Tamil Nadu",
+     "Meghalaya"
+    ],
+    "statesSource": "Indian Bureau of Mines / Ministry of Coal (state-level occurrence, indicative)",
+    "transport": [
+     "rail"
+    ]
+   },
+   "emissions": {
+    "pm10": 1500,
+    "pm25": 200,
+    "co2": 30000
+   },
+   "tags": [
+    "mining",
+    "limestone_mine"
+   ],
+   "technologies": [],
+   "risks": [
+    "Displacement and forest loss",
+    "Dust and water pollution",
+    "Requires geological exploration (deposit data not bundled)"
+   ],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": false,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative",
+    "source": ""
+   }
+  },
+  {
+   "id": "bauxite_mine",
+   "name": "Bauxite mine (3 Mtpa)",
+   "category": "Heavy Industry & Mining",
+   "subcategory": "Mining",
+   "industry": "Mining",
+   "function": "Mining",
+   "description": "Bauxite mine for alumina.",
+   "purpose": "Domestic raw-material supply.",
+   "capexCr": 600,
+   "constructionMonths": 30,
+   "landHa": 1500,
+   "opexCrPerYear": 18.0,
+   "powerDemandMW": 5,
+   "waterDemandMLD": 2,
+   "constructionJobs": 1500,
+   "operationsJobs": {
+    "unskilled": 500,
+    "skilled": 200,
+    "engineer": 30
+   },
+   "outputs": {
+    "goods": [
+     {
+      "good": "bauxite",
+      "qtyPerYear": 3000000
+     }
+    ],
+    "valueAddedCrPerYear": 180.0
+   },
+   "inputs": [],
+   "requires": {
+    "states": [
+     "Odisha",
+     "Gujarat",
+     "Jharkhand",
+     "Maharashtra",
+     "Chhattisgarh",
+     "Andhra Pradesh"
+    ],
+    "statesSource": "Indian Bureau of Mines / Ministry of Coal (state-level occurrence, indicative)",
+    "transport": [
+     "rail"
+    ]
+   },
+   "emissions": {
+    "pm10": 1200,
+    "pm25": 200,
+    "co2": 40000
+   },
+   "tags": [
+    "mining",
+    "bauxite_mine"
+   ],
+   "technologies": [],
+   "risks": [
+    "Displacement and forest loss",
+    "Dust and water pollution",
+    "Requires geological exploration (deposit data not bundled)"
+   ],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": false,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative",
+    "source": ""
+   }
+  },
+  {
+   "id": "rare_earth_plant",
+   "name": "Rare-earth mining & separation",
+   "category": "Heavy Industry & Mining",
+   "subcategory": "Mining",
+   "industry": "Mining",
+   "function": "Mining",
+   "description": "Beach-sand monazite mining and rare-earth separation.",
+   "purpose": "Domestic raw-material supply.",
+   "capexCr": 2500,
+   "constructionMonths": 30,
+   "landHa": 1500,
+   "opexCrPerYear": 75.0,
+   "powerDemandMW": 20,
+   "waterDemandMLD": 2,
+   "constructionJobs": 1500,
+   "operationsJobs": {
+    "unskilled": 300,
+    "skilled": 300,
+    "engineer": 150,
+    "scientist": 50
+   },
+   "outputs": {
+    "goods": [
+     {
+      "good": "rare_earths",
+      "qtyPerYear": 5000
+     }
+    ],
+    "valueAddedCrPerYear": 100.0
+   },
+   "inputs": [],
+   "requires": {
+    "states": [
+     "Kerala",
+     "Tamil Nadu",
+     "Odisha",
+     "Andhra Pradesh"
+    ],
+    "statesSource": "Indian Bureau of Mines / Ministry of Coal (state-level occurrence, indicative)",
+    "transport": [
+     "rail"
+    ]
+   },
+   "emissions": {
+    "pm10": 200,
+    "co2": 50000,
+    "so2": 100
+   },
+   "tags": [
+    "mining",
+    "rare_earths_mine"
+   ],
+   "technologies": [],
+   "risks": [
+    "Displacement and forest loss",
+    "Dust and water pollution",
+    "Requires geological exploration (deposit data not bundled)"
+   ],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": false,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "India has monazite beach-sand deposits; separation capacity is limited (IREL)",
+    "source": ""
+   }
+  },
+  {
+   "id": "lithium_refinery",
+   "name": "Lithium extraction & refining",
+   "category": "Heavy Industry & Mining",
+   "subcategory": "Mining",
+   "industry": "Mining",
+   "function": "Mining",
+   "description": "Hard-rock lithium mining and refining to carbonate/hydroxide.",
+   "purpose": "Domestic raw-material supply.",
+   "capexCr": 4000,
+   "constructionMonths": 30,
+   "landHa": 1500,
+   "opexCrPerYear": 120.0,
+   "powerDemandMW": 40,
+   "waterDemandMLD": 2,
+   "constructionJobs": 1500,
+   "operationsJobs": {
+    "unskilled": 300,
+    "skilled": 400,
+    "engineer": 150,
+    "scientist": 40
+   },
+   "outputs": {
+    "goods": [
+     {
+      "good": "lithium",
+      "qtyPerYear": 20000
+     }
+    ],
+    "valueAddedCrPerYear": 800.0
+   },
+   "inputs": [],
+   "requires": {
+    "states": [
+     "Jammu & Kashmir",
+     "Karnataka",
+     "Rajasthan",
+     "Chhattisgarh"
+    ],
+    "statesSource": "Indian Bureau of Mines / Ministry of Coal (state-level occurrence, indicative)",
+    "transport": [
+     "rail"
+    ]
+   },
+   "emissions": {
+    "pm10": 300,
+    "co2": 300000,
+    "so2": 200
+   },
+   "tags": [
+    "mining",
+    "lithium_mine"
+   ],
+   "technologies": [],
+   "risks": [
+    "Displacement and forest loss",
+    "Dust and water pollution",
+    "Requires geological exploration (deposit data not bundled)"
+   ],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": false,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "GSI reported lithium resources (J&K Reasi, Karnataka); commercial viability unproven",
+    "source": ""
+   }
+  },
+  {
+   "id": "steel_plant",
+   "name": "Integrated steel plant (5 Mtpa)",
+   "category": "Heavy Industry & Mining",
+   "subcategory": "Metals",
+   "industry": "Steel",
+   "function": "Metals",
+   "description": "Blast-furnace / basic-oxygen integrated steelworks.",
+   "purpose": "Steel for construction, vehicles and machinery.",
+   "capexCr": 35000,
+   "constructionMonths": 54,
+   "landHa": 1500,
+   "opexCrPerYear": 1050.0,
+   "powerDemandMW": 300,
+   "waterDemandMLD": 60,
+   "constructionJobs": 15000,
+   "operationsJobs": {
+    "unskilled": 3000,
+    "skilled": 4000,
+    "engineer": 900,
+    "scientist": 50
+   },
+   "outputs": {
+    "goods": [
+     {
+      "good": "steel",
+      "qtyPerYear": 5000000
+     }
+    ],
+    "valueAddedCrPerYear": 8000
+   },
+   "inputs": [
+    {
+     "good": "iron_ore",
+     "qtyPerYear": 8000000
+    },
+    {
+     "good": "coal",
+     "qtyPerYear": 4000000
+    },
+    {
+     "good": "limestone",
+     "qtyPerYear": 1500000
+    }
+   ],
+   "requires": {
+    "transport": [
+     "rail"
+    ],
+    "tech": {
+     "heavy_industry": 2
+    }
+   },
+   "emissions": {
+    "pm25": 4000,
+    "pm10": 10000,
+    "nox": 8000,
+    "so2": 9000,
+    "co": 60000,
+    "voc": 2000,
+    "co2": 12500000
+   },
+   "tags": [
+    "steel",
+    "heavy_industry",
+    "manufacturing"
+   ],
+   "technologies": [],
+   "risks": [
+    "Very high CO2 (~2.5 t/t steel)",
+    "Air pollution",
+    "Raw-material logistics"
+   ],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": false,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "≈₹7,000 crore per Mtpa",
+    "source": ""
+   }
+  },
+  {
+   "id": "cement_plant",
+   "name": "Cement plant (3 Mtpa)",
+   "category": "Heavy Industry & Mining",
+   "subcategory": "Building materials",
+   "industry": "Cement",
+   "function": "Building materials",
+   "description": "Dry-process cement plant with kiln.",
+   "purpose": "Construction materials.",
+   "capexCr": 2000,
+   "constructionMonths": 30,
+   "landHa": 250,
+   "opexCrPerYear": 60.0,
+   "powerDemandMW": 30,
+   "waterDemandMLD": 1.5,
+   "constructionJobs": 2500,
+   "operationsJobs": {
+    "unskilled": 400,
+    "skilled": 400,
+    "engineer": 80
+   },
+   "outputs": {
+    "goods": [
+     {
+      "good": "cement",
+      "qtyPerYear": 3000000
+     }
+    ],
+    "valueAddedCrPerYear": 600
+   },
+   "inputs": [
+    {
+     "good": "limestone",
+     "qtyPerYear": 4500000
+    },
+    {
+     "good": "coal",
+     "qtyPerYear": 450000
+    }
+   ],
+   "requires": {
+    "transport": [
+     "rail"
+    ]
+   },
+   "emissions": {
+    "pm25": 600,
+    "pm10": 1500,
+    "nox": 4500,
+    "so2": 1000,
+    "co": 3000,
+    "co2": 2400000
+   },
+   "tags": [
+    "cement",
+    "heavy_industry",
+    "manufacturing"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": false,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "≈₹650 crore per Mtpa; ~0.8 t CO2/t cement",
+    "source": ""
+   }
+  },
+  {
+   "id": "aluminium_smelter",
+   "name": "Aluminium smelter & refinery (0.5 Mtpa)",
+   "category": "Heavy Industry & Mining",
+   "subcategory": "Metals",
+   "industry": "Aluminium",
+   "function": "Metals",
+   "description": "Alumina refinery and electrolytic smelter.",
+   "purpose": "Aluminium for power lines, vehicles, packaging.",
+   "capexCr": 15000,
+   "constructionMonths": 48,
+   "landHa": 800,
+   "opexCrPerYear": 450.0,
+   "powerDemandMW": 750,
+   "waterDemandMLD": 20,
+   "constructionJobs": 6000,
+   "operationsJobs": {
+    "unskilled": 1000,
+    "skilled": 1500,
+    "engineer": 400
+   },
+   "outputs": {
+    "goods": [
+     {
+      "good": "aluminium",
+      "qtyPerYear": 500000
+     }
+    ],
+    "valueAddedCrPerYear": 3500
+   },
+   "inputs": [
+    {
+     "good": "bauxite",
+     "qtyPerYear": 2500000
+    },
+    {
+     "good": "coal",
+     "qtyPerYear": 300000
+    }
+   ],
+   "requires": {
+    "transport": [
+     "rail"
+    ],
+    "tech": {
+     "heavy_industry": 2
+    },
+    "minGridReliability": 0.9
+   },
+   "emissions": {
+    "pm25": 500,
+    "pm10": 1000,
+    "so2": 4000,
+    "nox": 1000,
+    "co2": 1500000
+   },
+   "tags": [
+    "aluminium",
+    "heavy_industry",
+    "manufacturing"
+   ],
+   "technologies": [],
+   "risks": [
+    "Huge electricity demand (~13-15 MWh/t)",
+    "Red-mud disposal"
+   ],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": false,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative order-of-magnitude modelling assumption",
+    "source": ""
+   }
+  },
+  {
+   "id": "oil_refinery",
+   "name": "Oil refinery (10 Mtpa)",
+   "category": "Heavy Industry & Mining",
+   "subcategory": "Petroleum",
+   "industry": "Refining",
+   "function": "Petroleum",
+   "description": "Crude-oil refinery producing fuels.",
+   "purpose": "Fuel security.",
+   "capexCr": 30000,
+   "constructionMonths": 54,
+   "landHa": 1000,
+   "opexCrPerYear": 900.0,
+   "powerDemandMW": 100,
+   "waterDemandMLD": 25,
+   "constructionJobs": 10000,
+   "operationsJobs": {
+    "unskilled": 800,
+    "skilled": 1500,
+    "engineer": 600,
+    "scientist": 30
+   },
+   "outputs": {
+    "goods": [
+     {
+      "good": "refined_fuels",
+      "qtyPerYear": 9300000
+     }
+    ],
+    "valueAddedCrPerYear": 6000
+   },
+   "inputs": [
+    {
+     "good": "crude_oil",
+     "qtyPerYear": 10000000
+    }
+   ],
+   "requires": {
+    "maxCoastKm": 150,
+    "transport": [
+     "rail"
+    ],
+    "tech": {
+     "heavy_industry": 2
+    }
+   },
+   "emissions": {
+    "pm25": 500,
+    "pm10": 800,
+    "nox": 4000,
+    "so2": 6000,
+    "co": 1500,
+    "voc": 5000,
+    "co2": 3000000
+   },
+   "tags": [
+    "refinery",
+    "heavy_industry",
+    "manufacturing"
+   ],
+   "technologies": [],
+   "risks": [
+    "Crude import dependence",
+    "VOC and SO2 emissions",
+    "Fire/explosion hazard"
+   ],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": false,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative order-of-magnitude modelling assumption",
+    "source": ""
+   }
+  },
+  {
+   "id": "chemical_plant",
+   "name": "Chemicals complex",
+   "category": "Heavy Industry & Mining",
+   "subcategory": "Chemicals",
+   "industry": "Chemicals",
+   "function": "Chemicals",
+   "description": "Basic and specialty chemicals manufacturing.",
+   "purpose": "Inputs for pharma, agriculture and manufacturing.",
+   "capexCr": 3000,
+   "constructionMonths": 36,
+   "landHa": 150,
+   "opexCrPerYear": 90.0,
+   "powerDemandMW": 40,
+   "waterDemandMLD": 10,
+   "constructionJobs": 3000,
+   "operationsJobs": {
+    "unskilled": 600,
+    "skilled": 800,
+    "engineer": 300,
+    "scientist": 50
+   },
+   "outputs": {
+    "goods": [
+     {
+      "good": "chemicals",
+      "qtyPerYear": 4000
+     }
+    ],
+    "valueAddedCrPerYear": 1200
+   },
+   "inputs": [
+    {
+     "good": "refined_fuels",
+     "qtyPerYear": 500000
+    },
+    {
+     "good": "natural_gas",
+     "qtyPerYear": 100000
+    }
+   ],
+   "requires": {
+    "transport": [
+     "road"
+    ],
+    "tech": {
+     "heavy_industry": 1
+    }
+   },
+   "emissions": {
+    "pm25": 100,
+    "nox": 800,
+    "so2": 600,
+    "voc": 1500,
+    "co2": 500000
+   },
+   "tags": [
+    "chemicals",
+    "manufacturing"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": false,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative order-of-magnitude modelling assumption",
+    "source": ""
+   }
+  },
+  {
+   "id": "textile_mill",
+   "name": "Textile & apparel park",
+   "category": "Heavy Industry & Mining",
+   "subcategory": "Light manufacturing",
+   "industry": "Textiles",
+   "function": "Light manufacturing",
+   "description": "Spinning, weaving and garment factories.",
+   "purpose": "Labour-intensive manufacturing jobs and exports.",
+   "capexCr": 1200,
+   "constructionMonths": 24,
+   "landHa": 200,
+   "opexCrPerYear": 36.0,
+   "powerDemandMW": 40,
+   "waterDemandMLD": 8,
+   "constructionJobs": 3000,
+   "operationsJobs": {
+    "unskilled": 15000,
+    "skilled": 2000,
+    "engineer": 100
+   },
+   "outputs": {
+    "goods": [
+     {
+      "good": "textiles",
+      "qtyPerYear": 2500
+     }
+    ],
+    "valueAddedCrPerYear": 1100
+   },
+   "inputs": [],
+   "requires": {
+    "transport": [
+     "road"
+    ]
+   },
+   "emissions": {
+    "pm25": 50,
+    "co2": 150000,
+    "voc": 100
+   },
+   "tags": [
+    "textiles",
+    "manufacturing",
+    "labour_intensive"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": false,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "PM MITRA park scale",
+    "source": ""
+   }
+  },
+  {
+   "id": "auto_plant",
+   "name": "Automobile assembly plant (300,000 vehicles/yr)",
+   "category": "Heavy Industry & Mining",
+   "subcategory": "Automotive",
+   "industry": "Automotive",
+   "function": "Automotive",
+   "description": "Car and light-vehicle assembly plant.",
+   "purpose": "Large manufacturing employer with deep supplier networks.",
+   "capexCr": 6000,
+   "constructionMonths": 30,
+   "landHa": 300,
+   "opexCrPerYear": 180.0,
+   "powerDemandMW": 40,
+   "waterDemandMLD": 2,
+   "constructionJobs": 4000,
+   "operationsJobs": {
+    "unskilled": 3000,
+    "skilled": 4000,
+    "engineer": 700,
+    "scientist": 50
+   },
+   "outputs": {
+    "goods": [
+     {
+      "good": "automobiles",
+      "qtyPerYear": 300000
+     }
+    ],
+    "valueAddedCrPerYear": 4000
+   },
+   "inputs": [
+    {
+     "good": "steel",
+     "qtyPerYear": 300000
+    },
+    {
+     "good": "electronic_components",
+     "qtyPerYear": 1500
+    }
+   ],
+   "requires": {
+    "transport": [
+     "road",
+     "rail"
+    ],
+    "tech": {
+     "automotive_ev": 1
+    },
+    "supporting": [
+     {
+      "tag": "industrial_park",
+      "count": 1,
+      "radiusKm": 200,
+      "why": "Auto plants rely on clustered component suppliers"
+     }
+    ]
+   },
+   "emissions": {
+    "voc": 600,
+    "pm25": 30,
+    "co2": 150000
+   },
+   "tags": [
+    "automotive",
+    "manufacturing"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": false,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative order-of-magnitude modelling assumption",
+    "source": ""
+   }
+  }
+ ]
+}

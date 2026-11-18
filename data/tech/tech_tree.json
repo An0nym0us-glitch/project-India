@@ -1,0 +1,590 @@
+{
+ "version": 1,
+ "note": "Technology maturity levels and thresholds are modelling assumptions. Points accumulate from research facilities, policies and the national research workforce.",
+ "domains": [
+  {
+   "id": "semiconductor",
+   "name": "Semiconductors",
+   "description": "Wafer fabrication, packaging and the semiconductor supply chain.",
+   "initialLevel": 0,
+   "initialLevelNote": "Greenfield start: no domestic industrial base exists; level reflects knowledge held by the existing workforce only (assumption).",
+   "levels": [
+    {
+     "name": "Design & test know-how",
+     "description": "Chip design and testing skills; no manufacturing.",
+     "points": 60,
+     "unlocks": "OSAT plants at reduced efficiency"
+    },
+    {
+     "name": "Assembly, packaging & test (OSAT)",
+     "description": "Domestic packaging and test operations at scale.",
+     "points": 250,
+     "unlocks": "Silicon wafer plants",
+     "prerequisites": {
+      "electronics": 1
+     },
+     "requiredFacilityTags": [
+      "chip_packaging"
+     ]
+    },
+    {
+     "name": "Mature-node fabrication (28-110 nm)",
+     "description": "Ability to run a mature-node CMOS fab with competitive yields.",
+     "points": 800,
+     "unlocks": "Mature-node fabs, memory plants",
+     "prerequisites": {
+      "electronics": 2,
+      "materials": 2
+     },
+     "requiredFacilityTags": [
+      "semiconductor_research"
+     ]
+    },
+    {
+     "name": "Advanced packaging & specialty processes",
+     "description": "2.5D/3D packaging, compound semiconductors, equipment know-how.",
+     "points": 2000,
+     "unlocks": "GPU/CPU/AI-accelerator plants, equipment makers",
+     "prerequisites": {
+      "materials": 2
+     },
+     "requiredFacilityTags": [
+      "semiconductor_fab"
+     ]
+    },
+    {
+     "name": "Leading-edge logic (≤7 nm)",
+     "description": "EUV-based leading-edge logic manufacturing.",
+     "points": 5000,
+     "unlocks": "Leading-edge fabs",
+     "prerequisites": {
+      "materials": 3,
+      "robotics_automation": 2
+     },
+     "requiredFacilityTags": [
+      "semiconductor_fab",
+      "semiconductor_research"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "electronics",
+   "name": "Electronics manufacturing",
+   "description": "Components, assembly and electronic systems.",
+   "initialLevel": 1,
+   "initialLevelNote": "Greenfield start: no domestic industrial base exists; level reflects knowledge held by the existing workforce only (assumption).",
+   "levels": [
+    {
+     "name": "Electronics assembly",
+     "description": "Final assembly of devices from imported components.",
+     "points": 50,
+     "unlocks": "Smartphone/laptop assembly, server assembly"
+    },
+    {
+     "name": "Component ecosystem",
+     "description": "PCBs, passives, modules and sub-assemblies made domestically.",
+     "points": 250,
+     "unlocks": "AI server factories, defence electronics",
+     "requiredFacilityTags": [
+      "electronics_components"
+     ]
+    },
+    {
+     "name": "Integrated systems & displays",
+     "description": "Display fabrication, complex systems design.",
+     "points": 800,
+     "unlocks": "Display fabs, GPU plants (with semiconductors)",
+     "prerequisites": {
+      "materials": 2
+     },
+     "requiredFacilityTags": [
+      "electronics_components",
+      "chip_design"
+     ]
+    },
+    {
+     "name": "Global electronics hub",
+     "description": "Deep domestic supply chain and design leadership.",
+     "points": 2000,
+     "unlocks": "",
+     "prerequisites": {
+      "semiconductor": 3
+     }
+    }
+   ]
+  },
+  {
+   "id": "computing_ai",
+   "name": "Computing & AI",
+   "description": "Software, AI research, HPC and computing hardware integration.",
+   "initialLevel": 1,
+   "initialLevelNote": "Greenfield start: no domestic industrial base exists; level reflects knowledge held by the existing workforce only (assumption).",
+   "levels": [
+    {
+     "name": "Software & IT services",
+     "description": "Software engineering and IT services skills.",
+     "points": 50,
+     "unlocks": "Office complexes"
+    },
+    {
+     "name": "Cloud & HPC operations",
+     "description": "Running data centres, cloud regions and supercomputers.",
+     "points": 250,
+     "unlocks": "Cloud regions, AI server factories",
+     "requiredFacilityTags": [
+      "data_centre"
+     ]
+    },
+    {
+     "name": "AI research & hardware co-design",
+     "description": "Frontier AI research and accelerator architecture.",
+     "points": 800,
+     "unlocks": "GPU plants, AI-accelerator plants",
+     "prerequisites": {
+      "electronics": 2
+     },
+     "requiredFacilityTags": [
+      "ai_lab"
+     ]
+    },
+    {
+     "name": "Frontier AI ecosystem",
+     "description": "Large-scale AI training and globally competitive models and chips.",
+     "points": 2000,
+     "unlocks": "",
+     "prerequisites": {
+      "semiconductor": 3
+     },
+     "requiredFacilityTags": [
+      "supercomputer"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "telecom",
+   "name": "Telecommunications",
+   "description": "Networks, telecom equipment and optical communications.",
+   "initialLevel": 1,
+   "initialLevelNote": "Greenfield start: no domestic industrial base exists; level reflects knowledge held by the existing workforce only (assumption).",
+   "levels": [
+    {
+     "name": "Network deployment",
+     "description": "Building and operating telecom networks.",
+     "points": 50,
+     "unlocks": ""
+    },
+    {
+     "name": "Equipment manufacturing",
+     "description": "Domestic 4G/5G equipment.",
+     "points": 250,
+     "unlocks": "Defence electronics, telecom equipment",
+     "prerequisites": {
+      "electronics": 1
+     },
+     "requiredFacilityTags": [
+      "telecom_network"
+     ]
+    },
+    {
+     "name": "Next-generation networks",
+     "description": "6G, optical and satellite communications R&D.",
+     "points": 800,
+     "unlocks": "",
+     "prerequisites": {
+      "electronics": 2
+     },
+     "requiredFacilityTags": [
+      "telecom_research"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "energy",
+   "name": "Energy technology",
+   "description": "Renewables, storage, grid and hydrogen technology.",
+   "initialLevel": 1,
+   "initialLevelNote": "Greenfield start: no domestic industrial base exists; level reflects knowledge held by the existing workforce only (assumption).",
+   "levels": [
+    {
+     "name": "Conventional power engineering",
+     "description": "Building thermal, hydro and solar plants.",
+     "points": 50,
+     "unlocks": ""
+    },
+    {
+     "name": "Grid & storage integration",
+     "description": "HVDC, storage, electrolysers and geothermal.",
+     "points": 250,
+     "unlocks": "HVDC lines, green hydrogen, geothermal",
+     "requiredFacilityTags": [
+      "power_plant"
+     ]
+    },
+    {
+     "name": "Advanced clean energy",
+     "description": "Offshore wind, advanced storage, next-gen PV.",
+     "points": 800,
+     "unlocks": "Offshore wind",
+     "prerequisites": {
+      "materials": 2
+     },
+     "requiredFacilityTags": [
+      "energy_research"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "nuclear",
+   "name": "Nuclear technology",
+   "description": "Reactor design, fuel cycle and nuclear safety.",
+   "initialLevel": 0,
+   "initialLevelNote": "Greenfield start: no domestic industrial base exists; level reflects knowledge held by the existing workforce only (assumption).",
+   "levels": [
+    {
+     "name": "Nuclear science base",
+     "description": "Physics and engineering education in nuclear science.",
+     "points": 80,
+     "unlocks": ""
+    },
+    {
+     "name": "Reactor engineering (PHWR)",
+     "description": "Design, build and operate heavy-water reactors.",
+     "points": 400,
+     "unlocks": "Nuclear power plants",
+     "prerequisites": {
+      "heavy_industry": 1
+     },
+     "requiredFacilityTags": [
+      "nuclear_research"
+     ]
+    },
+    {
+     "name": "Advanced reactors & fuel cycle",
+     "description": "Fast breeders, SMRs, thorium fuel cycle.",
+     "points": 1500,
+     "unlocks": "",
+     "prerequisites": {
+      "materials": 2
+     },
+     "requiredFacilityTags": [
+      "nuclear"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "biotech_pharma",
+   "name": "Biotechnology & pharma",
+   "description": "Pharmaceutical chemistry, biologics and vaccines.",
+   "initialLevel": 1,
+   "initialLevelNote": "Greenfield start: no domestic industrial base exists; level reflects knowledge held by the existing workforce only (assumption).",
+   "levels": [
+    {
+     "name": "Generic formulations",
+     "description": "Manufacturing generic medicines.",
+     "points": 50,
+     "unlocks": "Pharma formulations"
+    },
+    {
+     "name": "API & process chemistry",
+     "description": "Bulk-drug synthesis.",
+     "points": 250,
+     "unlocks": "API plants",
+     "requiredFacilityTags": [
+      "pharma"
+     ]
+    },
+    {
+     "name": "Biologics & vaccines",
+     "description": "Bioprocessing at scale.",
+     "points": 800,
+     "unlocks": "Biologics plants",
+     "requiredFacilityTags": [
+      "biotech_research"
+     ]
+    },
+    {
+     "name": "Drug discovery",
+     "description": "Novel molecules and therapies.",
+     "points": 2000,
+     "unlocks": "",
+     "prerequisites": {
+      "computing_ai": 2
+     },
+     "requiredFacilityTags": [
+      "pharma_research"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "aerospace_space",
+   "name": "Aerospace & space",
+   "description": "Aircraft, satellites, launch vehicles and drones.",
+   "initialLevel": 0,
+   "initialLevelNote": "Greenfield start: no domestic industrial base exists; level reflects knowledge held by the existing workforce only (assumption).",
+   "levels": [
+    {
+     "name": "Aerospace engineering base",
+     "description": "Aeronautical engineering knowledge.",
+     "points": 60,
+     "unlocks": "Drone manufacturing"
+    },
+    {
+     "name": "Aerostructures & satellites",
+     "description": "Aircraft components and satellite integration.",
+     "points": 300,
+     "unlocks": "Aerospace plants, satellite factories",
+     "prerequisites": {
+      "materials": 1
+     },
+     "requiredFacilityTags": [
+      "aerospace_research"
+     ]
+    },
+    {
+     "name": "Complete systems",
+     "description": "Aircraft engines, launch vehicles.",
+     "points": 1200,
+     "unlocks": "",
+     "prerequisites": {
+      "materials": 3,
+      "electronics": 2
+     },
+     "requiredFacilityTags": [
+      "aerospace"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "materials",
+   "name": "Advanced materials",
+   "description": "Metallurgy, chemicals, composites and specialty materials.",
+   "initialLevel": 1,
+   "initialLevelNote": "Greenfield start: no domestic industrial base exists; level reflects knowledge held by the existing workforce only (assumption).",
+   "levels": [
+    {
+     "name": "Basic metallurgy & chemicals",
+     "description": "Conventional materials processing.",
+     "points": 50,
+     "unlocks": ""
+    },
+    {
+     "name": "Specialty materials",
+     "description": "Specialty alloys, electronic chemicals, battery materials.",
+     "points": 300,
+     "unlocks": "Specialty gases, polysilicon, wafers, magnets",
+     "requiredFacilityTags": [
+      "materials_research"
+     ]
+    },
+    {
+     "name": "Advanced composites & ultra-pure materials",
+     "description": "Semiconductor-grade and aerospace-grade materials.",
+     "points": 1000,
+     "unlocks": "Leading-edge fab support, offshore wind",
+     "prerequisites": {
+      "heavy_industry": 2
+     },
+     "requiredFacilityTags": [
+      "advanced_materials"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "automotive_ev",
+   "name": "Automotive & EV",
+   "description": "Vehicles, powertrains and batteries.",
+   "initialLevel": 1,
+   "initialLevelNote": "Greenfield start: no domestic industrial base exists; level reflects knowledge held by the existing workforce only (assumption).",
+   "levels": [
+    {
+     "name": "Vehicle assembly",
+     "description": "Assembling vehicles from components.",
+     "points": 50,
+     "unlocks": "Automobile plants, battery gigafactories (partial)"
+    },
+    {
+     "name": "EV & battery systems",
+     "description": "EV platforms and battery-pack engineering.",
+     "points": 300,
+     "unlocks": "EV plants",
+     "prerequisites": {
+      "energy": 1
+     },
+     "requiredFacilityTags": [
+      "automotive"
+     ]
+    },
+    {
+     "name": "Advanced mobility",
+     "description": "Next-gen batteries, autonomy.",
+     "points": 1000,
+     "unlocks": "",
+     "prerequisites": {
+      "computing_ai": 2
+     },
+     "requiredFacilityTags": [
+      "auto_research"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "robotics_automation",
+   "name": "Robotics & automation",
+   "description": "Industrial robots, controls and precision machinery.",
+   "initialLevel": 0,
+   "initialLevelNote": "Greenfield start: no domestic industrial base exists; level reflects knowledge held by the existing workforce only (assumption).",
+   "levels": [
+    {
+     "name": "Automation integration",
+     "description": "Integrating imported automation.",
+     "points": 60,
+     "unlocks": "Automation equipment plants"
+    },
+    {
+     "name": "Robot manufacturing",
+     "description": "Domestic robots and controllers.",
+     "points": 300,
+     "unlocks": "Robotics factories, semiconductor equipment",
+     "prerequisites": {
+      "electronics": 1
+     },
+     "requiredFacilityTags": [
+      "robotics_research"
+     ]
+    },
+    {
+     "name": "Precision machinery",
+     "description": "Ultra-precision stages and mechatronics.",
+     "points": 1000,
+     "unlocks": "Lithography equipment",
+     "prerequisites": {
+      "materials": 2
+     },
+     "requiredFacilityTags": [
+      "robotics"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "quantum",
+   "name": "Quantum technology",
+   "description": "Quantum computing, communication and sensing.",
+   "initialLevel": 0,
+   "initialLevelNote": "Greenfield start: no domestic industrial base exists; level reflects knowledge held by the existing workforce only (assumption).",
+   "levels": [
+    {
+     "name": "Quantum research base",
+     "description": "University quantum research.",
+     "points": 100,
+     "unlocks": ""
+    },
+    {
+     "name": "Quantum prototypes",
+     "description": "Small-scale qubit systems and QKD links.",
+     "points": 600,
+     "unlocks": "",
+     "requiredFacilityTags": [
+      "quantum"
+     ]
+    },
+    {
+     "name": "Useful quantum systems",
+     "description": "Error-corrected or application-relevant devices.",
+     "points": 3000,
+     "unlocks": "",
+     "prerequisites": {
+      "materials": 3,
+      "computing_ai": 3
+     },
+     "requiredFacilityTags": [
+      "quantum"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "agriculture",
+   "name": "Agricultural technology",
+   "description": "Seeds, agronomy and food technology.",
+   "initialLevel": 1,
+   "initialLevelNote": "Greenfield start: no domestic industrial base exists; level reflects knowledge held by the existing workforce only (assumption).",
+   "levels": [
+    {
+     "name": "Traditional agronomy",
+     "description": "Conventional farming practice.",
+     "points": 30,
+     "unlocks": ""
+    },
+    {
+     "name": "Improved varieties & practices",
+     "description": "High-yield seeds, soil-health management.",
+     "points": 200,
+     "unlocks": "",
+     "requiredFacilityTags": [
+      "agri_research"
+     ]
+    },
+    {
+     "name": "Precision & climate-resilient agriculture",
+     "description": "Precision farming, biotech crops, climate adaptation.",
+     "points": 800,
+     "unlocks": "",
+     "prerequisites": {
+      "computing_ai": 1,
+      "biotech_pharma": 2
+     },
+     "requiredFacilityTags": [
+      "agri_research"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "heavy_industry",
+   "name": "Heavy industry & process engineering",
+   "description": "Steel, chemicals, refining and heavy engineering.",
+   "initialLevel": 1,
+   "initialLevelNote": "Greenfield start: no domestic industrial base exists; level reflects knowledge held by the existing workforce only (assumption).",
+   "levels": [
+    {
+     "name": "Basic process industry",
+     "description": "Small-scale chemicals and fertilisers.",
+     "points": 50,
+     "unlocks": "Fertiliser plants, chemicals"
+    },
+    {
+     "name": "Large integrated plants",
+     "description": "Integrated steel, refineries, aluminium.",
+     "points": 300,
+     "unlocks": "Steel, aluminium, refinery",
+     "requiredFacilityTags": [
+      "industrial_research"
+     ]
+    },
+    {
+     "name": "Advanced process technology",
+     "description": "Green steel, advanced catalysts.",
+     "points": 1000,
+     "unlocks": "",
+     "prerequisites": {
+      "materials": 2,
+      "energy": 2
+     },
+     "requiredFacilityTags": [
+      "steel"
+     ]
+    }
+   ]
+  }
+ ]
+}

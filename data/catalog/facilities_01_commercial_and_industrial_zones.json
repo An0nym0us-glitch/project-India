@@ -1,0 +1,340 @@
+{
+ "category": "Commercial & Industrial Zones",
+ "note": "Indicative modelling assumptions; see provenance on each entry.",
+ "facilities": [
+  {
+   "id": "commercial_building",
+   "name": "Commercial building",
+   "category": "Commercial & Industrial Zones",
+   "subcategory": "Commercial",
+   "industry": "Services",
+   "function": "Commercial",
+   "description": "Multi-storey commercial building for shops and offices.",
+   "purpose": "Services employment.",
+   "capexCr": 100,
+   "constructionMonths": 18,
+   "landHa": 1,
+   "opexCrPerYear": 3.0,
+   "powerDemandMW": 2,
+   "waterDemandMLD": 0.05,
+   "constructionJobs": 200,
+   "operationsJobs": {
+    "unskilled": 500,
+    "skilled": 900,
+    "engineer": 50
+   },
+   "outputs": {
+    "valueAddedCrPerYear": 120
+   },
+   "inputs": [],
+   "requires": {
+    "transport": [
+     "road"
+    ],
+    "urban": true
+   },
+   "emissions": {},
+   "tags": [
+    "commercial",
+    "services"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": false,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative",
+    "source": ""
+   }
+  },
+  {
+   "id": "office_complex",
+   "name": "Office complex / IT park",
+   "category": "Commercial & Industrial Zones",
+   "subcategory": "Commercial",
+   "industry": "IT services",
+   "function": "Commercial",
+   "description": "Grade-A office campus suited to IT/ITES and global capability centres.",
+   "purpose": "High-value services employment and exports.",
+   "capexCr": 1500,
+   "constructionMonths": 30,
+   "landHa": 10,
+   "opexCrPerYear": 45.0,
+   "powerDemandMW": 25,
+   "waterDemandMLD": 0.8,
+   "constructionJobs": 1500,
+   "operationsJobs": {
+    "unskilled": 1500,
+    "skilled": 4000,
+    "engineer": 14000
+   },
+   "outputs": {
+    "valueAddedCrPerYear": 4200
+   },
+   "inputs": [],
+   "requires": {
+    "transport": [
+     "road"
+    ],
+    "urban": true,
+    "supporting": [
+     {
+      "tag": "fibre_node",
+      "count": 1,
+      "radiusKm": 50,
+      "why": "IT services need high-capacity fibre connectivity"
+     },
+     {
+      "tag": "engineering_college",
+      "count": 1,
+      "radiusKm": 500,
+      "why": "A local pipeline of engineering graduates sustains IT hiring"
+     }
+    ]
+   },
+   "emissions": {},
+   "tags": [
+    "commercial",
+    "services",
+    "it_services"
+   ],
+   "technologies": [
+    "IT services"
+   ],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": false,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "IT services revenue ≈₹30 lakh per employee, ~70% value added",
+    "source": ""
+   }
+  },
+  {
+   "id": "shopping_centre",
+   "name": "Shopping centre",
+   "category": "Commercial & Industrial Zones",
+   "subcategory": "Commercial",
+   "industry": "Retail",
+   "function": "Commercial",
+   "description": "Organised retail mall.",
+   "purpose": "Retail services employment.",
+   "capexCr": 500,
+   "constructionMonths": 24,
+   "landHa": 5,
+   "opexCrPerYear": 15.0,
+   "powerDemandMW": 8,
+   "waterDemandMLD": 0.2,
+   "constructionJobs": 600,
+   "operationsJobs": {
+    "unskilled": 2000,
+    "skilled": 1000
+   },
+   "outputs": {
+    "valueAddedCrPerYear": 250
+   },
+   "inputs": [],
+   "requires": {
+    "transport": [
+     "road"
+    ],
+    "urban": true
+   },
+   "emissions": {},
+   "tags": [
+    "commercial",
+    "services",
+    "retail"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": false,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative order-of-magnitude modelling assumption",
+    "source": ""
+   }
+  },
+  {
+   "id": "warehouse",
+   "name": "Warehouse",
+   "category": "Commercial & Industrial Zones",
+   "subcategory": "Logistics",
+   "industry": "Logistics",
+   "function": "Logistics",
+   "description": "Modern Grade-A warehouse (≈50,000 m²).",
+   "purpose": "Storage for manufacturing and distribution.",
+   "capexCr": 100,
+   "constructionMonths": 12,
+   "landHa": 8,
+   "opexCrPerYear": 3.0,
+   "powerDemandMW": 1,
+   "waterDemandMLD": 0,
+   "constructionJobs": 150,
+   "operationsJobs": {
+    "unskilled": 250,
+    "skilled": 60
+   },
+   "outputs": {
+    "valueAddedCrPerYear": 30
+   },
+   "inputs": [],
+   "requires": {
+    "transport": [
+     "road"
+    ]
+   },
+   "emissions": {},
+   "tags": [
+    "logistics",
+    "warehouse"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": false,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative order-of-magnitude modelling assumption",
+    "source": ""
+   }
+  },
+  {
+   "id": "industrial_park",
+   "name": "Industrial park",
+   "category": "Commercial & Industrial Zones",
+   "subcategory": "Industrial zones",
+   "industry": "Industrial infrastructure",
+   "function": "Industrial zones",
+   "description": "Serviced industrial land with internal roads, power, water and effluent treatment.",
+   "purpose": "Lowers set-up cost and time for factories nearby (supporting infrastructure).",
+   "capexCr": 2000,
+   "constructionMonths": 36,
+   "landHa": 800,
+   "opexCrPerYear": 60.0,
+   "powerDemandMW": 5,
+   "waterDemandMLD": 2,
+   "constructionJobs": 3000,
+   "operationsJobs": {
+    "unskilled": 200,
+    "skilled": 150,
+    "engineer": 30
+   },
+   "outputs": {
+    "valueAddedCrPerYear": 60
+   },
+   "inputs": [],
+   "requires": {
+    "transport": [
+     "road"
+    ]
+   },
+   "emissions": {},
+   "tags": [
+    "industrial_park",
+    "industrial_infrastructure"
+   ],
+   "technologies": [],
+   "risks": [
+    "Land acquisition and displacement",
+    "Under-utilisation if anchor investors don't arrive"
+   ],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative; NICDC industrial node infrastructure costs",
+    "source": ""
+   }
+  },
+  {
+   "id": "sez",
+   "name": "Special economic zone",
+   "category": "Commercial & Industrial Zones",
+   "subcategory": "Industrial zones",
+   "industry": "Industrial infrastructure",
+   "function": "Industrial zones",
+   "description": "Export-oriented zone with customs facilities, single-window clearances and serviced plots.",
+   "purpose": "Attracts export manufacturing and services.",
+   "capexCr": 5000,
+   "constructionMonths": 48,
+   "landHa": 2000,
+   "opexCrPerYear": 150.0,
+   "powerDemandMW": 20,
+   "waterDemandMLD": 5,
+   "constructionJobs": 6000,
+   "operationsJobs": {
+    "unskilled": 1000,
+    "skilled": 600,
+    "engineer": 100
+   },
+   "outputs": {
+    "valueAddedCrPerYear": 300
+   },
+   "inputs": [],
+   "requires": {
+    "transport": [
+     "road"
+    ],
+    "supporting": [
+     {
+      "tag": "seaport",
+      "count": 1,
+      "radiusKm": 400,
+      "why": "Export zones depend on port access"
+     }
+    ]
+   },
+   "emissions": {},
+   "tags": [
+    "industrial_park",
+    "sez",
+    "export_zone"
+   ],
+   "technologies": [],
+   "risks": [
+    "Revenue foregone through tax concessions",
+    "Enclave effects with limited local linkages"
+   ],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative order-of-magnitude modelling assumption",
+    "source": ""
+   }
+  }
+ ]
+}

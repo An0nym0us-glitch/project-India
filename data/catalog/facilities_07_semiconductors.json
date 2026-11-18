@@ -1,0 +1,878 @@
+{
+ "category": "Semiconductors",
+ "note": "Indicative modelling assumptions; see provenance on each entry.",
+ "facilities": [
+  {
+   "id": "semi_research",
+   "name": "Semiconductor research centre",
+   "category": "Semiconductors",
+   "subcategory": "Research",
+   "industry": "Semiconductors",
+   "function": "Research",
+   "description": "Device physics, process R&D and design-enablement centre with a pilot line.",
+   "purpose": "Builds national semiconductor know-how and trains process engineers.",
+   "capexCr": 1000,
+   "constructionMonths": 30,
+   "landHa": 20,
+   "opexCrPerYear": 120,
+   "powerDemandMW": 15,
+   "waterDemandMLD": 1.5,
+   "constructionJobs": 800,
+   "operationsJobs": {
+    "unskilled": 50,
+    "skilled": 150,
+    "engineer": 250,
+    "scientist": 250
+   },
+   "outputs": {
+    "researchPoints": {
+     "semiconductor": 60,
+     "electronics": 10
+    }
+   },
+   "inputs": [],
+   "requires": {
+    "minGridReliability": 0.9,
+    "supporting": [
+     {
+      "tag": "engineering_college",
+      "count": 1,
+      "radiusKm": 0,
+      "why": "Research staff are drawn from engineering graduates"
+     }
+    ]
+   },
+   "emissions": {},
+   "tags": [
+    "semiconductor_research",
+    "research"
+   ],
+   "technologies": [
+    "process R&D",
+    "pilot line"
+   ],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative; SCL Mohali modernisation / IMEC-like centres",
+    "source": ""
+   }
+  },
+  {
+   "id": "electronic_components",
+   "name": "Electronic component manufacturing",
+   "category": "Semiconductors",
+   "subcategory": "Components",
+   "industry": "Electronics",
+   "function": "Components",
+   "description": "Passive components, PCBs and connectors.",
+   "purpose": "Domestic supply base for all electronics assembly.",
+   "capexCr": 1000,
+   "constructionMonths": 24,
+   "landHa": 25,
+   "opexCrPerYear": 30.0,
+   "powerDemandMW": 15,
+   "waterDemandMLD": 2,
+   "constructionJobs": 1000,
+   "operationsJobs": {
+    "unskilled": 1500,
+    "skilled": 800,
+    "engineer": 200,
+    "scientist": 20
+   },
+   "outputs": {
+    "goods": [
+     {
+      "good": "electronic_components",
+      "qtyPerYear": 1500
+     }
+    ],
+    "valueAddedCrPerYear": 450
+   },
+   "inputs": [
+    {
+     "good": "chemicals",
+     "qtyPerYear": 100
+    }
+   ],
+   "requires": {
+    "transport": [
+     "road"
+    ],
+    "tech": {
+     "electronics": 1
+    }
+   },
+   "emissions": {},
+   "tags": [
+    "electronics_components",
+    "electronics",
+    "manufacturing"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": false,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "ECMS-scheme scale component units",
+    "source": ""
+   }
+  },
+  {
+   "id": "specialty_gases",
+   "name": "Specialty chemicals & gases for electronics",
+   "category": "Semiconductors",
+   "subcategory": "Materials",
+   "industry": "Chemicals",
+   "function": "Materials",
+   "description": "Ultra-high-purity gases, wet chemicals and photoresists.",
+   "purpose": "Critical consumables for fabs and display plants.",
+   "capexCr": 1500,
+   "constructionMonths": 30,
+   "landHa": 30,
+   "opexCrPerYear": 45.0,
+   "powerDemandMW": 20,
+   "waterDemandMLD": 3,
+   "constructionJobs": 1000,
+   "operationsJobs": {
+    "unskilled": 200,
+    "skilled": 300,
+    "engineer": 150,
+    "scientist": 50
+   },
+   "outputs": {
+    "goods": [
+     {
+      "good": "specialty_chemicals",
+      "qtyPerYear": 20000
+     }
+    ],
+    "valueAddedCrPerYear": 400
+   },
+   "inputs": [
+    {
+     "good": "chemicals",
+     "qtyPerYear": 400
+    }
+   ],
+   "requires": {
+    "tech": {
+     "materials": 2
+    }
+   },
+   "emissions": {
+    "voc": 200,
+    "co2": 50000
+   },
+   "tags": [
+    "specialty_chemicals",
+    "manufacturing"
+   ],
+   "technologies": [],
+   "risks": [
+    "Hazardous materials handling"
+   ],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": false,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative order-of-magnitude modelling assumption",
+    "source": ""
+   }
+  },
+  {
+   "id": "polysilicon_plant",
+   "name": "Polysilicon plant (10,000 t/yr)",
+   "category": "Semiconductors",
+   "subcategory": "Materials",
+   "industry": "Semiconductors",
+   "function": "Materials",
+   "description": "Siemens-process polysilicon production.",
+   "purpose": "Feedstock for solar wafers and (with further purification) semiconductor wafers.",
+   "capexCr": 4000,
+   "constructionMonths": 36,
+   "landHa": 60,
+   "opexCrPerYear": 120.0,
+   "powerDemandMW": 120,
+   "waterDemandMLD": 5,
+   "constructionJobs": 2000,
+   "operationsJobs": {
+    "unskilled": 300,
+    "skilled": 400,
+    "engineer": 200,
+    "scientist": 30
+   },
+   "outputs": {
+    "goods": [
+     {
+      "good": "polysilicon",
+      "qtyPerYear": 10000
+     }
+    ],
+    "valueAddedCrPerYear": 400
+   },
+   "inputs": [
+    {
+     "good": "quartz",
+     "qtyPerYear": 30000
+    }
+   ],
+   "requires": {
+    "tech": {
+     "materials": 2
+    },
+    "minGridReliability": 0.9
+   },
+   "emissions": {
+    "co2": 600000,
+    "nox": 100
+   },
+   "tags": [
+    "polysilicon",
+    "manufacturing"
+   ],
+   "technologies": [],
+   "risks": [
+    "Very electricity-intensive",
+    "Global oversupply"
+   ],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": false,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative order-of-magnitude modelling assumption",
+    "source": ""
+   }
+  },
+  {
+   "id": "wafer_plant",
+   "name": "Silicon wafer manufacturing (300 mm)",
+   "category": "Semiconductors",
+   "subcategory": "Materials",
+   "industry": "Semiconductors",
+   "function": "Materials",
+   "description": "Crystal growth, slicing and polishing of prime silicon wafers.",
+   "purpose": "Supplies wafers to fabs.",
+   "capexCr": 8000,
+   "constructionMonths": 36,
+   "landHa": 40,
+   "opexCrPerYear": 240.0,
+   "powerDemandMW": 60,
+   "waterDemandMLD": 6,
+   "constructionJobs": 2000,
+   "operationsJobs": {
+    "unskilled": 200,
+    "skilled": 600,
+    "engineer": 400,
+    "scientist": 80
+   },
+   "outputs": {
+    "goods": [
+     {
+      "good": "silicon_wafer",
+      "qtyPerYear": 1200000
+     }
+    ],
+    "valueAddedCrPerYear": 600
+   },
+   "inputs": [
+    {
+     "good": "polysilicon",
+     "qtyPerYear": 2000
+    }
+   ],
+   "requires": {
+    "tech": {
+     "semiconductor": 2,
+     "materials": 2
+    },
+    "minGridReliability": 0.95
+   },
+   "emissions": {},
+   "tags": [
+    "silicon_wafer",
+    "semiconductor_supply",
+    "manufacturing"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": false,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative order-of-magnitude modelling assumption",
+    "source": ""
+   }
+  },
+  {
+   "id": "osat_plant",
+   "name": "Chip packaging, assembly & test (OSAT/ATMP)",
+   "category": "Semiconductors",
+   "subcategory": "Back-end",
+   "industry": "Semiconductors",
+   "function": "Back-end",
+   "description": "Assembly, packaging and testing of processed wafers into finished chips.",
+   "purpose": "Usually the first step of a national semiconductor industry.",
+   "capexCr": 7500,
+   "constructionMonths": 30,
+   "landHa": 40,
+   "opexCrPerYear": 225.0,
+   "powerDemandMW": 40,
+   "waterDemandMLD": 4,
+   "constructionJobs": 3000,
+   "operationsJobs": {
+    "unskilled": 1000,
+    "skilled": 2000,
+    "engineer": 800,
+    "scientist": 50
+   },
+   "outputs": {
+    "goods": [
+     {
+      "good": "packaged_chips",
+      "qtyPerYear": 3000
+     }
+    ],
+    "valueAddedCrPerYear": 1500
+   },
+   "inputs": [
+    {
+     "good": "wafer_mature",
+     "qtyPerYear": 120000
+    },
+    {
+     "good": "specialty_chemicals",
+     "qtyPerYear": 2000
+    }
+   ],
+   "requires": {
+    "transport": [
+     "road",
+     "airport"
+    ],
+    "tech": {
+     "semiconductor": 1,
+     "electronics": 1
+    },
+    "minGridReliability": 0.95,
+    "supporting": [
+     {
+      "tag": "engineering_college",
+      "count": 1,
+      "radiusKm": 0,
+      "why": "Packaging lines need process and test engineers"
+     }
+    ]
+   },
+   "emissions": {},
+   "tags": [
+    "chip_packaging",
+    "semiconductor",
+    "manufacturing"
+   ],
+   "technologies": [
+    "wire bond",
+    "flip chip"
+   ],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": false,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "CG Power/Renesas OSAT ≈₹7,600 crore; Micron ATMP ≈₹22,500 crore (incl. phases)",
+    "source": ""
+   }
+  },
+  {
+   "id": "fab_mature",
+   "name": "Semiconductor fab, mature node (28-110 nm)",
+   "category": "Semiconductors",
+   "subcategory": "Front-end",
+   "industry": "Semiconductors",
+   "function": "Front-end",
+   "description": "300 mm wafer fab (~40,000 wafers/month) for microcontrollers, power, automotive and analogue chips.",
+   "purpose": "Domestic production of mature-node chips used in vehicles, appliances and industry.",
+   "capexCr": 91000,
+   "constructionMonths": 60,
+   "landHa": 120,
+   "opexCrPerYear": 2730.0,
+   "powerDemandMW": 150,
+   "waterDemandMLD": 30,
+   "constructionJobs": 15000,
+   "operationsJobs": {
+    "unskilled": 800,
+    "skilled": 2500,
+    "engineer": 2200,
+    "scientist": 300
+   },
+   "outputs": {
+    "goods": [
+     {
+      "good": "wafer_mature",
+      "qtyPerYear": 480000
+     }
+    ],
+    "valueAddedCrPerYear": 9000
+   },
+   "inputs": [
+    {
+     "good": "silicon_wafer",
+     "qtyPerYear": 480000
+    },
+    {
+     "good": "specialty_chemicals",
+     "qtyPerYear": 8000
+    },
+    {
+     "good": "semi_equipment",
+     "qtyPerYear": 40
+    }
+   ],
+   "requires": {
+    "transport": [
+     "road",
+     "airport"
+    ],
+    "tech": {
+     "semiconductor": 3,
+     "materials": 2
+    },
+    "minGridReliability": 0.99,
+    "supporting": [
+     {
+      "tag": "semiconductor_research",
+      "count": 1,
+      "radiusKm": 0,
+      "why": "Fabs need process-development capability and trained process engineers"
+     },
+     {
+      "tag": "specialty_chemicals",
+      "count": 1,
+      "radiusKm": 0,
+      "why": "Fabs consume ultra-pure chemicals and gases continuously"
+     },
+     {
+      "tag": "engineering_college",
+      "count": 2,
+      "radiusKm": 0,
+      "why": "A fab employs thousands of engineers"
+     }
+    ]
+   },
+   "emissions": {
+    "voc": 100,
+    "nox": 50,
+    "co2": 600000
+   },
+   "tags": [
+    "semiconductor_fab",
+    "semiconductor",
+    "manufacturing"
+   ],
+   "technologies": [
+    "CMOS 28-110 nm",
+    "DUV lithography"
+   ],
+   "risks": [
+    "Extremely capital-intensive; needs sustained subsidies",
+    "Requires ~24/7 ultra-reliable power and ultra-pure water",
+    "Yield ramp can take years",
+    "Equipment import dependence"
+   ],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": false,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "medium",
+    "basis": "Tata-PSMC Dholera ≈₹91,000 crore for ~50,000 wspm",
+    "source": ""
+   }
+  },
+  {
+   "id": "fab_advanced",
+   "name": "Semiconductor fab, leading edge (≤7 nm)",
+   "category": "Semiconductors",
+   "subcategory": "Front-end",
+   "industry": "Semiconductors",
+   "function": "Front-end",
+   "description": "Leading-edge logic fab using EUV lithography (~20,000 wafers/month).",
+   "purpose": "Manufacturing CPUs, GPUs and AI accelerators.",
+   "capexCr": 160000,
+   "constructionMonths": 72,
+   "landHa": 150,
+   "opexCrPerYear": 4800.0,
+   "powerDemandMW": 300,
+   "waterDemandMLD": 40,
+   "constructionJobs": 20000,
+   "operationsJobs": {
+    "unskilled": 800,
+    "skilled": 3000,
+    "engineer": 3500,
+    "scientist": 800
+   },
+   "outputs": {
+    "goods": [
+     {
+      "good": "wafer_advanced",
+      "qtyPerYear": 240000
+     }
+    ],
+    "valueAddedCrPerYear": 25000
+   },
+   "inputs": [
+    {
+     "good": "silicon_wafer",
+     "qtyPerYear": 240000
+    },
+    {
+     "good": "specialty_chemicals",
+     "qtyPerYear": 10000
+    },
+    {
+     "good": "semi_equipment",
+     "qtyPerYear": 60
+    },
+    {
+     "good": "euv_lithography",
+     "qtyPerYear": 2
+    }
+   ],
+   "requires": {
+    "transport": [
+     "road",
+     "airport"
+    ],
+    "tech": {
+     "semiconductor": 5,
+     "materials": 3
+    },
+    "minGridReliability": 0.995,
+    "supporting": [
+     {
+      "tag": "semiconductor_fab",
+      "count": 1,
+      "radiusKm": 0,
+      "why": "Leading-edge capability is built on experience operating mature-node fabs"
+     },
+     {
+      "tag": "semiconductor_research",
+      "count": 2,
+      "radiusKm": 0,
+      "why": "Advanced process development needs deep R&D"
+     },
+     {
+      "tag": "research_university",
+      "count": 1,
+      "radiusKm": 0,
+      "why": "Device physics and materials science research base"
+     }
+    ]
+   },
+   "emissions": {
+    "voc": 150,
+    "nox": 80,
+    "co2": 1200000
+   },
+   "tags": [
+    "semiconductor_fab",
+    "advanced_fab",
+    "semiconductor",
+    "manufacturing"
+   ],
+   "technologies": [
+    "FinFET/GAA",
+    "EUV lithography"
+   ],
+   "risks": [
+    "EUV tools are supplied by a single vendor and subject to export licensing",
+    "Only a few firms worldwide operate such fabs",
+    "Enormous cost; failure risk is high"
+   ],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": false,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Leading-edge fabs cost ≈US$20 billion",
+    "source": ""
+   }
+  },
+  {
+   "id": "semi_equipment",
+   "name": "Semiconductor equipment manufacturing",
+   "category": "Semiconductors",
+   "subcategory": "Equipment",
+   "industry": "Semiconductors",
+   "function": "Equipment",
+   "description": "Deposition, etch, cleaning and metrology tools.",
+   "purpose": "Reduces dependence on foreign tool makers.",
+   "capexCr": 2500,
+   "constructionMonths": 36,
+   "landHa": 30,
+   "opexCrPerYear": 75.0,
+   "powerDemandMW": 20,
+   "waterDemandMLD": 1,
+   "constructionJobs": 1500,
+   "operationsJobs": {
+    "unskilled": 200,
+    "skilled": 800,
+    "engineer": 600,
+    "scientist": 150
+   },
+   "outputs": {
+    "goods": [
+     {
+      "good": "semi_equipment",
+      "qtyPerYear": 40
+     }
+    ],
+    "valueAddedCrPerYear": 1200
+   },
+   "inputs": [
+    {
+     "good": "electronic_components",
+     "qtyPerYear": 200
+    },
+    {
+     "good": "advanced_materials",
+     "qtyPerYear": 150
+    },
+    {
+     "good": "steel",
+     "qtyPerYear": 2000
+    }
+   ],
+   "requires": {
+    "tech": {
+     "semiconductor": 3,
+     "robotics_automation": 2,
+     "materials": 2
+    },
+    "supporting": [
+     {
+      "tag": "semiconductor_research",
+      "count": 1,
+      "radiusKm": 0,
+      "why": "Tool makers co-develop with process R&D"
+     }
+    ]
+   },
+   "emissions": {},
+   "tags": [
+    "semi_equipment",
+    "semiconductor_supply",
+    "manufacturing"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": false,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative order-of-magnitude modelling assumption",
+    "source": ""
+   }
+  },
+  {
+   "id": "litho_equipment",
+   "name": "Photolithography equipment & optics manufacturing",
+   "category": "Semiconductors",
+   "subcategory": "Equipment",
+   "industry": "Semiconductors",
+   "function": "Equipment",
+   "description": "Precision optics, light sources and stages for lithography (DUV class).",
+   "purpose": "Strategic capability at the heart of chipmaking.",
+   "capexCr": 5000,
+   "constructionMonths": 60,
+   "landHa": 30,
+   "opexCrPerYear": 150.0,
+   "powerDemandMW": 30,
+   "waterDemandMLD": 1,
+   "constructionJobs": 1500,
+   "operationsJobs": {
+    "unskilled": 100,
+    "skilled": 600,
+    "engineer": 800,
+    "scientist": 400
+   },
+   "outputs": {
+    "goods": [
+     {
+      "good": "semi_equipment",
+      "qtyPerYear": 10
+     }
+    ],
+    "researchPoints": {
+     "semiconductor": 20
+    },
+    "valueAddedCrPerYear": 1500
+   },
+   "inputs": [
+    {
+     "good": "advanced_materials",
+     "qtyPerYear": 300
+    },
+    {
+     "good": "electronic_components",
+     "qtyPerYear": 300
+    }
+   ],
+   "requires": {
+    "tech": {
+     "semiconductor": 4,
+     "materials": 3,
+     "robotics_automation": 3
+    },
+    "minGridReliability": 0.99,
+    "supporting": [
+     {
+      "tag": "research_university",
+      "count": 1,
+      "radiusKm": 0,
+      "why": "Optics and precision engineering research base"
+     }
+    ]
+   },
+   "emissions": {},
+   "tags": [
+    "litho_equipment",
+    "semiconductor_supply",
+    "manufacturing"
+   ],
+   "technologies": [],
+   "risks": [
+    "Decades of accumulated know-how required; very few global suppliers"
+   ],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": false,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative order-of-magnitude modelling assumption",
+    "source": ""
+   }
+  },
+  {
+   "id": "display_fab",
+   "name": "Display panel fab (Gen 8.6)",
+   "category": "Semiconductors",
+   "subcategory": "Displays",
+   "industry": "Electronics",
+   "function": "Displays",
+   "description": "LCD/AMOLED display panel fabrication.",
+   "purpose": "Displays for phones, laptops and TVs.",
+   "capexCr": 50000,
+   "constructionMonths": 48,
+   "landHa": 150,
+   "opexCrPerYear": 1500.0,
+   "powerDemandMW": 150,
+   "waterDemandMLD": 20,
+   "constructionJobs": 8000,
+   "operationsJobs": {
+    "unskilled": 1000,
+    "skilled": 2500,
+    "engineer": 1500,
+    "scientist": 200
+   },
+   "outputs": {
+    "goods": [
+     {
+      "good": "display_panel",
+      "qtyPerYear": 30000000
+     }
+    ],
+    "valueAddedCrPerYear": 6000
+   },
+   "inputs": [
+    {
+     "good": "specialty_chemicals",
+     "qtyPerYear": 5000
+    },
+    {
+     "good": "advanced_materials",
+     "qtyPerYear": 800
+    }
+   ],
+   "requires": {
+    "tech": {
+     "electronics": 3,
+     "materials": 3
+    },
+    "minGridReliability": 0.99
+   },
+   "emissions": {
+    "voc": 300,
+    "co2": 800000
+   },
+   "tags": [
+    "display",
+    "electronics",
+    "manufacturing"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": false,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative order-of-magnitude modelling assumption",
+    "source": ""
+   }
+  }
+ ]
+}

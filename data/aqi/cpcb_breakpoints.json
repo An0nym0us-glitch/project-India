@@ -1,0 +1,21 @@
+{
+ "source": "Central Pollution Control Board (CPCB), National Air Quality Index, Control of Urban Pollution Series CUPS/82/2014-15 (October 2014)",
+ "note": "Sub-index is linear interpolation within the breakpoint band; overall AQI = maximum sub-index, valid when at least three pollutants (including PM2.5 or PM10) are available. The upper limits of the 'Severe' band (401-500) are not specified as concentration caps in a uniform way; the values marked as extrapolation caps are modelling assumptions and AQI is capped at 500.",
+ "categories": [
+  {"name": "Good", "low": 0, "high": 50, "color": "#00b050", "health": "Minimal impact"},
+  {"name": "Satisfactory", "low": 51, "high": 100, "color": "#92d050", "health": "Minor breathing discomfort to sensitive people"},
+  {"name": "Moderate", "low": 101, "high": 200, "color": "#ffff00", "health": "Breathing discomfort to people with lung, heart disease, children and older adults"},
+  {"name": "Poor", "low": 201, "high": 300, "color": "#ff9900", "health": "Breathing discomfort to people on prolonged exposure"},
+  {"name": "Very Poor", "low": 301, "high": 400, "color": "#ff0000", "health": "Respiratory illness to people on prolonged exposure"},
+  {"name": "Severe", "low": 401, "high": 500, "color": "#c00000", "health": "Respiratory effects even on healthy people"}
+ ],
+ "pollutants": {
+  "pm10": {"unit": "µg/m3", "averaging": "24-hour", "bp": [[0,50],[51,100],[101,250],[251,350],[351,430],[431,510]]},
+  "pm25": {"unit": "µg/m3", "averaging": "24-hour", "bp": [[0,30],[31,60],[61,90],[91,120],[121,250],[251,380]]},
+  "no2":  {"unit": "µg/m3", "averaging": "24-hour", "bp": [[0,40],[41,80],[81,180],[181,280],[281,400],[401,800]]},
+  "o3":   {"unit": "µg/m3", "averaging": "8-hour",  "bp": [[0,50],[51,100],[101,168],[169,208],[209,748],[749,1000]]},
+  "co":   {"unit": "mg/m3", "averaging": "8-hour",  "bp": [[0,1.0],[1.1,2.0],[2.1,10],[10.1,17],[17.1,34],[34.1,50]]},
+  "so2":  {"unit": "µg/m3", "averaging": "24-hour", "bp": [[0,40],[41,80],[81,380],[381,800],[801,1600],[1601,2400]]}
+ },
+ "extrapolationCaps": "Upper concentration of the Severe band for each pollutant (PM10 510, PM2.5 380, NO2 800, O3 1000, CO 50, SO2 2400) is a modelling assumption used only for interpolation."
+}

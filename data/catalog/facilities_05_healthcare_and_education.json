@@ -1,0 +1,974 @@
+{
+ "category": "Healthcare & Education",
+ "note": "Indicative modelling assumptions; see provenance on each entry.",
+ "facilities": [
+  {
+   "id": "primary_school",
+   "name": "Primary school (500 seats)",
+   "category": "Healthcare & Education",
+   "subcategory": "Schools",
+   "industry": "Education",
+   "function": "Schools",
+   "description": "Government primary school (classes 1-5).",
+   "purpose": "Foundational literacy and numeracy.",
+   "capexCr": 3,
+   "constructionMonths": 12,
+   "landHa": 0.5,
+   "opexCrPerYear": 1.5,
+   "powerDemandMW": 0.02,
+   "waterDemandMLD": 0,
+   "constructionJobs": 30,
+   "operationsJobs": {
+    "unskilled": 4,
+    "skilled": 18
+   },
+   "outputs": {
+    "schoolSeats": 500
+   },
+   "inputs": [],
+   "requires": {},
+   "emissions": {},
+   "tags": [
+    "school",
+    "education"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative ₹2-4 crore per school building",
+    "source": ""
+   }
+  },
+  {
+   "id": "secondary_school",
+   "name": "Secondary school (1,200 seats)",
+   "category": "Healthcare & Education",
+   "subcategory": "Schools",
+   "industry": "Education",
+   "function": "Schools",
+   "description": "Secondary & higher-secondary school with labs.",
+   "purpose": "Builds the base for skilled workforce and higher education.",
+   "capexCr": 15,
+   "constructionMonths": 18,
+   "landHa": 2,
+   "opexCrPerYear": 5,
+   "powerDemandMW": 0.1,
+   "waterDemandMLD": 0,
+   "constructionJobs": 80,
+   "operationsJobs": {
+    "unskilled": 10,
+    "skilled": 55
+   },
+   "outputs": {
+    "schoolSeats": 1200,
+    "graduatesPerYear": {
+     "skilled": 40
+    }
+   },
+   "inputs": [],
+   "requires": {},
+   "emissions": {},
+   "tags": [
+    "school",
+    "education",
+    "secondary_school"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative order-of-magnitude modelling assumption",
+    "source": ""
+   }
+  },
+  {
+   "id": "vocational_institute",
+   "name": "Vocational training institute (ITI)",
+   "category": "Healthcare & Education",
+   "subcategory": "Skills",
+   "industry": "Education",
+   "function": "Skills",
+   "description": "Industrial training institute.",
+   "purpose": "Produces skilled technicians for industry.",
+   "capexCr": 30,
+   "constructionMonths": 18,
+   "landHa": 3,
+   "opexCrPerYear": 6,
+   "powerDemandMW": 0.3,
+   "waterDemandMLD": 0,
+   "constructionJobs": 80,
+   "operationsJobs": {
+    "unskilled": 10,
+    "skilled": 40,
+    "engineer": 5
+   },
+   "outputs": {
+    "graduatesPerYear": {
+     "skilled": 800
+    }
+   },
+   "inputs": [],
+   "requires": {},
+   "emissions": {},
+   "tags": [
+    "vocational",
+    "education",
+    "skills"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative order-of-magnitude modelling assumption",
+    "source": ""
+   }
+  },
+  {
+   "id": "university",
+   "name": "University",
+   "category": "Healthcare & Education",
+   "subcategory": "Higher education",
+   "industry": "Education",
+   "function": "Higher education",
+   "description": "Multi-disciplinary university (~10,000 students).",
+   "purpose": "Graduates and research capacity.",
+   "capexCr": 1000,
+   "constructionMonths": 36,
+   "landHa": 100,
+   "opexCrPerYear": 150,
+   "powerDemandMW": 6,
+   "waterDemandMLD": 1.5,
+   "constructionJobs": 1500,
+   "operationsJobs": {
+    "unskilled": 300,
+    "skilled": 400,
+    "engineer": 100,
+    "scientist": 500
+   },
+   "outputs": {
+    "higherEdSeats": 10000,
+    "graduatesPerYear": {
+     "skilled": 1500,
+     "engineer": 300,
+     "scientist": 150
+    },
+    "researchPoints": {
+     "materials": 5,
+     "biotech_pharma": 5,
+     "computing_ai": 5,
+     "agriculture": 5
+    }
+   },
+   "inputs": [],
+   "requires": {},
+   "emissions": {},
+   "tags": [
+    "university",
+    "education",
+    "research"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative new central university scale",
+    "source": ""
+   }
+  },
+  {
+   "id": "engineering_college",
+   "name": "Engineering college / institute of technology",
+   "category": "Healthcare & Education",
+   "subcategory": "Higher education",
+   "industry": "Education",
+   "function": "Higher education",
+   "description": "Engineering institute (~4,000 students).",
+   "purpose": "Supplies engineers to every advanced industry.",
+   "capexCr": 600,
+   "constructionMonths": 36,
+   "landHa": 80,
+   "opexCrPerYear": 120,
+   "powerDemandMW": 5,
+   "waterDemandMLD": 1,
+   "constructionJobs": 1000,
+   "operationsJobs": {
+    "unskilled": 200,
+    "skilled": 250,
+    "engineer": 100,
+    "scientist": 300
+   },
+   "outputs": {
+    "higherEdSeats": 4000,
+    "graduatesPerYear": {
+     "engineer": 1000,
+     "scientist": 80
+    },
+    "researchPoints": {
+     "electronics": 10,
+     "semiconductor": 4,
+     "computing_ai": 10,
+     "heavy_industry": 8,
+     "robotics_automation": 6
+    }
+   },
+   "inputs": [],
+   "requires": {},
+   "emissions": {},
+   "tags": [
+    "engineering_college",
+    "university",
+    "education",
+    "research"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "New IIT campuses ≈₹1,000-2,000 crore; smaller institutes less",
+    "source": ""
+   }
+  },
+  {
+   "id": "medical_college",
+   "name": "Medical college with teaching hospital",
+   "category": "Healthcare & Education",
+   "subcategory": "Higher education",
+   "industry": "Health & education",
+   "function": "Higher education",
+   "description": "Medical college (150 MBBS seats/yr) with 600-bed hospital.",
+   "purpose": "Trains doctors and provides tertiary care.",
+   "capexCr": 600,
+   "constructionMonths": 36,
+   "landHa": 25,
+   "opexCrPerYear": 150,
+   "powerDemandMW": 6,
+   "waterDemandMLD": 1,
+   "constructionJobs": 1200,
+   "operationsJobs": {
+    "unskilled": 500,
+    "skilled": 600,
+    "scientist": 80,
+    "medical": 400
+   },
+   "outputs": {
+    "higherEdSeats": 900,
+    "hospitalBeds": 600,
+    "graduatesPerYear": {
+     "medical": 150
+    },
+    "researchPoints": {
+     "biotech_pharma": 8
+    }
+   },
+   "inputs": [],
+   "requires": {},
+   "emissions": {},
+   "tags": [
+    "medical_college",
+    "hospital",
+    "education",
+    "health"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "NMC norms; ₹325-600 crore per new college",
+    "source": ""
+   }
+  },
+  {
+   "id": "research_university",
+   "name": "Research university",
+   "category": "Healthcare & Education",
+   "subcategory": "Higher education",
+   "industry": "Research",
+   "function": "Higher education",
+   "description": "Research-intensive university with doctoral programmes and national labs.",
+   "purpose": "Frontier research and scientists.",
+   "capexCr": 3000,
+   "constructionMonths": 48,
+   "landHa": 200,
+   "opexCrPerYear": 400,
+   "powerDemandMW": 20,
+   "waterDemandMLD": 2,
+   "constructionJobs": 3000,
+   "operationsJobs": {
+    "unskilled": 500,
+    "skilled": 800,
+    "engineer": 400,
+    "scientist": 1500
+   },
+   "outputs": {
+    "higherEdSeats": 8000,
+    "graduatesPerYear": {
+     "scientist": 600,
+     "engineer": 400
+    },
+    "researchPoints": {
+     "semiconductor": 10,
+     "computing_ai": 20,
+     "biotech_pharma": 15,
+     "materials": 15,
+     "quantum": 6,
+     "nuclear": 8,
+     "aerospace_space": 8,
+     "energy": 10
+    }
+   },
+   "inputs": [],
+   "requires": {
+    "supporting": [
+     {
+      "tag": "engineering_college",
+      "count": 1,
+      "radiusKm": 0,
+      "why": "Research universities draw students from undergraduate engineering programmes"
+     }
+    ]
+   },
+   "emissions": {},
+   "tags": [
+    "research_university",
+    "university",
+    "research",
+    "education"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative order-of-magnitude modelling assumption",
+    "source": ""
+   }
+  },
+  {
+   "id": "phc",
+   "name": "Primary health centre",
+   "category": "Healthcare & Education",
+   "subcategory": "Healthcare",
+   "industry": "Health",
+   "function": "Healthcare",
+   "description": "PHC with outpatient care, maternal health, immunisation and 6 beds.",
+   "purpose": "First point of public healthcare (IPHS: one per 30,000 people in plains).",
+   "capexCr": 2,
+   "constructionMonths": 12,
+   "landHa": 0.5,
+   "opexCrPerYear": 1.2,
+   "powerDemandMW": 0.05,
+   "waterDemandMLD": 0,
+   "constructionJobs": 30,
+   "operationsJobs": {
+    "unskilled": 5,
+    "skilled": 8,
+    "medical": 4
+   },
+   "outputs": {
+    "primaryCareCoverage": 30000,
+    "hospitalBeds": 6
+   },
+   "inputs": [],
+   "requires": {},
+   "emissions": {},
+   "tags": [
+    "phc",
+    "health",
+    "primary_care"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "IPHS norms",
+    "source": ""
+   }
+  },
+  {
+   "id": "chc",
+   "name": "Community health centre (30 beds)",
+   "category": "Healthcare & Education",
+   "subcategory": "Healthcare",
+   "industry": "Health",
+   "function": "Healthcare",
+   "description": "First referral unit with specialists.",
+   "purpose": "Secondary care for ~120,000 people.",
+   "capexCr": 15,
+   "constructionMonths": 18,
+   "landHa": 2,
+   "opexCrPerYear": 8,
+   "powerDemandMW": 0.3,
+   "waterDemandMLD": 0,
+   "constructionJobs": 80,
+   "operationsJobs": {
+    "unskilled": 20,
+    "skilled": 30,
+    "medical": 25
+   },
+   "outputs": {
+    "primaryCareCoverage": 120000,
+    "hospitalBeds": 30
+   },
+   "inputs": [],
+   "requires": {},
+   "emissions": {},
+   "tags": [
+    "chc",
+    "health",
+    "primary_care"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative order-of-magnitude modelling assumption",
+    "source": ""
+   }
+  },
+  {
+   "id": "district_hospital",
+   "name": "District hospital (300 beds)",
+   "category": "Healthcare & Education",
+   "subcategory": "Healthcare",
+   "industry": "Health",
+   "function": "Healthcare",
+   "description": "Multi-specialty district hospital.",
+   "purpose": "Secondary care, surgery and emergency services.",
+   "capexCr": 300,
+   "constructionMonths": 30,
+   "landHa": 8,
+   "opexCrPerYear": 60,
+   "powerDemandMW": 3,
+   "waterDemandMLD": 0.3,
+   "constructionJobs": 600,
+   "operationsJobs": {
+    "unskilled": 200,
+    "skilled": 300,
+    "medical": 300
+   },
+   "outputs": {
+    "hospitalBeds": 300
+   },
+   "inputs": [],
+   "requires": {},
+   "emissions": {},
+   "tags": [
+    "hospital",
+    "health"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "≈₹1 crore per bed incl. equipment",
+    "source": ""
+   }
+  },
+  {
+   "id": "tertiary_hospital",
+   "name": "Tertiary super-specialty hospital (750 beds)",
+   "category": "Healthcare & Education",
+   "subcategory": "Healthcare",
+   "industry": "Health",
+   "function": "Healthcare",
+   "description": "AIIMS-type institute.",
+   "purpose": "Advanced care, training and medical research.",
+   "capexCr": 1500,
+   "constructionMonths": 48,
+   "landHa": 80,
+   "opexCrPerYear": 400,
+   "powerDemandMW": 10,
+   "waterDemandMLD": 0.8,
+   "constructionJobs": 2000,
+   "operationsJobs": {
+    "unskilled": 800,
+    "skilled": 900,
+    "scientist": 100,
+    "medical": 900
+   },
+   "outputs": {
+    "hospitalBeds": 750,
+    "graduatesPerYear": {
+     "medical": 100
+    },
+    "researchPoints": {
+     "biotech_pharma": 10
+    }
+   },
+   "inputs": [],
+   "requires": {
+    "transport": [
+     "road"
+    ]
+   },
+   "emissions": {},
+   "tags": [
+    "hospital",
+    "health",
+    "tertiary_hospital"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "New AIIMS ≈₹1,200-1,800 crore",
+    "source": ""
+   }
+  },
+  {
+   "id": "pharma_factory",
+   "name": "Pharmaceutical formulations factory",
+   "category": "Healthcare & Education",
+   "subcategory": "Pharmaceuticals",
+   "industry": "Pharmaceuticals",
+   "function": "Pharmaceuticals",
+   "description": "Tablets, capsules and injectables manufacturing (GMP).",
+   "purpose": "Affordable medicines and exports.",
+   "capexCr": 500,
+   "constructionMonths": 24,
+   "landHa": 20,
+   "opexCrPerYear": 15.0,
+   "powerDemandMW": 8,
+   "waterDemandMLD": 1.5,
+   "constructionJobs": 600,
+   "operationsJobs": {
+    "unskilled": 300,
+    "skilled": 400,
+    "engineer": 80,
+    "scientist": 40
+   },
+   "outputs": {
+    "goods": [
+     {
+      "good": "pharmaceuticals",
+      "qtyPerYear": 1200
+     }
+    ],
+    "valueAddedCrPerYear": 500
+   },
+   "inputs": [
+    {
+     "good": "api",
+     "qtyPerYear": 400
+    }
+   ],
+   "requires": {
+    "transport": [
+     "road"
+    ],
+    "tech": {
+     "biotech_pharma": 1
+    }
+   },
+   "emissions": {
+    "voc": 50,
+    "co2": 20000
+   },
+   "tags": [
+    "pharma",
+    "manufacturing"
+   ],
+   "technologies": [],
+   "risks": [
+    "Regulatory compliance (GMP) failures",
+    "Effluent pollution"
+   ],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": false,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative order-of-magnitude modelling assumption",
+    "source": ""
+   }
+  },
+  {
+   "id": "api_plant",
+   "name": "Active pharmaceutical ingredient (API) plant",
+   "category": "Healthcare & Education",
+   "subcategory": "Pharmaceuticals",
+   "industry": "Pharmaceuticals",
+   "function": "Pharmaceuticals",
+   "description": "Bulk drug / API chemical synthesis plant.",
+   "purpose": "Reduces dependence on imported APIs.",
+   "capexCr": 1000,
+   "constructionMonths": 30,
+   "landHa": 40,
+   "opexCrPerYear": 30.0,
+   "powerDemandMW": 15,
+   "waterDemandMLD": 4,
+   "constructionJobs": 1000,
+   "operationsJobs": {
+    "unskilled": 300,
+    "skilled": 400,
+    "engineer": 150,
+    "scientist": 80
+   },
+   "outputs": {
+    "goods": [
+     {
+      "good": "api",
+      "qtyPerYear": 900
+     }
+    ],
+    "valueAddedCrPerYear": 450
+   },
+   "inputs": [
+    {
+     "good": "chemicals",
+     "qtyPerYear": 300
+    }
+   ],
+   "requires": {
+    "transport": [
+     "road"
+    ],
+    "tech": {
+     "biotech_pharma": 2
+    }
+   },
+   "emissions": {
+    "voc": 300,
+    "co2": 60000,
+    "nox": 50
+   },
+   "tags": [
+    "pharma",
+    "api",
+    "manufacturing",
+    "chemicals_user"
+   ],
+   "technologies": [],
+   "risks": [
+    "Highly polluting effluents",
+    "Price competition from imports"
+   ],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": false,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "PLI bulk-drug parks scale",
+    "source": ""
+   }
+  },
+  {
+   "id": "medical_equipment",
+   "name": "Medical equipment manufacturing",
+   "category": "Healthcare & Education",
+   "subcategory": "Medical devices",
+   "industry": "Medical devices",
+   "function": "Medical devices",
+   "description": "Diagnostic imaging, monitors and consumables.",
+   "purpose": "Reduces medical-device import dependence.",
+   "capexCr": 300,
+   "constructionMonths": 24,
+   "landHa": 10,
+   "opexCrPerYear": 9.0,
+   "powerDemandMW": 4,
+   "waterDemandMLD": 0,
+   "constructionJobs": 400,
+   "operationsJobs": {
+    "unskilled": 200,
+    "skilled": 300,
+    "engineer": 100,
+    "scientist": 20
+   },
+   "outputs": {
+    "goods": [
+     {
+      "good": "medical_devices",
+      "qtyPerYear": 500
+     }
+    ],
+    "valueAddedCrPerYear": 180
+   },
+   "inputs": [
+    {
+     "good": "electronic_components",
+     "qtyPerYear": 120
+    }
+   ],
+   "requires": {
+    "tech": {
+     "electronics": 1
+    }
+   },
+   "emissions": {},
+   "tags": [
+    "medical_devices",
+    "manufacturing"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": false,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative order-of-magnitude modelling assumption",
+    "source": ""
+   }
+  },
+  {
+   "id": "biotech_research",
+   "name": "Biotechnology research centre",
+   "category": "Healthcare & Education",
+   "subcategory": "Research",
+   "industry": "Biotechnology",
+   "function": "Research",
+   "description": "Genomics, vaccines and biologics research.",
+   "purpose": "Builds biotech capability.",
+   "capexCr": 400,
+   "constructionMonths": 24,
+   "landHa": 15,
+   "opexCrPerYear": 60,
+   "powerDemandMW": 5,
+   "waterDemandMLD": 0,
+   "constructionJobs": 400,
+   "operationsJobs": {
+    "unskilled": 50,
+    "skilled": 150,
+    "engineer": 40,
+    "scientist": 300
+   },
+   "outputs": {
+    "researchPoints": {
+     "biotech_pharma": 40
+    }
+   },
+   "inputs": [],
+   "requires": {},
+   "emissions": {},
+   "tags": [
+    "biotech_research",
+    "research"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative order-of-magnitude modelling assumption",
+    "source": ""
+   }
+  },
+  {
+   "id": "pharma_research",
+   "name": "Pharmaceutical R&D centre",
+   "category": "Healthcare & Education",
+   "subcategory": "Research",
+   "industry": "Pharmaceuticals",
+   "function": "Research",
+   "description": "Drug discovery and clinical research centre.",
+   "purpose": "New molecules and process innovation.",
+   "capexCr": 500,
+   "constructionMonths": 24,
+   "landHa": 10,
+   "opexCrPerYear": 80,
+   "powerDemandMW": 4,
+   "waterDemandMLD": 0,
+   "constructionJobs": 400,
+   "operationsJobs": {
+    "unskilled": 50,
+    "skilled": 150,
+    "engineer": 60,
+    "scientist": 350
+   },
+   "outputs": {
+    "researchPoints": {
+     "biotech_pharma": 50
+    }
+   },
+   "inputs": [],
+   "requires": {
+    "supporting": [
+     {
+      "tag": "pharma",
+      "count": 1,
+      "radiusKm": 0,
+      "why": "R&D centres are most productive near manufacturing that can commercialise results"
+     }
+    ]
+   },
+   "emissions": {},
+   "tags": [
+    "pharma_research",
+    "research"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative order-of-magnitude modelling assumption",
+    "source": ""
+   }
+  },
+  {
+   "id": "biologics_plant",
+   "name": "Biologics & vaccine manufacturing",
+   "category": "Healthcare & Education",
+   "subcategory": "Pharmaceuticals",
+   "industry": "Biotechnology",
+   "function": "Pharmaceuticals",
+   "description": "Bioreactor-based vaccine and biologics plant.",
+   "purpose": "Vaccine security and high-value exports.",
+   "capexCr": 2000,
+   "constructionMonths": 36,
+   "landHa": 30,
+   "opexCrPerYear": 60.0,
+   "powerDemandMW": 20,
+   "waterDemandMLD": 3,
+   "constructionJobs": 1200,
+   "operationsJobs": {
+    "unskilled": 200,
+    "skilled": 500,
+    "engineer": 200,
+    "scientist": 200
+   },
+   "outputs": {
+    "goods": [
+     {
+      "good": "pharmaceuticals",
+      "qtyPerYear": 2500
+     }
+    ],
+    "valueAddedCrPerYear": 1500
+   },
+   "inputs": [
+    {
+     "good": "chemicals",
+     "qtyPerYear": 200
+    }
+   ],
+   "requires": {
+    "tech": {
+     "biotech_pharma": 3
+    },
+    "minGridReliability": 0.95
+   },
+   "emissions": {},
+   "tags": [
+    "biotech",
+    "pharma",
+    "manufacturing"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": false,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative order-of-magnitude modelling assumption",
+    "source": ""
+   }
+  }
+ ]
+}

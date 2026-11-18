@@ -1,0 +1,673 @@
+{
+ "category": "Agriculture & Food",
+ "note": "Indicative modelling assumptions; see provenance on each entry.",
+ "facilities": [
+  {
+   "id": "farm_cluster",
+   "name": "Modern farm cluster (1,000 ha)",
+   "category": "Agriculture & Food",
+   "subcategory": "Farming",
+   "industry": "Agriculture",
+   "function": "Farming",
+   "description": "Consolidated, mechanised farm cluster with improved seeds.",
+   "purpose": "Raises food production per hectare and per worker.",
+   "capexCr": 50,
+   "constructionMonths": 12,
+   "landHa": 1000,
+   "opexCrPerYear": 1.5,
+   "powerDemandMW": 0.5,
+   "waterDemandMLD": 14,
+   "constructionJobs": 100,
+   "operationsJobs": {
+    "unskilled": 350,
+    "skilled": 40,
+    "engineer": 2
+   },
+   "outputs": {
+    "goods": [
+     {
+      "good": "food_grain",
+      "qtyPerYear": 4500
+     }
+    ],
+    "valueAddedCrPerYear": 9
+   },
+   "inputs": [
+    {
+     "good": "fertilizer",
+     "qtyPerYear": 250
+    }
+   ],
+   "requires": {},
+   "emissions": {
+    "pm25": 3,
+    "nox": 3,
+    "co2": 1500
+   },
+   "tags": [
+    "agriculture",
+    "farm"
+   ],
+   "technologies": [],
+   "risks": [
+    "Groundwater depletion without efficient irrigation",
+    "Soil degradation with fertiliser overuse"
+   ],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "~4.5 t/ha irrigated cereal yields; ~250 kg/ha fertiliser",
+    "source": ""
+   }
+  },
+  {
+   "id": "irrigation_canal",
+   "name": "Canal irrigation system (10,000 ha)",
+   "category": "Agriculture & Food",
+   "subcategory": "Irrigation",
+   "industry": "Agriculture",
+   "function": "Irrigation",
+   "description": "Distributary canal network from a river source.",
+   "purpose": "Increases yields on legacy farmland and enables double cropping.",
+   "capexCr": 500,
+   "constructionMonths": 36,
+   "landHa": 200,
+   "opexCrPerYear": 15.0,
+   "powerDemandMW": 0,
+   "waterDemandMLD": 0,
+   "constructionJobs": 1500,
+   "operationsJobs": {
+    "unskilled": 100,
+    "skilled": 30,
+    "engineer": 5
+   },
+   "outputs": {
+    "irrigationHa": 10000
+   },
+   "inputs": [],
+   "requires": {
+    "maxRiverKm": 30
+   },
+   "emissions": {},
+   "tags": [
+    "irrigation",
+    "agriculture"
+   ],
+   "technologies": [],
+   "risks": [
+    "Waterlogging and salinity",
+    "Upstream-downstream water conflicts"
+   ],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "≈₹5 lakh/ha",
+    "source": ""
+   }
+  },
+  {
+   "id": "micro_irrigation",
+   "name": "Drip & sprinkler irrigation project (10,000 ha)",
+   "category": "Agriculture & Food",
+   "subcategory": "Irrigation",
+   "industry": "Agriculture",
+   "function": "Irrigation",
+   "description": "Micro-irrigation for water-efficient farming.",
+   "purpose": "Raises yields while saving water.",
+   "capexCr": 150,
+   "constructionMonths": 12,
+   "landHa": 0,
+   "opexCrPerYear": 4.5,
+   "powerDemandMW": 1,
+   "waterDemandMLD": 0,
+   "constructionJobs": 600,
+   "operationsJobs": {
+    "unskilled": 50,
+    "skilled": 20
+   },
+   "outputs": {
+    "irrigationHa": 10000
+   },
+   "inputs": [],
+   "requires": {},
+   "emissions": {},
+   "tags": [
+    "irrigation",
+    "agriculture",
+    "water_efficient"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "≈₹1.5 lakh/ha (PMKSY 'Per Drop More Crop')",
+    "source": ""
+   }
+  },
+  {
+   "id": "greenhouse",
+   "name": "Greenhouse complex (50 ha)",
+   "category": "Agriculture & Food",
+   "subcategory": "Farming",
+   "industry": "Agriculture",
+   "function": "Farming",
+   "description": "Climate-controlled horticulture.",
+   "purpose": "High-value vegetables, flowers and seedlings.",
+   "capexCr": 100,
+   "constructionMonths": 12,
+   "landHa": 50,
+   "opexCrPerYear": 3.0,
+   "powerDemandMW": 3,
+   "waterDemandMLD": 0.5,
+   "constructionJobs": 150,
+   "operationsJobs": {
+    "unskilled": 300,
+    "skilled": 50,
+    "engineer": 5
+   },
+   "outputs": {
+    "goods": [
+     {
+      "good": "processed_food",
+      "qtyPerYear": 60
+     }
+    ],
+    "valueAddedCrPerYear": 40
+   },
+   "inputs": [],
+   "requires": {},
+   "emissions": {},
+   "tags": [
+    "agriculture",
+    "horticulture"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative order-of-magnitude modelling assumption",
+    "source": ""
+   }
+  },
+  {
+   "id": "agri_research",
+   "name": "Agricultural research centre",
+   "category": "Agriculture & Food",
+   "subcategory": "Research",
+   "industry": "Agriculture",
+   "function": "Research",
+   "description": "Crop science, seeds, soil and water research institute.",
+   "purpose": "Raises agricultural productivity over time.",
+   "capexCr": 300,
+   "constructionMonths": 24,
+   "landHa": 200,
+   "opexCrPerYear": 9.0,
+   "powerDemandMW": 2,
+   "waterDemandMLD": 0,
+   "constructionJobs": 300,
+   "operationsJobs": {
+    "unskilled": 100,
+    "skilled": 100,
+    "engineer": 30,
+    "scientist": 150
+   },
+   "outputs": {
+    "researchPoints": {
+     "agriculture": 40
+    },
+    "foodYieldBoost": 0.02,
+    "valueAddedCrPerYear": 30
+   },
+   "inputs": [],
+   "requires": {},
+   "emissions": {},
+   "tags": [
+    "research",
+    "agri_research"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "ICAR institute scale",
+    "source": ""
+   }
+  },
+  {
+   "id": "fertilizer_plant",
+   "name": "Fertiliser plant (urea, 1.27 Mtpa)",
+   "category": "Agriculture & Food",
+   "subcategory": "Agri-inputs",
+   "industry": "Chemicals",
+   "function": "Agri-inputs",
+   "description": "Gas-based ammonia-urea complex.",
+   "purpose": "Reduces fertiliser imports.",
+   "capexCr": 8300,
+   "constructionMonths": 42,
+   "landHa": 250,
+   "opexCrPerYear": 249.0,
+   "powerDemandMW": 40,
+   "waterDemandMLD": 20,
+   "constructionJobs": 5000,
+   "operationsJobs": {
+    "unskilled": 300,
+    "skilled": 500,
+    "engineer": 200
+   },
+   "outputs": {
+    "goods": [
+     {
+      "good": "fertilizer",
+      "qtyPerYear": 1270000
+     }
+    ],
+    "valueAddedCrPerYear": 1200
+   },
+   "inputs": [
+    {
+     "good": "natural_gas",
+     "qtyPerYear": 700000
+    }
+   ],
+   "requires": {
+    "transport": [
+     "rail"
+    ],
+    "tech": {
+     "heavy_industry": 1
+    }
+   },
+   "emissions": {
+    "pm25": 200,
+    "pm10": 400,
+    "nox": 1500,
+    "so2": 100,
+    "co": 300,
+    "voc": 200,
+    "co2": 2200000
+   },
+   "tags": [
+    "fertilizer",
+    "chemicals",
+    "manufacturing"
+   ],
+   "technologies": [],
+   "risks": [
+    "Dependence on imported LNG",
+    "Ammonia safety"
+   ],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": false,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "HURL urea plants ≈₹8,300 crore each",
+    "source": ""
+   }
+  },
+  {
+   "id": "food_processing",
+   "name": "Food processing factory",
+   "category": "Agriculture & Food",
+   "subcategory": "Food industry",
+   "industry": "Food processing",
+   "function": "Food industry",
+   "description": "Milling, packaging and processed-food manufacturing.",
+   "purpose": "Adds value to farm output and reduces waste.",
+   "capexCr": 300,
+   "constructionMonths": 18,
+   "landHa": 15,
+   "opexCrPerYear": 9.0,
+   "powerDemandMW": 6,
+   "waterDemandMLD": 2,
+   "constructionJobs": 500,
+   "operationsJobs": {
+    "unskilled": 800,
+    "skilled": 200,
+    "engineer": 20
+   },
+   "outputs": {
+    "goods": [
+     {
+      "good": "processed_food",
+      "qtyPerYear": 600
+     }
+    ],
+    "valueAddedCrPerYear": 180
+   },
+   "inputs": [
+    {
+     "good": "food_grain",
+     "qtyPerYear": 100000
+    }
+   ],
+   "requires": {
+    "transport": [
+     "road"
+    ]
+   },
+   "emissions": {
+    "pm25": 5,
+    "co2": 15000
+   },
+   "tags": [
+    "food_processing",
+    "manufacturing"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": false,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative order-of-magnitude modelling assumption",
+    "source": ""
+   }
+  },
+  {
+   "id": "cold_storage",
+   "name": "Cold storage (10,000 t)",
+   "category": "Agriculture & Food",
+   "subcategory": "Supply chain",
+   "industry": "Logistics",
+   "function": "Supply chain",
+   "description": "Refrigerated warehouse for perishables.",
+   "purpose": "Reduces post-harvest losses.",
+   "capexCr": 30,
+   "constructionMonths": 9,
+   "landHa": 2,
+   "opexCrPerYear": 0.9,
+   "powerDemandMW": 1.5,
+   "waterDemandMLD": 0,
+   "constructionJobs": 60,
+   "operationsJobs": {
+    "unskilled": 30,
+    "skilled": 10
+   },
+   "outputs": {
+    "foodYieldBoost": 0.002,
+    "valueAddedCrPerYear": 6
+   },
+   "inputs": [],
+   "requires": {
+    "transport": [
+     "road"
+    ]
+   },
+   "emissions": {},
+   "tags": [
+    "cold_chain",
+    "agri_logistics"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": false,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative order-of-magnitude modelling assumption",
+    "source": ""
+   }
+  },
+  {
+   "id": "grain_warehouse",
+   "name": "Grain silo / warehouse (50,000 t)",
+   "category": "Agriculture & Food",
+   "subcategory": "Supply chain",
+   "industry": "Logistics",
+   "function": "Supply chain",
+   "description": "Modern steel silo complex.",
+   "purpose": "Strategic food reserves; reduces storage losses.",
+   "capexCr": 100,
+   "constructionMonths": 12,
+   "landHa": 5,
+   "opexCrPerYear": 3.0,
+   "powerDemandMW": 0.5,
+   "waterDemandMLD": 0,
+   "constructionJobs": 100,
+   "operationsJobs": {
+    "unskilled": 40,
+    "skilled": 10
+   },
+   "outputs": {
+    "foodYieldBoost": 0.003,
+    "valueAddedCrPerYear": 8
+   },
+   "inputs": [],
+   "requires": {
+    "transport": [
+     "road"
+    ]
+   },
+   "emissions": {},
+   "tags": [
+    "grain_storage",
+    "agri_logistics",
+    "food_security"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative order-of-magnitude modelling assumption",
+    "source": ""
+   }
+  },
+  {
+   "id": "dairy_plant",
+   "name": "Dairy processing plant (1 million L/day)",
+   "category": "Agriculture & Food",
+   "subcategory": "Food industry",
+   "industry": "Dairy",
+   "function": "Food industry",
+   "description": "Milk chilling, processing and packaging.",
+   "purpose": "Organises dairy value chains for farmers.",
+   "capexCr": 500,
+   "constructionMonths": 18,
+   "landHa": 20,
+   "opexCrPerYear": 15.0,
+   "powerDemandMW": 8,
+   "waterDemandMLD": 3,
+   "constructionJobs": 600,
+   "operationsJobs": {
+    "unskilled": 600,
+    "skilled": 200,
+    "engineer": 20
+   },
+   "outputs": {
+    "goods": [
+     {
+      "good": "milk",
+      "qtyPerYear": 365000
+     }
+    ],
+    "valueAddedCrPerYear": 300
+   },
+   "inputs": [],
+   "requires": {
+    "transport": [
+     "road"
+    ]
+   },
+   "emissions": {
+    "co2": 20000
+   },
+   "tags": [
+    "dairy",
+    "food_processing"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": false,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative order-of-magnitude modelling assumption",
+    "source": ""
+   }
+  },
+  {
+   "id": "fishery_harbour",
+   "name": "Fishing harbour & aquaculture hub",
+   "category": "Agriculture & Food",
+   "subcategory": "Fisheries",
+   "industry": "Fisheries",
+   "function": "Fisheries",
+   "description": "Fishing harbour with landing, auction and cold chain.",
+   "purpose": "Supports fishers' livelihoods and seafood exports.",
+   "capexCr": 200,
+   "constructionMonths": 24,
+   "landHa": 15,
+   "opexCrPerYear": 6.0,
+   "powerDemandMW": 2,
+   "waterDemandMLD": 0,
+   "constructionJobs": 400,
+   "operationsJobs": {
+    "unskilled": 1500,
+    "skilled": 100
+   },
+   "outputs": {
+    "goods": [
+     {
+      "good": "fish",
+      "qtyPerYear": 30000
+     }
+    ],
+    "valueAddedCrPerYear": 150
+   },
+   "inputs": [],
+   "requires": {
+    "maxCoastKm": 3
+   },
+   "emissions": {},
+   "tags": [
+    "fisheries"
+   ],
+   "technologies": [],
+   "risks": [
+    "Overfishing"
+   ],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative order-of-magnitude modelling assumption",
+    "source": ""
+   }
+  },
+  {
+   "id": "agri_logistics",
+   "name": "Agricultural logistics & market centre",
+   "category": "Agriculture & Food",
+   "subcategory": "Supply chain",
+   "industry": "Logistics",
+   "function": "Supply chain",
+   "description": "Mandi with sorting, grading and aggregation.",
+   "purpose": "Better price discovery and reduced wastage.",
+   "capexCr": 150,
+   "constructionMonths": 12,
+   "landHa": 10,
+   "opexCrPerYear": 4.5,
+   "powerDemandMW": 1,
+   "waterDemandMLD": 0,
+   "constructionJobs": 200,
+   "operationsJobs": {
+    "unskilled": 200,
+    "skilled": 50,
+    "engineer": 5
+   },
+   "outputs": {
+    "foodYieldBoost": 0.004,
+    "valueAddedCrPerYear": 25
+   },
+   "inputs": [],
+   "requires": {
+    "transport": [
+     "road"
+    ]
+   },
+   "emissions": {},
+   "tags": [
+    "agri_logistics"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative order-of-magnitude modelling assumption",
+    "source": ""
+   }
+  }
+ ]
+}

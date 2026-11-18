@@ -1,0 +1,926 @@
+{
+ "category": "Computing & AI",
+ "note": "Indicative modelling assumptions; see provenance on each entry.",
+ "facilities": [
+  {
+   "id": "gpu_plant",
+   "name": "GPU manufacturing & advanced packaging plant",
+   "category": "Computing & AI",
+   "subcategory": "Processors",
+   "industry": "Computing",
+   "function": "Processors",
+   "description": "Integrates GPU dies with HBM memory using 2.5D advanced packaging, then tests and builds accelerator modules.",
+   "purpose": "Domestic GPU supply for AI and HPC.",
+   "capexCr": 25000,
+   "constructionMonths": 48,
+   "landHa": 50,
+   "opexCrPerYear": 750.0,
+   "powerDemandMW": 80,
+   "waterDemandMLD": 6,
+   "constructionJobs": 5000,
+   "operationsJobs": {
+    "unskilled": 500,
+    "skilled": 2000,
+    "engineer": 2500,
+    "scientist": 500
+   },
+   "outputs": {
+    "goods": [
+     {
+      "good": "gpu",
+      "qtyPerYear": 100000
+     }
+    ],
+    "valueAddedCrPerYear": 6000
+   },
+   "inputs": [
+    {
+     "good": "wafer_advanced",
+     "qtyPerYear": 30000
+    },
+    {
+     "good": "hbm_memory",
+     "qtyPerYear": 600000
+    },
+    {
+     "good": "specialty_chemicals",
+     "qtyPerYear": 1500
+    },
+    {
+     "good": "electronic_components",
+     "qtyPerYear": 500
+    }
+   ],
+   "requires": {
+    "transport": [
+     "airport"
+    ],
+    "tech": {
+     "semiconductor": 4,
+     "computing_ai": 3,
+     "electronics": 3
+    },
+    "minGridReliability": 0.99,
+    "supporting": [
+     {
+      "tag": "chip_packaging",
+      "count": 1,
+      "radiusKm": 0,
+      "why": "Advanced packaging builds on domestic OSAT experience"
+     },
+     {
+      "tag": "semiconductor_research",
+      "count": 1,
+      "radiusKm": 0,
+      "why": "GPU design and packaging need deep semiconductor expertise"
+     },
+     {
+      "tag": "electronics_components",
+      "count": 1,
+      "radiusKm": 0,
+      "why": "Substrates and passives are needed for every module"
+     }
+    ]
+   },
+   "emissions": {},
+   "tags": [
+    "gpu",
+    "processor",
+    "semiconductor",
+    "manufacturing"
+   ],
+   "technologies": [
+    "GPU design",
+    "2.5D packaging",
+    "HBM integration"
+   ],
+   "risks": [
+    "Needs leading-edge wafers (domestic ≤7 nm fab or imports subject to allocation)",
+    "HBM memory is supplied by very few firms",
+    "GPU architecture IP is a decades-long effort"
+   ],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": false,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative; advanced-packaging facilities cost several US$ billion",
+    "source": ""
+   }
+  },
+  {
+   "id": "cpu_plant",
+   "name": "CPU manufacturing plant",
+   "category": "Computing & AI",
+   "subcategory": "Processors",
+   "industry": "Computing",
+   "function": "Processors",
+   "description": "Packages and tests server and client CPUs from processed wafers.",
+   "purpose": "Domestic processor supply.",
+   "capexCr": 15000,
+   "constructionMonths": 42,
+   "landHa": 40,
+   "opexCrPerYear": 450.0,
+   "powerDemandMW": 50,
+   "waterDemandMLD": 4,
+   "constructionJobs": 4000,
+   "operationsJobs": {
+    "unskilled": 500,
+    "skilled": 1500,
+    "engineer": 1800,
+    "scientist": 300
+   },
+   "outputs": {
+    "goods": [
+     {
+      "good": "cpu",
+      "qtyPerYear": 400000
+     }
+    ],
+    "valueAddedCrPerYear": 3500
+   },
+   "inputs": [
+    {
+     "good": "wafer_advanced",
+     "qtyPerYear": 15000
+    },
+    {
+     "good": "electronic_components",
+     "qtyPerYear": 300
+    }
+   ],
+   "requires": {
+    "transport": [
+     "airport"
+    ],
+    "tech": {
+     "semiconductor": 4,
+     "computing_ai": 2
+    },
+    "minGridReliability": 0.99,
+    "supporting": [
+     {
+      "tag": "chip_packaging",
+      "count": 1,
+      "radiusKm": 0,
+      "why": "CPU packaging builds on OSAT capability"
+     }
+    ]
+   },
+   "emissions": {},
+   "tags": [
+    "cpu",
+    "processor",
+    "semiconductor",
+    "manufacturing"
+   ],
+   "technologies": [
+    "CPU design",
+    "ISA licensing / RISC-V"
+   ],
+   "risks": [
+    "ISA/IP licensing",
+    "Leading-edge wafer access"
+   ],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": false,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative order-of-magnitude modelling assumption",
+    "source": ""
+   }
+  },
+  {
+   "id": "ai_accelerator_plant",
+   "name": "AI accelerator manufacturing plant",
+   "category": "Computing & AI",
+   "subcategory": "Processors",
+   "industry": "Computing",
+   "function": "Processors",
+   "description": "Custom AI accelerator (ASIC/NPU) packaging and module production.",
+   "purpose": "Specialised AI chips, potentially on mature or advanced nodes.",
+   "capexCr": 20000,
+   "constructionMonths": 48,
+   "landHa": 40,
+   "opexCrPerYear": 600.0,
+   "powerDemandMW": 60,
+   "waterDemandMLD": 5,
+   "constructionJobs": 4000,
+   "operationsJobs": {
+    "unskilled": 400,
+    "skilled": 1500,
+    "engineer": 2200,
+    "scientist": 600
+   },
+   "outputs": {
+    "goods": [
+     {
+      "good": "ai_accelerator",
+      "qtyPerYear": 80000
+     }
+    ],
+    "valueAddedCrPerYear": 4500
+   },
+   "inputs": [
+    {
+     "good": "wafer_advanced",
+     "qtyPerYear": 12000
+    },
+    {
+     "good": "wafer_mature",
+     "qtyPerYear": 20000
+    },
+    {
+     "good": "hbm_memory",
+     "qtyPerYear": 300000
+    },
+    {
+     "good": "electronic_components",
+     "qtyPerYear": 300
+    }
+   ],
+   "requires": {
+    "transport": [
+     "airport"
+    ],
+    "tech": {
+     "semiconductor": 4,
+     "computing_ai": 3
+    },
+    "minGridReliability": 0.99,
+    "supporting": [
+     {
+      "tag": "ai_lab",
+      "count": 1,
+      "radiusKm": 0,
+      "why": "Accelerator architecture is co-designed with AI researchers"
+     }
+    ]
+   },
+   "emissions": {},
+   "tags": [
+    "ai_accelerator",
+    "processor",
+    "semiconductor",
+    "manufacturing"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": false,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative order-of-magnitude modelling assumption",
+    "source": ""
+   }
+  },
+  {
+   "id": "ai_server_factory",
+   "name": "AI server manufacturing factory",
+   "category": "Computing & AI",
+   "subcategory": "Servers",
+   "industry": "Computing",
+   "function": "Servers",
+   "description": "Builds 8-GPU AI servers and racks: boards, power, liquid cooling, integration and burn-in.",
+   "purpose": "Turns processors into deployable AI compute.",
+   "capexCr": 2000,
+   "constructionMonths": 24,
+   "landHa": 20,
+   "opexCrPerYear": 60.0,
+   "powerDemandMW": 25,
+   "waterDemandMLD": 1,
+   "constructionJobs": 1500,
+   "operationsJobs": {
+    "unskilled": 1000,
+    "skilled": 1500,
+    "engineer": 600,
+    "scientist": 50
+   },
+   "outputs": {
+    "goods": [
+     {
+      "good": "ai_server",
+      "qtyPerYear": 5000
+     }
+    ],
+    "valueAddedCrPerYear": 1500
+   },
+   "inputs": [
+    {
+     "good": "gpu",
+     "qtyPerYear": 40000
+    },
+    {
+     "good": "cpu",
+     "qtyPerYear": 10000
+    },
+    {
+     "good": "electronic_components",
+     "qtyPerYear": 400
+    },
+    {
+     "good": "dram_memory",
+     "qtyPerYear": 300
+    }
+   ],
+   "requires": {
+    "transport": [
+     "road",
+     "airport"
+    ],
+    "tech": {
+     "electronics": 2,
+     "computing_ai": 2
+    },
+    "supporting": [
+     {
+      "tag": "electronics_components",
+      "count": 1,
+      "radiusKm": 0,
+      "why": "Server boards need PCBs, power supplies and passives"
+     }
+    ]
+   },
+   "emissions": {},
+   "tags": [
+    "ai_server",
+    "server",
+    "electronics",
+    "manufacturing"
+   ],
+   "technologies": [
+    "system integration",
+    "liquid cooling"
+   ],
+   "risks": [
+    "Depends on GPU supply (domestic or imported)",
+    "Thin margins for pure assembly"
+   ],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": false,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative order-of-magnitude modelling assumption",
+    "source": ""
+   }
+  },
+  {
+   "id": "server_assembly",
+   "name": "Server assembly facility",
+   "category": "Computing & AI",
+   "subcategory": "Servers",
+   "industry": "Computing",
+   "function": "Servers",
+   "description": "General-purpose server and storage assembly.",
+   "purpose": "Supplies data centres and enterprises.",
+   "capexCr": 800,
+   "constructionMonths": 18,
+   "landHa": 10,
+   "opexCrPerYear": 24.0,
+   "powerDemandMW": 10,
+   "waterDemandMLD": 0,
+   "constructionJobs": 800,
+   "operationsJobs": {
+    "unskilled": 800,
+    "skilled": 700,
+    "engineer": 200
+   },
+   "outputs": {
+    "goods": [
+     {
+      "good": "server",
+      "qtyPerYear": 60000
+     }
+    ],
+    "valueAddedCrPerYear": 600
+   },
+   "inputs": [
+    {
+     "good": "cpu",
+     "qtyPerYear": 60000
+    },
+    {
+     "good": "electronic_components",
+     "qtyPerYear": 300
+    },
+    {
+     "good": "dram_memory",
+     "qtyPerYear": 200
+    }
+   ],
+   "requires": {
+    "transport": [
+     "road"
+    ],
+    "tech": {
+     "electronics": 1
+    }
+   },
+   "emissions": {},
+   "tags": [
+    "server",
+    "electronics",
+    "manufacturing"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": false,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative order-of-magnitude modelling assumption",
+    "source": ""
+   }
+  },
+  {
+   "id": "memory_plant",
+   "name": "Memory chip assembly & test plant",
+   "category": "Computing & AI",
+   "subcategory": "Memory",
+   "industry": "Semiconductors",
+   "function": "Memory",
+   "description": "DRAM/NAND assembly and test.",
+   "purpose": "Memory supply for servers and devices.",
+   "capexCr": 20000,
+   "constructionMonths": 36,
+   "landHa": 40,
+   "opexCrPerYear": 600.0,
+   "powerDemandMW": 50,
+   "waterDemandMLD": 6,
+   "constructionJobs": 4000,
+   "operationsJobs": {
+    "unskilled": 800,
+    "skilled": 1500,
+    "engineer": 900,
+    "scientist": 100
+   },
+   "outputs": {
+    "goods": [
+     {
+      "good": "dram_memory",
+      "qtyPerYear": 4000
+     }
+    ],
+    "valueAddedCrPerYear": 2500
+   },
+   "inputs": [
+    {
+     "good": "wafer_mature",
+     "qtyPerYear": 60000
+    },
+    {
+     "good": "specialty_chemicals",
+     "qtyPerYear": 1000
+    }
+   ],
+   "requires": {
+    "tech": {
+     "semiconductor": 3
+    },
+    "minGridReliability": 0.99
+   },
+   "emissions": {},
+   "tags": [
+    "memory",
+    "semiconductor",
+    "manufacturing",
+    "chip_packaging"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": false,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Micron Sanand ATMP ≈₹22,500 crore",
+    "source": ""
+   }
+  },
+  {
+   "id": "data_centre",
+   "name": "Data centre (50 MW IT)",
+   "category": "Computing & AI",
+   "subcategory": "Data centres",
+   "industry": "Digital infrastructure",
+   "function": "Data centres",
+   "description": "Colocation data centre with redundant power and cooling.",
+   "purpose": "Hosts cloud, enterprise and AI workloads; requires electricity, cooling, connectivity and security.",
+   "capexCr": 3000,
+   "constructionMonths": 24,
+   "landHa": 25.0,
+   "opexCrPerYear": 90.0,
+   "powerDemandMW": 70.0,
+   "waterDemandMLD": 1.5,
+   "constructionJobs": 1000,
+   "operationsJobs": {
+    "unskilled": 50,
+    "skilled": 100,
+    "engineer": 75
+   },
+   "outputs": {
+    "computeMW": 50,
+    "valueAddedCrPerYear": 1250
+   },
+   "inputs": [
+    {
+     "good": "server",
+     "qtyPerYear": 6000
+    },
+    {
+     "good": "ai_server",
+     "qtyPerYear": 200
+    }
+   ],
+   "requires": {
+    "transport": [
+     "fibre",
+     "road"
+    ],
+    "minGridReliability": 0.99
+   },
+   "emissions": {},
+   "tags": [
+    "data_centre"
+   ],
+   "technologies": [
+    "cooling",
+    "virtualisation"
+   ],
+   "risks": [
+    "Very high, continuous electricity demand",
+    "Water use for cooling",
+    "Requires fibre backbone and physical security",
+    "Server supply (domestic or imported)"
+   ],
+   "environmentNote": "Emissions depend on the grid's generation mix.",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": false,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "≈₹60-70 crore per MW IT load excl. servers; PUE ≈1.4",
+    "source": ""
+   }
+  },
+  {
+   "id": "hyperscale_dc",
+   "name": "Hyperscale data centre (300 MW IT)",
+   "category": "Computing & AI",
+   "subcategory": "Data centres",
+   "industry": "Digital infrastructure",
+   "function": "Data centres",
+   "description": "Hyperscale campus for cloud and AI training.",
+   "purpose": "Hosts cloud, enterprise and AI workloads; requires electricity, cooling, connectivity and security.",
+   "capexCr": 18000,
+   "constructionMonths": 36,
+   "landHa": 150.0,
+   "opexCrPerYear": 540.0,
+   "powerDemandMW": 420.0,
+   "waterDemandMLD": 9.0,
+   "constructionJobs": 6000,
+   "operationsJobs": {
+    "unskilled": 300,
+    "skilled": 600,
+    "engineer": 450
+   },
+   "outputs": {
+    "computeMW": 300,
+    "valueAddedCrPerYear": 7500
+   },
+   "inputs": [
+    {
+     "good": "server",
+     "qtyPerYear": 36000
+    },
+    {
+     "good": "ai_server",
+     "qtyPerYear": 1200
+    }
+   ],
+   "requires": {
+    "transport": [
+     "fibre",
+     "road"
+    ],
+    "minGridReliability": 0.99
+   },
+   "emissions": {},
+   "tags": [
+    "data_centre",
+    "hyperscale"
+   ],
+   "technologies": [
+    "cooling",
+    "virtualisation"
+   ],
+   "risks": [
+    "Very high, continuous electricity demand",
+    "Water use for cooling",
+    "Requires fibre backbone and physical security",
+    "Server supply (domestic or imported)"
+   ],
+   "environmentNote": "Emissions depend on the grid's generation mix.",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": false,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "≈₹60-70 crore per MW IT load excl. servers; PUE ≈1.4",
+    "source": ""
+   }
+  },
+  {
+   "id": "cloud_region",
+   "name": "Cloud computing region (3 availability zones)",
+   "category": "Computing & AI",
+   "subcategory": "Data centres",
+   "industry": "Digital infrastructure",
+   "function": "Data centres",
+   "description": "Software, networking and operations layer that turns multiple data centres into a public cloud region.",
+   "purpose": "Sovereign/public cloud services.",
+   "capexCr": 5000,
+   "constructionMonths": 24,
+   "landHa": 5,
+   "opexCrPerYear": 150.0,
+   "powerDemandMW": 5,
+   "waterDemandMLD": 0,
+   "constructionJobs": 500,
+   "operationsJobs": {
+    "skilled": 500,
+    "engineer": 1500,
+    "scientist": 50
+   },
+   "outputs": {
+    "valueAddedCrPerYear": 3000,
+    "researchPoints": {
+     "computing_ai": 10
+    }
+   },
+   "inputs": [],
+   "requires": {
+    "transport": [
+     "fibre"
+    ],
+    "tech": {
+     "computing_ai": 2
+    },
+    "supporting": [
+     {
+      "tag": "data_centre",
+      "count": 3,
+      "radiusKm": 500,
+      "why": "A cloud region spans at least three data-centre availability zones"
+     }
+    ]
+   },
+   "emissions": {},
+   "tags": [
+    "cloud",
+    "digital_services"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": false,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative order-of-magnitude modelling assumption",
+    "source": ""
+   }
+  },
+  {
+   "id": "ai_lab",
+   "name": "AI research laboratory",
+   "category": "Computing & AI",
+   "subcategory": "Research",
+   "industry": "AI",
+   "function": "Research",
+   "description": "Machine-learning research lab with GPU cluster access.",
+   "purpose": "Frontier AI research, models and talent.",
+   "capexCr": 500,
+   "constructionMonths": 18,
+   "landHa": 5,
+   "opexCrPerYear": 150,
+   "powerDemandMW": 10,
+   "waterDemandMLD": 0,
+   "constructionJobs": 200,
+   "operationsJobs": {
+    "skilled": 100,
+    "engineer": 300,
+    "scientist": 400
+   },
+   "outputs": {
+    "researchPoints": {
+     "computing_ai": 60
+    }
+   },
+   "inputs": [],
+   "requires": {
+    "transport": [
+     "fibre"
+    ],
+    "supporting": [
+     {
+      "tag": "data_centre",
+      "count": 1,
+      "radiusKm": 0,
+      "why": "AI research needs large-scale compute"
+     },
+     {
+      "tag": "university",
+      "count": 1,
+      "radiusKm": 0,
+      "why": "Talent pipeline"
+     }
+    ]
+   },
+   "emissions": {},
+   "tags": [
+    "ai_lab",
+    "research"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative order-of-magnitude modelling assumption",
+    "source": ""
+   }
+  },
+  {
+   "id": "supercomputer",
+   "name": "National supercomputing centre",
+   "category": "Computing & AI",
+   "subcategory": "HPC",
+   "industry": "Computing",
+   "function": "HPC",
+   "description": "Petascale supercomputer for science and engineering.",
+   "purpose": "Weather, climate, materials, drug discovery and defence simulation.",
+   "capexCr": 1000,
+   "constructionMonths": 24,
+   "landHa": 3,
+   "opexCrPerYear": 80,
+   "powerDemandMW": 15,
+   "waterDemandMLD": 0.3,
+   "constructionJobs": 200,
+   "operationsJobs": {
+    "skilled": 80,
+    "engineer": 150,
+    "scientist": 150
+   },
+   "outputs": {
+    "computeMW": 10,
+    "researchPoints": {
+     "computing_ai": 20,
+     "materials": 10,
+     "biotech_pharma": 10,
+     "aerospace_space": 8,
+     "nuclear": 8,
+     "quantum": 4
+    }
+   },
+   "inputs": [
+    {
+     "good": "server",
+     "qtyPerYear": 2000
+    },
+    {
+     "good": "gpu",
+     "qtyPerYear": 2000
+    }
+   ],
+   "requires": {
+    "transport": [
+     "fibre"
+    ],
+    "minGridReliability": 0.99
+   },
+   "emissions": {},
+   "tags": [
+    "supercomputer",
+    "hpc",
+    "research"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "National Supercomputing Mission scale",
+    "source": ""
+   }
+  },
+  {
+   "id": "hpc_facility",
+   "name": "High-performance computing facility",
+   "category": "Computing & AI",
+   "subcategory": "HPC",
+   "industry": "Computing",
+   "function": "HPC",
+   "description": "University/industry HPC cluster.",
+   "purpose": "Simulation and data-intensive research.",
+   "capexCr": 300,
+   "constructionMonths": 12,
+   "landHa": 1,
+   "opexCrPerYear": 30,
+   "powerDemandMW": 4,
+   "waterDemandMLD": 0,
+   "constructionJobs": 80,
+   "operationsJobs": {
+    "skilled": 30,
+    "engineer": 60,
+    "scientist": 60
+   },
+   "outputs": {
+    "computeMW": 3,
+    "researchPoints": {
+     "computing_ai": 6,
+     "materials": 4
+    }
+   },
+   "inputs": [
+    {
+     "good": "server",
+     "qtyPerYear": 600
+    }
+   ],
+   "requires": {
+    "transport": [
+     "fibre"
+    ]
+   },
+   "emissions": {},
+   "tags": [
+    "hpc",
+    "research"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative order-of-magnitude modelling assumption",
+    "source": ""
+   }
+  }
+ ]
+}

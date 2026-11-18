@@ -1,0 +1,1913 @@
+{
+ "version": 1,
+ "note": "Policy effect sizes are indicative modelling assumptions. Effects scale with intensity × effectiveness and ramp in after the lag.",
+ "policies": [
+  {
+   "id": "tax_increase",
+   "name": "Raise general tax rate",
+   "category": "Taxation",
+   "description": "Raise the overall tax-to-GDP ratio through income tax, GST and corporate tax changes.",
+   "intensityLabel": "100% = +3 percentage points of GDP",
+   "effects": [
+    {
+     "key": "tax.rate",
+     "mode": "add",
+     "full": 0.03,
+     "note": ""
+    },
+    {
+     "key": "private.investment",
+     "mode": "mul",
+     "full": 0.88,
+     "note": "Lower post-tax returns"
+    },
+    {
+     "key": "legacy.productivity",
+     "mode": "mul",
+     "full": 0.99,
+     "note": ""
+    }
+   ],
+   "costCrPerYearAtFull": 0,
+   "costPctGdpAtFull": 0,
+   "effectiveness": {
+    "low": 0.6,
+    "central": 0.8,
+    "high": 0.95
+   },
+   "benefits": [
+    "More public revenue for infrastructure and services"
+   ],
+   "unintendedConsequences": [
+    "Lower private investment",
+    "Tax evasion and informality may rise"
+   ],
+   "shortTerm": "Revenue rises within a year.",
+   "longTerm": "Can slow private capital formation if rates are high.",
+   "affectedGroups": [
+    "Formal-sector workers",
+    "Businesses"
+   ],
+   "stateDifferences": "States with larger formal economies contribute more.",
+   "implementationChallenges": [
+    "Compliance and administration capacity"
+   ],
+   "uncertainty": "Revenue response depends on compliance; modelled effectiveness 60-95%.",
+   "humanRightsConcern": "",
+   "lagMonths": 3,
+   "rampMonths": 12,
+   "revenueNote": "Adds up to 3% of GDP in revenue",
+   "provenance": {
+    "kind": "assumption",
+    "note": "Effect sizes are indicative modelling assumptions with wide uncertainty."
+   }
+  },
+  {
+   "id": "tax_cut",
+   "name": "Cut taxes to stimulate investment",
+   "category": "Taxation",
+   "description": "Reduce corporate and income taxes.",
+   "intensityLabel": "100% = −3 percentage points of GDP",
+   "effects": [
+    {
+     "key": "tax.rate",
+     "mode": "add",
+     "full": -0.03,
+     "note": ""
+    },
+    {
+     "key": "private.investment",
+     "mode": "mul",
+     "full": 1.15,
+     "note": ""
+    }
+   ],
+   "costCrPerYearAtFull": 0,
+   "costPctGdpAtFull": 0,
+   "effectiveness": {
+    "low": 0.5,
+    "central": 0.75,
+    "high": 1.0
+   },
+   "benefits": [
+    "Higher private investment"
+   ],
+   "unintendedConsequences": [
+    "Lower revenue may force borrowing or spending cuts"
+   ],
+   "shortTerm": "Revenue falls immediately.",
+   "longTerm": "Investment response is uncertain and gradual.",
+   "affectedGroups": [
+    "Businesses",
+    "Higher-income households"
+   ],
+   "stateDifferences": "",
+   "implementationChallenges": [
+    "Fiscal deficit"
+   ],
+   "uncertainty": "Investment elasticity to taxes is debated.",
+   "humanRightsConcern": "",
+   "lagMonths": 3,
+   "rampMonths": 24,
+   "revenueNote": "",
+   "provenance": {
+    "kind": "assumption",
+    "note": "Effect sizes are indicative modelling assumptions with wide uncertainty."
+   }
+  },
+  {
+   "id": "manufacturing_incentive",
+   "name": "Production-linked manufacturing incentives",
+   "category": "Industrial policy",
+   "description": "Government co-finances a larger share of new factory investment and pays output-linked incentives.",
+   "intensityLabel": "100% = government pays +30% of factory capex",
+   "effects": [
+    {
+     "key": "capex.publicShare.private",
+     "mode": "add",
+     "full": 0.3,
+     "note": ""
+    },
+    {
+     "key": "efficiency.mult.manufacturing",
+     "mode": "mul",
+     "full": 1.05,
+     "note": ""
+    },
+    {
+     "key": "private.investment",
+     "mode": "mul",
+     "full": 1.1,
+     "note": ""
+    }
+   ],
+   "costCrPerYearAtFull": 0,
+   "costPctGdpAtFull": 0.002,
+   "effectiveness": {
+    "low": 0.5,
+    "central": 0.75,
+    "high": 0.95
+   },
+   "benefits": [
+    "Faster industrial build-out",
+    "Manufacturing jobs"
+   ],
+   "unintendedConsequences": [
+    "Fiscal cost; risk of subsidising firms that would invest anyway",
+    "Rent-seeking"
+   ],
+   "shortTerm": "Higher public spending on factories.",
+   "longTerm": "Industrial base and exports grow if firms become competitive.",
+   "affectedGroups": [
+    "Manufacturers",
+    "Industrial workers"
+   ],
+   "stateDifferences": "States with industrial land, power and ports benefit most.",
+   "implementationChallenges": [
+    "Selecting sectors",
+    "Monitoring output commitments"
+   ],
+   "uncertainty": "Global evidence on industrial subsidies is mixed.",
+   "humanRightsConcern": "",
+   "lagMonths": 12,
+   "rampMonths": 36,
+   "revenueNote": "",
+   "provenance": {
+    "kind": "assumption",
+    "note": "Effect sizes are indicative modelling assumptions with wide uncertainty."
+   }
+  },
+  {
+   "id": "semiconductor_subsidy",
+   "name": "Semiconductor mission subsidy",
+   "category": "Industrial policy",
+   "description": "Fiscal support of up to 50% of project cost for fabs, OSAT and display plants, plus R&D grants.",
+   "intensityLabel": "100% = 50% capex support + R&D grants",
+   "effects": [
+    {
+     "key": "capex.publicShare.tag.semiconductor",
+     "mode": "add",
+     "full": 0.5,
+     "note": ""
+    },
+    {
+     "key": "research.mult.semiconductor",
+     "mode": "mul",
+     "full": 1.3,
+     "note": ""
+    },
+    {
+     "key": "tech.points.semiconductor",
+     "mode": "add",
+     "full": 40,
+     "note": ""
+    }
+   ],
+   "costCrPerYearAtFull": 5000,
+   "costPctGdpAtFull": 0,
+   "effectiveness": {
+    "low": 0.4,
+    "central": 0.7,
+    "high": 0.9
+   },
+   "benefits": [
+    "Makes chip projects financially viable",
+    "Builds semiconductor know-how"
+   ],
+   "unintendedConsequences": [
+    "Very large fiscal exposure per project",
+    "Projects may still fail without ecosystem"
+   ],
+   "shortTerm": "High upfront fiscal cost.",
+   "longTerm": "Capability builds over a decade if sustained.",
+   "affectedGroups": [
+    "Semiconductor firms",
+    "Engineers"
+   ],
+   "stateDifferences": "Gujarat, Karnataka, Tamil Nadu, Telangana, Uttar Pradesh with power/water reliability benefit most.",
+   "implementationChallenges": [
+    "Attracting experienced operators",
+    "Ultra-reliable power and water"
+   ],
+   "uncertainty": "Success rates of new-entrant fabs are historically low.",
+   "humanRightsConcern": "",
+   "lagMonths": 12,
+   "rampMonths": 36,
+   "revenueNote": "",
+   "provenance": {
+    "kind": "assumption",
+    "note": "Effect sizes are indicative modelling assumptions with wide uncertainty."
+   }
+  },
+  {
+   "id": "ai_programme",
+   "name": "National AI research programme",
+   "category": "Research & development",
+   "description": "Funding for AI compute, research labs, fellowships and open datasets.",
+   "intensityLabel": "100% = ₹10,000 crore per year",
+   "effects": [
+    {
+     "key": "research.mult.computing_ai",
+     "mode": "mul",
+     "full": 1.4,
+     "note": ""
+    },
+    {
+     "key": "tech.points.computing_ai",
+     "mode": "add",
+     "full": 60,
+     "note": ""
+    },
+    {
+     "key": "skilled.inflow.scientist",
+     "mode": "add",
+     "full": 2000,
+     "note": ""
+    }
+   ],
+   "costCrPerYearAtFull": 10000,
+   "costPctGdpAtFull": 0,
+   "effectiveness": {
+    "low": 0.5,
+    "central": 0.75,
+    "high": 1.0
+   },
+   "benefits": [
+    "AI research capability",
+    "Retains and attracts AI talent"
+   ],
+   "unintendedConsequences": [
+    "Compute spending may outpace talent",
+    "Concentration in a few cities"
+   ],
+   "shortTerm": "Spending on compute and grants.",
+   "longTerm": "Stronger AI ecosystem; spill-overs to services productivity.",
+   "affectedGroups": [
+    "Researchers",
+    "Startups"
+   ],
+   "stateDifferences": "Concentrates in states with universities and data centres.",
+   "implementationChallenges": [
+    "Compute access",
+    "Talent retention"
+   ],
+   "uncertainty": "Research productivity is highly uncertain.",
+   "humanRightsConcern": "",
+   "lagMonths": 12,
+   "rampMonths": 36,
+   "revenueNote": "",
+   "provenance": {
+    "kind": "assumption",
+    "note": "Effect sizes are indicative modelling assumptions with wide uncertainty."
+   }
+  },
+  {
+   "id": "rnd_tax_credit",
+   "name": "R&D incentives for industry",
+   "category": "Research & development",
+   "description": "Tax credits and grants for private-sector R&D.",
+   "intensityLabel": "100% = R&D credit equal to 0.3% of GDP",
+   "effects": [
+    {
+     "key": "research.mult.all",
+     "mode": "mul",
+     "full": 1.25,
+     "note": ""
+    },
+    {
+     "key": "tax.rate",
+     "mode": "add",
+     "full": -0.003,
+     "note": ""
+    }
+   ],
+   "costCrPerYearAtFull": 0,
+   "costPctGdpAtFull": 0,
+   "effectiveness": {
+    "low": 0.4,
+    "central": 0.7,
+    "high": 0.9
+   },
+   "benefits": [
+    "More private R&D"
+   ],
+   "unintendedConsequences": [
+    "Relabelling of existing spending as R&D"
+   ],
+   "shortTerm": "Revenue cost.",
+   "longTerm": "Higher technology maturity across domains.",
+   "affectedGroups": [
+    "Technology firms"
+   ],
+   "stateDifferences": "",
+   "implementationChallenges": [
+    "Verification of genuine R&D"
+   ],
+   "uncertainty": "Additionality of R&D credits is ~50-100% in studies.",
+   "humanRightsConcern": "",
+   "lagMonths": 12,
+   "rampMonths": 36,
+   "revenueNote": "",
+   "provenance": {
+    "kind": "assumption",
+    "note": "Effect sizes are indicative modelling assumptions with wide uncertainty."
+   }
+  },
+  {
+   "id": "national_research_fund",
+   "name": "National research foundation",
+   "category": "Research & development",
+   "description": "Competitive basic-research grants across all fields.",
+   "intensityLabel": "100% = ₹20,000 crore per year",
+   "effects": [
+    {
+     "key": "research.mult.all",
+     "mode": "mul",
+     "full": 1.3,
+     "note": ""
+    },
+    {
+     "key": "tech.points.all",
+     "mode": "add",
+     "full": 10,
+     "note": ""
+    },
+    {
+     "key": "skilled.inflow.scientist",
+     "mode": "add",
+     "full": 3000,
+     "note": ""
+    }
+   ],
+   "costCrPerYearAtFull": 20000,
+   "costPctGdpAtFull": 0,
+   "effectiveness": {
+    "low": 0.5,
+    "central": 0.75,
+    "high": 1.0
+   },
+   "benefits": [
+    "Broad research base"
+   ],
+   "unintendedConsequences": [
+    "Slow, diffuse returns"
+   ],
+   "shortTerm": "Spending only.",
+   "longTerm": "Higher researcher stock and technology maturity.",
+   "affectedGroups": [
+    "Universities",
+    "Researchers"
+   ],
+   "stateDifferences": "",
+   "implementationChallenges": [],
+   "uncertainty": "Long and variable lags.",
+   "humanRightsConcern": "",
+   "lagMonths": 12,
+   "rampMonths": 36,
+   "revenueNote": "",
+   "provenance": {
+    "kind": "assumption",
+    "note": "Effect sizes are indicative modelling assumptions with wide uncertainty."
+   }
+  },
+  {
+   "id": "education_spending",
+   "name": "Increase education spending",
+   "category": "Education",
+   "description": "Raise school and higher-education quality: teachers, training, learning materials.",
+   "intensityLabel": "100% = +1% of GDP",
+   "effects": [
+    {
+     "key": "education.quality",
+     "mode": "mul",
+     "full": 1.3,
+     "note": ""
+    },
+    {
+     "key": "graduates.mult",
+     "mode": "mul",
+     "full": 1.2,
+     "note": ""
+    },
+    {
+     "key": "tfr",
+     "mode": "mul",
+     "full": 0.97,
+     "note": ""
+    },
+    {
+     "key": "legacy.productivity",
+     "mode": "mul",
+     "full": 1.03,
+     "note": ""
+    }
+   ],
+   "costCrPerYearAtFull": 0,
+   "costPctGdpAtFull": 0.01,
+   "effectiveness": {
+    "low": 0.5,
+    "central": 0.75,
+    "high": 1.0
+   },
+   "benefits": [
+    "Higher-skilled workforce",
+    "Lower fertility over time via female education"
+   ],
+   "unintendedConsequences": [
+    "Graduate unemployment if jobs don't follow"
+   ],
+   "shortTerm": "Costs now; few visible gains.",
+   "longTerm": "Productivity and skills rise after 10-20 years.",
+   "affectedGroups": [
+    "Children",
+    "Youth",
+    "Teachers"
+   ],
+   "stateDifferences": "Larger gains in states with low literacy (e.g. Bihar, UP, Rajasthan).",
+   "implementationChallenges": [
+    "Teacher vacancies",
+    "Learning outcomes vs enrolment"
+   ],
+   "uncertainty": "Quality improvements are hard to deliver.",
+   "humanRightsConcern": "",
+   "lagMonths": 24,
+   "rampMonths": 120,
+   "revenueNote": "",
+   "provenance": {
+    "kind": "assumption",
+    "note": "Effect sizes are indicative modelling assumptions with wide uncertainty."
+   }
+  },
+  {
+   "id": "skills_mission",
+   "name": "National skills mission",
+   "category": "Education",
+   "description": "Apprenticeships and vocational training linked to industry.",
+   "intensityLabel": "100% = ₹15,000 crore per year",
+   "effects": [
+    {
+     "key": "skilled.inflow.skilled",
+     "mode": "add",
+     "full": 400000,
+     "note": ""
+    },
+    {
+     "key": "efficiency.mult.manufacturing",
+     "mode": "mul",
+     "full": 1.03,
+     "note": ""
+    }
+   ],
+   "costCrPerYearAtFull": 15000,
+   "costPctGdpAtFull": 0,
+   "effectiveness": {
+    "low": 0.3,
+    "central": 0.6,
+    "high": 0.85
+   },
+   "benefits": [
+    "More skilled technicians"
+   ],
+   "unintendedConsequences": [
+    "Low placement rates if training is not demand-led"
+   ],
+   "shortTerm": "Training costs.",
+   "longTerm": "Larger skilled workforce.",
+   "affectedGroups": [
+    "Youth",
+    "Industry"
+   ],
+   "stateDifferences": "",
+   "implementationChallenges": [
+    "Industry participation"
+   ],
+   "uncertainty": "Past skill programmes had low placement rates.",
+   "humanRightsConcern": "",
+   "lagMonths": 12,
+   "rampMonths": 36,
+   "revenueNote": "",
+   "provenance": {
+    "kind": "assumption",
+    "note": "Effect sizes are indicative modelling assumptions with wide uncertainty."
+   }
+  },
+  {
+   "id": "health_spending",
+   "name": "Universal health coverage push",
+   "category": "Healthcare",
+   "description": "Raise public health spending, insurance coverage and staffing.",
+   "intensityLabel": "100% = +1.5% of GDP",
+   "effects": [
+    {
+     "key": "health.quality",
+     "mode": "mul",
+     "full": 1.3,
+     "note": ""
+    },
+    {
+     "key": "mortality",
+     "mode": "mul",
+     "full": 0.9,
+     "note": ""
+    }
+   ],
+   "costCrPerYearAtFull": 0,
+   "costPctGdpAtFull": 0.015,
+   "effectiveness": {
+    "low": 0.5,
+    "central": 0.75,
+    "high": 1.0
+   },
+   "benefits": [
+    "Longer life expectancy",
+    "Lower out-of-pocket spending"
+   ],
+   "unintendedConsequences": [
+    "Demand may outstrip doctors and beds"
+   ],
+   "shortTerm": "Higher spending; gradual outcome gains.",
+   "longTerm": "Healthier, more productive population.",
+   "affectedGroups": [
+    "Low-income households",
+    "Elderly"
+   ],
+   "stateDifferences": "Largest gains where infrastructure exists to absorb funds.",
+   "implementationChallenges": [
+    "Doctor shortages in rural areas"
+   ],
+   "uncertainty": "Outcome gains depend on supply-side capacity.",
+   "humanRightsConcern": "",
+   "lagMonths": 12,
+   "rampMonths": 60,
+   "revenueNote": "",
+   "provenance": {
+    "kind": "assumption",
+    "note": "Effect sizes are indicative modelling assumptions with wide uncertainty."
+   }
+  },
+  {
+   "id": "medical_education",
+   "name": "Expand medical education",
+   "category": "Healthcare",
+   "description": "Increase medical seats, nursing and allied-health training.",
+   "intensityLabel": "100% = ₹8,000 crore per year",
+   "effects": [
+    {
+     "key": "skilled.inflow.medical",
+     "mode": "add",
+     "full": 30000,
+     "note": ""
+    }
+   ],
+   "costCrPerYearAtFull": 8000,
+   "costPctGdpAtFull": 0,
+   "effectiveness": {
+    "low": 0.6,
+    "central": 0.8,
+    "high": 0.95
+   },
+   "benefits": [
+    "More doctors and nurses"
+   ],
+   "unintendedConsequences": [
+    "Quality risk in rapid expansion"
+   ],
+   "shortTerm": "Costs only.",
+   "longTerm": "Medical workforce grows after 5-6 years.",
+   "affectedGroups": [
+    "Patients",
+    "Students"
+   ],
+   "stateDifferences": "",
+   "implementationChallenges": [],
+   "uncertainty": "",
+   "humanRightsConcern": "",
+   "lagMonths": 60,
+   "rampMonths": 60,
+   "revenueNote": "",
+   "provenance": {
+    "kind": "assumption",
+    "note": "Effect sizes are indicative modelling assumptions with wide uncertainty."
+   }
+  },
+  {
+   "id": "agri_support",
+   "name": "Agricultural modernisation support",
+   "category": "Agriculture",
+   "description": "Extension services, crop insurance, minimum support and input subsidies.",
+   "intensityLabel": "100% = ₹1 lakh crore per year",
+   "effects": [
+    {
+     "key": "food.yield",
+     "mode": "mul",
+     "full": 1.15,
+     "note": ""
+    },
+    {
+     "key": "legacy.productivity",
+     "mode": "mul",
+     "full": 1.05,
+     "note": ""
+    },
+    {
+     "key": "emissions.mult.agriculture",
+     "mode": "mul",
+     "full": 1.05,
+     "note": ""
+    }
+   ],
+   "costCrPerYearAtFull": 100000,
+   "costPctGdpAtFull": 0,
+   "effectiveness": {
+    "low": 0.4,
+    "central": 0.65,
+    "high": 0.9
+   },
+   "benefits": [
+    "Higher farm incomes",
+    "Food security"
+   ],
+   "unintendedConsequences": [
+    "Input subsidies can encourage over-use of fertiliser and water"
+   ],
+   "shortTerm": "Large recurring cost.",
+   "longTerm": "Higher yields; possible groundwater depletion.",
+   "affectedGroups": [
+    "Farmers",
+    "Rural households"
+   ],
+   "stateDifferences": "Punjab, Haryana, UP gain most from price support; rain-fed states gain more from extension.",
+   "implementationChallenges": [
+    "Targeting",
+    "Fiscal burden"
+   ],
+   "uncertainty": "Yield response varies by region.",
+   "humanRightsConcern": "",
+   "lagMonths": 12,
+   "rampMonths": 36,
+   "revenueNote": "",
+   "provenance": {
+    "kind": "assumption",
+    "note": "Effect sizes are indicative modelling assumptions with wide uncertainty."
+   }
+  },
+  {
+   "id": "residue_management",
+   "name": "Crop-residue management",
+   "category": "Agriculture",
+   "description": "Equipment subsidies and incentives to stop residue burning.",
+   "intensityLabel": "100% = ₹3,000 crore per year",
+   "effects": [
+    {
+     "key": "emissions.mult.residue",
+     "mode": "mul",
+     "full": 0.4,
+     "note": ""
+    }
+   ],
+   "costCrPerYearAtFull": 3000,
+   "costPctGdpAtFull": 0,
+   "effectiveness": {
+    "low": 0.3,
+    "central": 0.6,
+    "high": 0.85
+   },
+   "benefits": [
+    "Large reductions in winter PM2.5 in north India"
+   ],
+   "unintendedConsequences": [
+    "Farmer costs; compliance hard"
+   ],
+   "shortTerm": "Seasonal air-quality gains.",
+   "longTerm": "Sustained if alternatives are economic.",
+   "affectedGroups": [
+    "Farmers in Punjab, Haryana, west UP",
+    "Residents of Indo-Gangetic plain"
+   ],
+   "stateDifferences": "Matters mainly for Punjab and Haryana.",
+   "implementationChallenges": [
+    "Short window between harvests"
+   ],
+   "uncertainty": "Past schemes achieved partial reductions.",
+   "humanRightsConcern": "",
+   "lagMonths": 12,
+   "rampMonths": 36,
+   "revenueNote": "",
+   "provenance": {
+    "kind": "assumption",
+    "note": "Effect sizes are indicative modelling assumptions with wide uncertainty."
+   }
+  },
+  {
+   "id": "skilled_immigration",
+   "name": "Skilled immigration & diaspora return",
+   "category": "Migration & population",
+   "description": "Fast-track visas and incentives for foreign and diaspora engineers and scientists.",
+   "intensityLabel": "100% = up to 5,000 engineers + 3,000 scientists per year",
+   "effects": [
+    {
+     "key": "skilled.inflow.engineer",
+     "mode": "add",
+     "full": 5000,
+     "note": ""
+    },
+    {
+     "key": "skilled.inflow.scientist",
+     "mode": "add",
+     "full": 3000,
+     "note": ""
+    },
+    {
+     "key": "braindrain",
+     "mode": "mul",
+     "full": 0.7,
+     "note": ""
+    }
+   ],
+   "costCrPerYearAtFull": 1000,
+   "costPctGdpAtFull": 0,
+   "effectiveness": {
+    "low": 0.3,
+    "central": 0.6,
+    "high": 0.9
+   },
+   "benefits": [
+    "Rapid access to scarce skills"
+   ],
+   "unintendedConsequences": [
+    "Political resistance"
+   ],
+   "shortTerm": "Small immediate inflow.",
+   "longTerm": "Knowledge transfer accelerates technology maturity.",
+   "affectedGroups": [
+    "Diaspora",
+    "Domestic professionals"
+   ],
+   "stateDifferences": "",
+   "implementationChallenges": [
+    "Competitive global market for talent"
+   ],
+   "uncertainty": "Uptake depends on quality of life and salaries.",
+   "humanRightsConcern": "",
+   "lagMonths": 12,
+   "rampMonths": 36,
+   "revenueNote": "",
+   "provenance": {
+    "kind": "assumption",
+    "note": "Effect sizes are indicative modelling assumptions with wide uncertainty."
+   }
+  },
+  {
+   "id": "urban_migration",
+   "name": "Support rural-to-urban migration",
+   "category": "Migration & population",
+   "description": "Portable welfare benefits, rental housing for migrants, and urban job information.",
+   "intensityLabel": "100% = full portability",
+   "effects": [
+    {
+     "key": "migration.mult",
+     "mode": "mul",
+     "full": 1.8,
+     "note": ""
+    }
+   ],
+   "costCrPerYearAtFull": 5000,
+   "costPctGdpAtFull": 0,
+   "effectiveness": {
+    "low": 0.5,
+    "central": 0.75,
+    "high": 1.0
+   },
+   "benefits": [
+    "Labour moves to jobs",
+    "Higher productivity"
+   ],
+   "unintendedConsequences": [
+    "Urban housing and service pressure"
+   ],
+   "shortTerm": "More migration to job centres.",
+   "longTerm": "Faster urbanisation.",
+   "affectedGroups": [
+    "Migrant workers"
+   ],
+   "stateDifferences": "Origin states (Bihar, UP) lose working-age population; destination states gain.",
+   "implementationChallenges": [
+    "Urban infrastructure capacity"
+   ],
+   "uncertainty": "Migration is driven by many factors.",
+   "humanRightsConcern": "",
+   "lagMonths": 12,
+   "rampMonths": 36,
+   "revenueNote": "",
+   "provenance": {
+    "kind": "assumption",
+    "note": "Effect sizes are indicative modelling assumptions with wide uncertainty."
+   }
+  },
+  {
+   "id": "family_planning",
+   "name": "Voluntary family-planning & reproductive health",
+   "category": "Migration & population",
+   "description": "Expand access to contraception, maternal health and girls' education (voluntary, rights-based).",
+   "intensityLabel": "100% = ₹10,000 crore per year",
+   "effects": [
+    {
+     "key": "tfr",
+     "mode": "mul",
+     "full": 0.9,
+     "note": ""
+    },
+    {
+     "key": "mortality",
+     "mode": "mul",
+     "full": 0.98,
+     "note": ""
+    }
+   ],
+   "costCrPerYearAtFull": 10000,
+   "costPctGdpAtFull": 0,
+   "effectiveness": {
+    "low": 0.5,
+    "central": 0.75,
+    "high": 1.0
+   },
+   "benefits": [
+    "Lower unmet need for contraception",
+    "Better maternal and child health"
+   ],
+   "unintendedConsequences": [
+    "Faster population ageing in the long run"
+   ],
+   "shortTerm": "Small effect on births within a few years.",
+   "longTerm": "Lower fertility, older age structure, higher pension needs.",
+   "affectedGroups": [
+    "Women",
+    "Young couples"
+   ],
+   "stateDifferences": "Largest effect in states with high TFR (Bihar, UP, Meghalaya).",
+   "implementationChallenges": [
+    "Reaching rural women"
+   ],
+   "uncertainty": "Effect size depends on existing unmet need.",
+   "humanRightsConcern": "",
+   "lagMonths": 12,
+   "rampMonths": 60,
+   "revenueNote": "",
+   "provenance": {
+    "kind": "assumption",
+    "note": "Effect sizes are indicative modelling assumptions with wide uncertainty."
+   }
+  },
+  {
+   "id": "pronatal_incentives",
+   "name": "Pro-natal incentives",
+   "category": "Migration & population",
+   "description": "Child benefits, parental leave and childcare subsidies to raise fertility.",
+   "intensityLabel": "100% = 0.5% of GDP",
+   "effects": [
+    {
+     "key": "tfr",
+     "mode": "mul",
+     "full": 1.06,
+     "note": ""
+    },
+    {
+     "key": "lfp",
+     "mode": "add",
+     "full": -0.005,
+     "note": ""
+    }
+   ],
+   "costCrPerYearAtFull": 0,
+   "costPctGdpAtFull": 0.005,
+   "effectiveness": {
+    "low": 0.2,
+    "central": 0.5,
+    "high": 0.8
+   },
+   "benefits": [
+    "Slows ageing in the long run"
+   ],
+   "unintendedConsequences": [
+    "High cost per additional birth",
+    "May reduce female labour participation"
+   ],
+   "shortTerm": "Costs rise immediately.",
+   "longTerm": "Small fertility effect; evidence from other countries is modest.",
+   "affectedGroups": [
+    "Families with children",
+    "Women"
+   ],
+   "stateDifferences": "",
+   "implementationChallenges": [],
+   "uncertainty": "International evidence suggests small effects.",
+   "humanRightsConcern": "",
+   "lagMonths": 12,
+   "rampMonths": 36,
+   "revenueNote": "",
+   "provenance": {
+    "kind": "assumption",
+    "note": "Effect sizes are indicative modelling assumptions with wide uncertainty."
+   }
+  },
+  {
+   "id": "two_child_penalties",
+   "name": "Two-child norm with penalties (coercive)",
+   "category": "Migration & population",
+   "description": "Penalise families with more than two children (loss of benefits, ineligibility for local office or government jobs).",
+   "intensityLabel": "100% = strict national enforcement",
+   "effects": [
+    {
+     "key": "tfr",
+     "mode": "mul",
+     "full": 0.95,
+     "note": ""
+    },
+    {
+     "key": "governance.trust",
+     "mode": "add",
+     "full": -0.15,
+     "note": ""
+    },
+    {
+     "key": "efficiency.mult.all",
+     "mode": "mul",
+     "full": 0.98,
+     "note": ""
+    },
+    {
+     "key": "sexratio.distortion",
+     "mode": "add",
+     "full": 0.03,
+     "note": ""
+    },
+    {
+     "key": "health.quality",
+     "mode": "mul",
+     "full": 0.95,
+     "note": ""
+    }
+   ],
+   "costCrPerYearAtFull": 2000,
+   "costPctGdpAtFull": 0,
+   "effectiveness": {
+    "low": 0.1,
+    "central": 0.3,
+    "high": 0.6
+   },
+   "benefits": [
+    "Small additional reduction in fertility (evidence weak)"
+   ],
+   "unintendedConsequences": [
+    "Punishes children and poor families for parents' choices",
+    "Increases sex-selective abortion and abandonment of girls",
+    "Discourages birth registration",
+    "Excludes women and marginalised groups from political office"
+   ],
+   "shortTerm": "Immediate social backlash; exclusion of poorer households.",
+   "longTerm": "Distorted sex ratios, loss of trust in government, little extra fertility decline beyond voluntary trends.",
+   "affectedGroups": [
+    "Poor households",
+    "Women",
+    "Children",
+    "Scheduled Castes/Tribes (disproportionately affected)"
+   ],
+   "stateDifferences": "Some Indian states have applied such rules to local-body elections; studies found weak fertility effects and harm to women.",
+   "implementationChallenges": [
+    "Legal and constitutional challenges",
+    "Enforcement against vulnerable groups"
+   ],
+   "uncertainty": "Very uncertain fertility effect; harms are well documented.",
+   "humanRightsConcern": "This is a coercive policy. It conflicts with reproductive rights recognised in international human-rights law (e.g. ICPD Programme of Action) and penalises children. The simulator models its social harms, not just its intended effect.",
+   "lagMonths": 12,
+   "rampMonths": 36,
+   "revenueNote": "",
+   "provenance": {
+    "kind": "assumption",
+    "note": "Effect sizes are indicative modelling assumptions with wide uncertainty."
+   }
+  },
+  {
+   "id": "renewable_push",
+   "name": "Renewable energy push",
+   "category": "Energy",
+   "description": "Viability-gap funding, green-energy corridors and renewable purchase obligations.",
+   "intensityLabel": "100% = capex support of 25% for renewables + storage",
+   "effects": [
+    {
+     "key": "capex.publicShare.tag.renewable",
+     "mode": "add",
+     "full": 0.25,
+     "note": ""
+    },
+    {
+     "key": "capex.mult.tag.renewable",
+     "mode": "mul",
+     "full": 0.92,
+     "note": ""
+    },
+    {
+     "key": "capex.mult.tag.storage",
+     "mode": "mul",
+     "full": 0.92,
+     "note": ""
+    },
+    {
+     "key": "tech.points.energy",
+     "mode": "add",
+     "full": 20,
+     "note": ""
+    }
+   ],
+   "costCrPerYearAtFull": 8000,
+   "costPctGdpAtFull": 0,
+   "effectiveness": {
+    "low": 0.6,
+    "central": 0.8,
+    "high": 1.0
+   },
+   "benefits": [
+    "Cleaner electricity",
+    "Lower fuel imports"
+   ],
+   "unintendedConsequences": [
+    "Grid-integration costs and reliability challenges without storage"
+   ],
+   "shortTerm": "Subsidy costs.",
+   "longTerm": "Lower emissions and fuel import bills.",
+   "affectedGroups": [
+    "Power consumers",
+    "Renewable developers"
+   ],
+   "stateDifferences": "Rajasthan, Gujarat, Tamil Nadu, Karnataka have the best resources.",
+   "implementationChallenges": [
+    "Transmission build-out",
+    "Land"
+   ],
+   "uncertainty": "Cost declines may be faster or slower than assumed.",
+   "humanRightsConcern": "",
+   "lagMonths": 12,
+   "rampMonths": 36,
+   "revenueNote": "",
+   "provenance": {
+    "kind": "assumption",
+    "note": "Effect sizes are indicative modelling assumptions with wide uncertainty."
+   }
+  },
+  {
+   "id": "coal_phase_down",
+   "name": "Coal phase-down",
+   "category": "Energy",
+   "description": "No new coal plants; carbon price on existing coal generation.",
+   "intensityLabel": "100% = ₹1,500/t CO2 equivalent carbon charge",
+   "effects": [
+    {
+     "key": "emissions.mult.coal",
+     "mode": "mul",
+     "full": 0.85,
+     "note": ""
+    },
+    {
+     "key": "efficiency.mult.tag.coal_power",
+     "mode": "mul",
+     "full": 0.85,
+     "note": ""
+    },
+    {
+     "key": "tax.rate",
+     "mode": "add",
+     "full": 0.003,
+     "note": ""
+    }
+   ],
+   "costCrPerYearAtFull": 0,
+   "costPctGdpAtFull": 0,
+   "effectiveness": {
+    "low": 0.6,
+    "central": 0.8,
+    "high": 1.0
+   },
+   "benefits": [
+    "Lower CO2 and air pollution"
+   ],
+   "unintendedConsequences": [
+    "Higher power prices",
+    "Job losses in coal regions (Jharkhand, Chhattisgarh, Odisha)"
+   ],
+   "shortTerm": "Lower coal output; possible shortages if replacements lag.",
+   "longTerm": "Decarbonised power system.",
+   "affectedGroups": [
+    "Coal workers",
+    "Electricity consumers"
+   ],
+   "stateDifferences": "Coal-dependent eastern states face transition costs.",
+   "implementationChallenges": [
+    "Just transition for coal regions"
+   ],
+   "uncertainty": "Depends on replacement capacity.",
+   "humanRightsConcern": "",
+   "lagMonths": 12,
+   "rampMonths": 36,
+   "revenueNote": "",
+   "provenance": {
+    "kind": "assumption",
+    "note": "Effect sizes are indicative modelling assumptions with wide uncertainty."
+   }
+  },
+  {
+   "id": "energy_efficiency",
+   "name": "Energy efficiency standards",
+   "category": "Energy",
+   "description": "Appliance, building and industrial efficiency standards.",
+   "intensityLabel": "100% = full-strength standards",
+   "effects": [
+    {
+     "key": "power.demand",
+     "mode": "mul",
+     "full": 0.9,
+     "note": ""
+    }
+   ],
+   "costCrPerYearAtFull": 2000,
+   "costPctGdpAtFull": 0,
+   "effectiveness": {
+    "low": 0.5,
+    "central": 0.75,
+    "high": 0.95
+   },
+   "benefits": [
+    "Lower electricity demand growth"
+   ],
+   "unintendedConsequences": [
+    "Higher upfront costs for consumers"
+   ],
+   "shortTerm": "Gradual.",
+   "longTerm": "Up to 10% lower demand.",
+   "affectedGroups": [
+    "Consumers",
+    "Manufacturers"
+   ],
+   "stateDifferences": "",
+   "implementationChallenges": [],
+   "uncertainty": "",
+   "humanRightsConcern": "",
+   "lagMonths": 12,
+   "rampMonths": 60,
+   "revenueNote": "",
+   "provenance": {
+    "kind": "assumption",
+    "note": "Effect sizes are indicative modelling assumptions with wide uncertainty."
+   }
+  },
+  {
+   "id": "industrial_pollution",
+   "name": "Strict industrial pollution control",
+   "category": "Environment",
+   "description": "Tighter emission standards, continuous monitoring and enforcement.",
+   "intensityLabel": "100% = full enforcement",
+   "effects": [
+    {
+     "key": "emissions.mult.industry",
+     "mode": "mul",
+     "full": 0.6,
+     "note": ""
+    },
+    {
+     "key": "emissions.mult.power",
+     "mode": "mul",
+     "full": 0.7,
+     "note": ""
+    },
+    {
+     "key": "opex.mult.industry",
+     "mode": "mul",
+     "full": 1.05,
+     "note": ""
+    },
+    {
+     "key": "efficiency.mult.manufacturing",
+     "mode": "mul",
+     "full": 0.98,
+     "note": ""
+    }
+   ],
+   "costCrPerYearAtFull": 3000,
+   "costPctGdpAtFull": 0,
+   "effectiveness": {
+    "low": 0.4,
+    "central": 0.65,
+    "high": 0.9
+   },
+   "benefits": [
+    "Cleaner air near industrial clusters"
+   ],
+   "unintendedConsequences": [
+    "Higher compliance costs; small firms may close"
+   ],
+   "shortTerm": "Compliance costs.",
+   "longTerm": "Lower PM2.5 and SO2.",
+   "affectedGroups": [
+    "Industry",
+    "Residents near industry"
+   ],
+   "stateDifferences": "",
+   "implementationChallenges": [
+    "Weak enforcement capacity of pollution control boards"
+   ],
+   "uncertainty": "Enforcement historically uneven.",
+   "humanRightsConcern": "",
+   "lagMonths": 12,
+   "rampMonths": 36,
+   "revenueNote": "",
+   "provenance": {
+    "kind": "assumption",
+    "note": "Effect sizes are indicative modelling assumptions with wide uncertainty."
+   }
+  },
+  {
+   "id": "clean_cooking",
+   "name": "Clean cooking & household energy",
+   "category": "Environment",
+   "description": "LPG/electric cooking subsidies and refills for poor households.",
+   "intensityLabel": "100% = ₹15,000 crore per year",
+   "effects": [
+    {
+     "key": "emissions.mult.household",
+     "mode": "mul",
+     "full": 0.6,
+     "note": ""
+    }
+   ],
+   "costCrPerYearAtFull": 15000,
+   "costPctGdpAtFull": 0,
+   "effectiveness": {
+    "low": 0.4,
+    "central": 0.65,
+    "high": 0.9
+   },
+   "benefits": [
+    "Large health gains from lower household air pollution"
+   ],
+   "unintendedConsequences": [
+    "Recurring subsidy cost; refill rates may stay low"
+   ],
+   "shortTerm": "Costs and partial uptake.",
+   "longTerm": "Lower PM2.5, especially for women and children.",
+   "affectedGroups": [
+    "Rural women",
+    "Children"
+   ],
+   "stateDifferences": "Largest effect in states with high biomass use (Bihar, Jharkhand, Odisha, UP).",
+   "implementationChallenges": [],
+   "uncertainty": "Sustained use of clean fuels is uncertain.",
+   "humanRightsConcern": "",
+   "lagMonths": 12,
+   "rampMonths": 36,
+   "revenueNote": "",
+   "provenance": {
+    "kind": "assumption",
+    "note": "Effect sizes are indicative modelling assumptions with wide uncertainty."
+   }
+  },
+  {
+   "id": "vehicle_standards",
+   "name": "Vehicle emission standards & EV incentives",
+   "category": "Environment",
+   "description": "Tighter fuel/emission standards and EV purchase incentives.",
+   "intensityLabel": "100% = full",
+   "effects": [
+    {
+     "key": "emissions.mult.transport",
+     "mode": "mul",
+     "full": 0.65,
+     "note": ""
+    },
+    {
+     "key": "goods.demand.electric_vehicle",
+     "mode": "mul",
+     "full": 2.0,
+     "note": ""
+    }
+   ],
+   "costCrPerYearAtFull": 5000,
+   "costPctGdpAtFull": 0,
+   "effectiveness": {
+    "low": 0.5,
+    "central": 0.75,
+    "high": 0.95
+   },
+   "benefits": [
+    "Lower urban NO2 and PM"
+   ],
+   "unintendedConsequences": [
+    "Higher vehicle costs"
+   ],
+   "shortTerm": "Gradual fleet turnover.",
+   "longTerm": "Cleaner urban air.",
+   "affectedGroups": [
+    "Urban residents",
+    "Vehicle owners"
+   ],
+   "stateDifferences": "",
+   "implementationChallenges": [],
+   "uncertainty": "",
+   "humanRightsConcern": "",
+   "lagMonths": 12,
+   "rampMonths": 36,
+   "revenueNote": "",
+   "provenance": {
+    "kind": "assumption",
+    "note": "Effect sizes are indicative modelling assumptions with wide uncertainty."
+   }
+  },
+  {
+   "id": "import_tariffs",
+   "name": "Protective import tariffs",
+   "category": "Trade",
+   "description": "Raise tariffs on manufactured imports to protect domestic industry.",
+   "intensityLabel": "100% = +20% average tariff",
+   "effects": [
+    {
+     "key": "import.cost",
+     "mode": "mul",
+     "full": 1.2,
+     "note": ""
+    },
+    {
+     "key": "efficiency.mult.manufacturing",
+     "mode": "mul",
+     "full": 1.03,
+     "note": ""
+    },
+    {
+     "key": "tax.rate",
+     "mode": "add",
+     "full": 0.004,
+     "note": ""
+    },
+    {
+     "key": "legacy.productivity",
+     "mode": "mul",
+     "full": 0.99,
+     "note": ""
+    }
+   ],
+   "costCrPerYearAtFull": 0,
+   "costPctGdpAtFull": 0,
+   "effectiveness": {
+    "low": 0.6,
+    "central": 0.8,
+    "high": 1.0
+   },
+   "benefits": [
+    "Protects infant industries",
+    "Tariff revenue"
+   ],
+   "unintendedConsequences": [
+    "Higher input costs for downstream industries",
+    "Retaliation; lower export competitiveness"
+   ],
+   "shortTerm": "Revenue and higher prices.",
+   "longTerm": "Can entrench inefficient firms.",
+   "affectedGroups": [
+    "Consumers",
+    "Domestic producers"
+   ],
+   "stateDifferences": "",
+   "implementationChallenges": [],
+   "uncertainty": "Long-run effects on productivity often negative.",
+   "humanRightsConcern": "",
+   "lagMonths": 12,
+   "rampMonths": 36,
+   "revenueNote": "",
+   "provenance": {
+    "kind": "assumption",
+    "note": "Effect sizes are indicative modelling assumptions with wide uncertainty."
+   }
+  },
+  {
+   "id": "export_promotion",
+   "name": "Export promotion & trade agreements",
+   "category": "Trade",
+   "description": "Export credit, logistics support and trade agreements.",
+   "intensityLabel": "100% = full",
+   "effects": [
+    {
+     "key": "export.share",
+     "mode": "mul",
+     "full": 1.2,
+     "note": ""
+    },
+    {
+     "key": "efficiency.mult.manufacturing",
+     "mode": "mul",
+     "full": 1.02,
+     "note": ""
+    }
+   ],
+   "costCrPerYearAtFull": 6000,
+   "costPctGdpAtFull": 0,
+   "effectiveness": {
+    "low": 0.5,
+    "central": 0.7,
+    "high": 0.9
+   },
+   "benefits": [
+    "More exports"
+   ],
+   "unintendedConsequences": [
+    "Exposure to global demand shocks"
+   ],
+   "shortTerm": "Costs.",
+   "longTerm": "Larger export base.",
+   "affectedGroups": [
+    "Exporters"
+   ],
+   "stateDifferences": "",
+   "implementationChallenges": [],
+   "uncertainty": "",
+   "humanRightsConcern": "",
+   "lagMonths": 12,
+   "rampMonths": 36,
+   "revenueNote": "",
+   "provenance": {
+    "kind": "assumption",
+    "note": "Effect sizes are indicative modelling assumptions with wide uncertainty."
+   }
+  },
+  {
+   "id": "labour_reform",
+   "name": "Labour-code simplification",
+   "category": "Labour",
+   "description": "Simplify hiring, compliance and contract rules while keeping core protections.",
+   "intensityLabel": "100% = full reform",
+   "effects": [
+    {
+     "key": "efficiency.mult.manufacturing",
+     "mode": "mul",
+     "full": 1.04,
+     "note": ""
+    },
+    {
+     "key": "private.investment",
+     "mode": "mul",
+     "full": 1.05,
+     "note": ""
+    },
+    {
+     "key": "governance.trust",
+     "mode": "add",
+     "full": -0.02,
+     "note": ""
+    }
+   ],
+   "costCrPerYearAtFull": 0,
+   "costPctGdpAtFull": 0,
+   "effectiveness": {
+    "low": 0.3,
+    "central": 0.6,
+    "high": 0.9
+   },
+   "benefits": [
+    "More formal hiring"
+   ],
+   "unintendedConsequences": [
+    "Weaker job security; protests"
+   ],
+   "shortTerm": "Possible unrest.",
+   "longTerm": "Larger formal sector if paired with skills.",
+   "affectedGroups": [
+    "Workers",
+    "Employers"
+   ],
+   "stateDifferences": "",
+   "implementationChallenges": [
+    "Union opposition"
+   ],
+   "uncertainty": "Evidence on job creation is mixed.",
+   "humanRightsConcern": "",
+   "lagMonths": 12,
+   "rampMonths": 36,
+   "revenueNote": "",
+   "provenance": {
+    "kind": "assumption",
+    "note": "Effect sizes are indicative modelling assumptions with wide uncertainty."
+   }
+  },
+  {
+   "id": "minimum_wage",
+   "name": "Raise minimum wages",
+   "category": "Labour",
+   "description": "Higher statutory minimum wages.",
+   "intensityLabel": "100% = +30% minimum wage",
+   "effects": [
+    {
+     "key": "legacy.productivity",
+     "mode": "mul",
+     "full": 1.02,
+     "note": ""
+    },
+    {
+     "key": "efficiency.mult.labour_intensive",
+     "mode": "mul",
+     "full": 0.95,
+     "note": ""
+    },
+    {
+     "key": "tfr",
+     "mode": "mul",
+     "full": 1.0,
+     "note": ""
+    }
+   ],
+   "costCrPerYearAtFull": 0,
+   "costPctGdpAtFull": 0,
+   "effectiveness": {
+    "low": 0.5,
+    "central": 0.7,
+    "high": 0.9
+   },
+   "benefits": [
+    "Higher incomes for low-paid workers"
+   ],
+   "unintendedConsequences": [
+    "Labour-intensive firms may cut formal hiring"
+   ],
+   "shortTerm": "",
+   "longTerm": "",
+   "affectedGroups": [
+    "Low-wage workers",
+    "Small firms"
+   ],
+   "stateDifferences": "",
+   "implementationChallenges": [],
+   "uncertainty": "Employment effects are debated.",
+   "humanRightsConcern": "",
+   "lagMonths": 12,
+   "rampMonths": 36,
+   "revenueNote": "",
+   "provenance": {
+    "kind": "assumption",
+    "note": "Effect sizes are indicative modelling assumptions with wide uncertainty."
+   }
+  },
+  {
+   "id": "affordable_housing_policy",
+   "name": "Affordable housing programme",
+   "category": "Housing",
+   "description": "Interest subsidies and capital grants for affordable housing.",
+   "intensityLabel": "100% = capex support 40% on affordable housing",
+   "effects": [
+    {
+     "key": "capex.mult.tag.affordable",
+     "mode": "mul",
+     "full": 0.6,
+     "note": ""
+    },
+    {
+     "key": "capex.mult.tag.rural_housing",
+     "mode": "mul",
+     "full": 0.6,
+     "note": ""
+    }
+   ],
+   "costCrPerYearAtFull": 15000,
+   "costPctGdpAtFull": 0,
+   "effectiveness": {
+    "low": 0.6,
+    "central": 0.8,
+    "high": 1.0
+   },
+   "benefits": [
+    "Lower-cost housing"
+   ],
+   "unintendedConsequences": [
+    "Construction in peripheral areas with poor access"
+   ],
+   "shortTerm": "Subsidy costs.",
+   "longTerm": "Smaller housing shortage.",
+   "affectedGroups": [
+    "Low-income households",
+    "Construction workers"
+   ],
+   "stateDifferences": "",
+   "implementationChallenges": [],
+   "uncertainty": "",
+   "humanRightsConcern": "",
+   "lagMonths": 12,
+   "rampMonths": 36,
+   "revenueNote": "",
+   "provenance": {
+    "kind": "assumption",
+    "note": "Effect sizes are indicative modelling assumptions with wide uncertainty."
+   }
+  },
+  {
+   "id": "rental_housing",
+   "name": "Rental housing & land-use reform",
+   "category": "Housing",
+   "description": "Higher floor-area ratios, rent-control reform, land titling.",
+   "intensityLabel": "100% = full reform",
+   "effects": [
+    {
+     "key": "capex.mult.Residential & Urban",
+     "mode": "mul",
+     "full": 0.85,
+     "note": ""
+    },
+    {
+     "key": "migration.mult",
+     "mode": "mul",
+     "full": 1.1,
+     "note": ""
+    }
+   ],
+   "costCrPerYearAtFull": 500,
+   "costPctGdpAtFull": 0,
+   "effectiveness": {
+    "low": 0.3,
+    "central": 0.6,
+    "high": 0.9
+   },
+   "benefits": [
+    "Cheaper urban housing"
+   ],
+   "unintendedConsequences": [
+    "Densification strains infrastructure"
+   ],
+   "shortTerm": "",
+   "longTerm": "",
+   "affectedGroups": [
+    "Renters",
+    "Developers"
+   ],
+   "stateDifferences": "",
+   "implementationChallenges": [
+    "State-level land laws"
+   ],
+   "uncertainty": "",
+   "humanRightsConcern": "",
+   "lagMonths": 12,
+   "rampMonths": 36,
+   "revenueNote": "",
+   "provenance": {
+    "kind": "assumption",
+    "note": "Effect sizes are indicative modelling assumptions with wide uncertainty."
+   }
+  },
+  {
+   "id": "infrastructure_maintenance",
+   "name": "Infrastructure maintenance fund",
+   "category": "Infrastructure",
+   "description": "Dedicated maintenance budgets for public assets.",
+   "intensityLabel": "100% = maintenance at 1.5x baseline",
+   "effects": [
+    {
+     "key": "opex.mult.public",
+     "mode": "mul",
+     "full": 1.5,
+     "note": ""
+    },
+    {
+     "key": "efficiency.mult.all",
+     "mode": "mul",
+     "full": 1.04,
+     "note": ""
+    }
+   ],
+   "costCrPerYearAtFull": 0,
+   "costPctGdpAtFull": 0,
+   "effectiveness": {
+    "low": 0.7,
+    "central": 0.85,
+    "high": 1.0
+   },
+   "benefits": [
+    "Assets perform better and last longer"
+   ],
+   "unintendedConsequences": [
+    "Recurring cost"
+   ],
+   "shortTerm": "",
+   "longTerm": "",
+   "affectedGroups": [
+    "All users of public infrastructure"
+   ],
+   "stateDifferences": "",
+   "implementationChallenges": [],
+   "uncertainty": "",
+   "humanRightsConcern": "",
+   "lagMonths": 12,
+   "rampMonths": 36,
+   "revenueNote": "",
+   "provenance": {
+    "kind": "assumption",
+    "note": "Effect sizes are indicative modelling assumptions with wide uncertainty."
+   }
+  },
+  {
+   "id": "ppp_programme",
+   "name": "Public-private partnership programme",
+   "category": "Infrastructure",
+   "description": "Private developers finance a share of infrastructure in exchange for long-term availability payments.",
+   "intensityLabel": "100% = private finance 40% of eligible capex",
+   "effects": [
+    {
+     "key": "capex.publicShare.public",
+     "mode": "add",
+     "full": -0.4,
+     "note": ""
+    },
+    {
+     "key": "opex.mult.public",
+     "mode": "mul",
+     "full": 1.15,
+     "note": ""
+    },
+    {
+     "key": "private.investment",
+     "mode": "mul",
+     "full": 1.05,
+     "note": ""
+    }
+   ],
+   "costCrPerYearAtFull": 0,
+   "costPctGdpAtFull": 0,
+   "effectiveness": {
+    "low": 0.5,
+    "central": 0.7,
+    "high": 0.9
+   },
+   "benefits": [
+    "Less upfront public spending"
+   ],
+   "unintendedConsequences": [
+    "Long-term payment obligations",
+    "Contract disputes"
+   ],
+   "shortTerm": "Lower capex burden.",
+   "longTerm": "Higher recurring payments.",
+   "affectedGroups": [
+    "Taxpayers",
+    "Infrastructure firms"
+   ],
+   "stateDifferences": "",
+   "implementationChallenges": [],
+   "uncertainty": "Indian PPP experience is mixed (many stalled projects in 2010s).",
+   "humanRightsConcern": "",
+   "lagMonths": 12,
+   "rampMonths": 36,
+   "revenueNote": "",
+   "provenance": {
+    "kind": "assumption",
+    "note": "Effect sizes are indicative modelling assumptions with wide uncertainty."
+   }
+  },
+  {
+   "id": "land_acquisition_reform",
+   "name": "Land-acquisition facilitation",
+   "category": "Infrastructure",
+   "description": "Faster land acquisition with fair compensation and resettlement.",
+   "intensityLabel": "100% = full",
+   "effects": [
+    {
+     "key": "construction.speed",
+     "mode": "mul",
+     "full": 1.15,
+     "note": ""
+    },
+    {
+     "key": "governance.trust",
+     "mode": "add",
+     "full": -0.01,
+     "note": ""
+    }
+   ],
+   "costCrPerYearAtFull": 3000,
+   "costPctGdpAtFull": 0,
+   "effectiveness": {
+    "low": 0.4,
+    "central": 0.6,
+    "high": 0.85
+   },
+   "benefits": [
+    "Faster construction"
+   ],
+   "unintendedConsequences": [
+    "Displacement disputes"
+   ],
+   "shortTerm": "",
+   "longTerm": "",
+   "affectedGroups": [
+    "Landowners",
+    "Tribal communities"
+   ],
+   "stateDifferences": "",
+   "implementationChallenges": [],
+   "uncertainty": "",
+   "humanRightsConcern": "Must respect consent and rehabilitation requirements (LARR Act 2013).",
+   "lagMonths": 12,
+   "rampMonths": 36,
+   "revenueNote": "",
+   "provenance": {
+    "kind": "assumption",
+    "note": "Effect sizes are indicative modelling assumptions with wide uncertainty."
+   }
+  },
+  {
+   "id": "governance_reform",
+   "name": "Administrative & judicial capacity",
+   "category": "Governance",
+   "description": "More judges, digital services, and state capacity investments.",
+   "intensityLabel": "100% = ₹10,000 crore per year",
+   "effects": [
+    {
+     "key": "governance.trust",
+     "mode": "add",
+     "full": 0.05,
+     "note": ""
+    },
+    {
+     "key": "efficiency.mult.all",
+     "mode": "mul",
+     "full": 1.03,
+     "note": ""
+    },
+    {
+     "key": "private.investment",
+     "mode": "mul",
+     "full": 1.05,
+     "note": ""
+    }
+   ],
+   "costCrPerYearAtFull": 10000,
+   "costPctGdpAtFull": 0,
+   "effectiveness": {
+    "low": 0.4,
+    "central": 0.65,
+    "high": 0.9
+   },
+   "benefits": [
+    "All policies work better"
+   ],
+   "unintendedConsequences": [],
+   "shortTerm": "Slow.",
+   "longTerm": "Institutional quality improves.",
+   "affectedGroups": [
+    "Citizens",
+    "Businesses"
+   ],
+   "stateDifferences": "",
+   "implementationChallenges": [],
+   "uncertainty": "",
+   "humanRightsConcern": "",
+   "lagMonths": 24,
+   "rampMonths": 96,
+   "revenueNote": "",
+   "provenance": {
+    "kind": "assumption",
+    "note": "Effect sizes are indicative modelling assumptions with wide uncertainty."
+   }
+  }
+ ]
+}

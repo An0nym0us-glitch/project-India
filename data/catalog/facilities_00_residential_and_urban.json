@@ -1,0 +1,514 @@
+{
+ "category": "Residential & Urban",
+ "note": "Indicative modelling assumptions; see provenance on each entry.",
+ "facilities": [
+  {
+   "id": "village_cluster",
+   "name": "Village development cluster (500 homes)",
+   "category": "Residential & Urban",
+   "subcategory": "Rural housing",
+   "industry": "Construction",
+   "function": "Rural housing",
+   "description": "Clustered rural housing with basic internal roads, drainage and community spaces for ~500 households.",
+   "purpose": "Improves rural housing quality and capacity; prerequisite for rural service delivery.",
+   "capexCr": 15,
+   "constructionMonths": 12,
+   "landHa": 20,
+   "opexCrPerYear": 0.45,
+   "powerDemandMW": 0.3,
+   "waterDemandMLD": 0.15,
+   "constructionJobs": 300,
+   "operationsJobs": {},
+   "outputs": {
+    "housingPersons": 2300
+   },
+   "inputs": [],
+   "requires": {},
+   "emissions": {},
+   "tags": [
+    "housing",
+    "rural_housing"
+   ],
+   "technologies": [],
+   "risks": [
+    "Low density raises per-capita cost of utilities",
+    "Needs road access for services"
+   ],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "PMAY-G unit assistance ≈₹1.2-1.3 lakh plus beneficiary & infrastructure share (≈₹3 lakh/home)",
+    "source": ""
+   }
+  },
+  {
+   "id": "residential_building",
+   "name": "Residential building (100 units)",
+   "category": "Residential & Urban",
+   "subcategory": "Housing",
+   "industry": "Construction",
+   "function": "Housing",
+   "description": "Mid-rise apartment building with 100 dwelling units.",
+   "purpose": "Adds urban housing in small increments.",
+   "capexCr": 35,
+   "constructionMonths": 18,
+   "landHa": 0.5,
+   "opexCrPerYear": 1.05,
+   "powerDemandMW": 0.4,
+   "waterDemandMLD": 0.06,
+   "constructionJobs": 150,
+   "operationsJobs": {},
+   "outputs": {
+    "housingPersons": 450
+   },
+   "inputs": [],
+   "requires": {
+    "urban": true,
+    "transport": [
+     "road"
+    ]
+   },
+   "emissions": {},
+   "tags": [
+    "housing",
+    "urban_housing"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "≈₹35 lakh per unit construction cost incl. common areas",
+    "source": ""
+   }
+  },
+  {
+   "id": "affordable_housing",
+   "name": "Affordable housing project (2,000 units)",
+   "category": "Residential & Urban",
+   "subcategory": "Housing",
+   "industry": "Construction",
+   "function": "Housing",
+   "description": "EWS/LIG housing project of 2,000 compact units with shared amenities.",
+   "purpose": "Reduces urban housing shortage for low-income households.",
+   "capexCr": 220,
+   "constructionMonths": 24,
+   "landHa": 10,
+   "opexCrPerYear": 6.6,
+   "powerDemandMW": 4,
+   "waterDemandMLD": 1.2,
+   "constructionJobs": 1200,
+   "operationsJobs": {},
+   "outputs": {
+    "housingPersons": 9000
+   },
+   "inputs": [],
+   "requires": {
+    "transport": [
+     "road"
+    ]
+   },
+   "emissions": {},
+   "tags": [
+    "housing",
+    "urban_housing",
+    "affordable"
+   ],
+   "technologies": [],
+   "risks": [
+    "Peripheral locations can increase commute times",
+    "Quality and maintenance risks"
+   ],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "≈₹11 lakh per unit (PMAY-U AHP-type projects)",
+    "source": ""
+   }
+  },
+  {
+   "id": "apartment_complex",
+   "name": "Apartment complex (1,000 units)",
+   "category": "Residential & Urban",
+   "subcategory": "Housing",
+   "industry": "Construction",
+   "function": "Housing",
+   "description": "Mid-income apartment complex.",
+   "purpose": "Urban housing capacity.",
+   "capexCr": 420,
+   "constructionMonths": 30,
+   "landHa": 4,
+   "opexCrPerYear": 12.6,
+   "powerDemandMW": 3,
+   "waterDemandMLD": 0.6,
+   "constructionJobs": 800,
+   "operationsJobs": {},
+   "outputs": {
+    "housingPersons": 4500
+   },
+   "inputs": [],
+   "requires": {
+    "transport": [
+     "road"
+    ],
+    "urban": true
+   },
+   "emissions": {},
+   "tags": [
+    "housing",
+    "urban_housing"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "≈₹42 lakh per unit",
+    "source": ""
+   }
+  },
+  {
+   "id": "highrise_towers",
+   "name": "High-rise residential towers (3,000 units)",
+   "category": "Residential & Urban",
+   "subcategory": "Housing",
+   "industry": "Construction",
+   "function": "Housing",
+   "description": "High-density tower cluster; efficient land use but heavy utility loads.",
+   "purpose": "Dense urban housing.",
+   "capexCr": 1800,
+   "constructionMonths": 42,
+   "landHa": 6,
+   "opexCrPerYear": 54.0,
+   "powerDemandMW": 12,
+   "waterDemandMLD": 1.9,
+   "constructionJobs": 2500,
+   "operationsJobs": {},
+   "outputs": {
+    "housingPersons": 13500
+   },
+   "inputs": [],
+   "requires": {
+    "transport": [
+     "road"
+    ],
+    "urban": true
+   },
+   "emissions": {},
+   "tags": [
+    "housing",
+    "urban_housing",
+    "high_density"
+   ],
+   "technologies": [],
+   "risks": [
+    "High water and sewage load concentrated in one location",
+    "Traffic congestion without transit"
+   ],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "≈₹60 lakh per unit",
+    "source": ""
+   }
+  },
+  {
+   "id": "luxury_apartments",
+   "name": "Luxury apartments (500 units)",
+   "category": "Residential & Urban",
+   "subcategory": "Housing",
+   "industry": "Construction",
+   "function": "Housing",
+   "description": "Premium residential development.",
+   "purpose": "High-income housing; limited effect on shortage.",
+   "capexCr": 1500,
+   "constructionMonths": 36,
+   "landHa": 5,
+   "opexCrPerYear": 45.0,
+   "powerDemandMW": 5,
+   "waterDemandMLD": 0.5,
+   "constructionJobs": 900,
+   "operationsJobs": {},
+   "outputs": {
+    "housingPersons": 2000
+   },
+   "inputs": [],
+   "requires": {
+    "transport": [
+     "road"
+    ],
+    "urban": true
+   },
+   "emissions": {},
+   "tags": [
+    "housing",
+    "urban_housing",
+    "luxury"
+   ],
+   "technologies": [],
+   "risks": [
+    "Little impact on low-income housing shortage",
+    "High per-capita resource use"
+   ],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "≈₹3 crore per unit",
+    "source": ""
+   }
+  },
+  {
+   "id": "housing_complex",
+   "name": "Gated housing complex (1,500 units)",
+   "category": "Residential & Urban",
+   "subcategory": "Housing",
+   "industry": "Construction",
+   "function": "Housing",
+   "description": "Gated complex with internal utilities.",
+   "purpose": "Urban/peri-urban housing.",
+   "capexCr": 750,
+   "constructionMonths": 30,
+   "landHa": 12,
+   "opexCrPerYear": 22.5,
+   "powerDemandMW": 5,
+   "waterDemandMLD": 0.9,
+   "constructionJobs": 1100,
+   "operationsJobs": {},
+   "outputs": {
+    "housingPersons": 6700
+   },
+   "inputs": [],
+   "requires": {
+    "transport": [
+     "road"
+    ]
+   },
+   "emissions": {},
+   "tags": [
+    "housing",
+    "urban_housing"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "≈₹50 lakh per unit",
+    "source": ""
+   }
+  },
+  {
+   "id": "township",
+   "name": "Integrated township (20,000 units)",
+   "category": "Residential & Urban",
+   "subcategory": "Townships",
+   "industry": "Construction",
+   "function": "Townships",
+   "description": "Planned township with housing, local roads, schools, clinics and commercial space.",
+   "purpose": "Large-scale planned urbanisation.",
+   "capexCr": 10000,
+   "constructionMonths": 60,
+   "landHa": 400,
+   "opexCrPerYear": 300.0,
+   "powerDemandMW": 60,
+   "waterDemandMLD": 13,
+   "constructionJobs": 12000,
+   "operationsJobs": {
+    "unskilled": 3000,
+    "skilled": 1500,
+    "engineer": 200
+   },
+   "outputs": {
+    "housingPersons": 90000,
+    "schoolSeats": 8000,
+    "valueAddedCrPerYear": 400
+   },
+   "inputs": [],
+   "requires": {
+    "transport": [
+     "road"
+    ]
+   },
+   "emissions": {},
+   "tags": [
+    "housing",
+    "urban_housing",
+    "township"
+   ],
+   "technologies": [],
+   "risks": [
+    "Requires trunk water, power and transit connections",
+    "Risk of under-occupancy if jobs are not nearby"
+   ],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative: ₹50 lakh per unit incl. infrastructure",
+    "source": ""
+   }
+  },
+  {
+   "id": "smart_city",
+   "name": "Smart city development",
+   "category": "Residential & Urban",
+   "subcategory": "Townships",
+   "industry": "Urban development",
+   "function": "Townships",
+   "description": "Greenfield planned city with digital utilities, transit-oriented layout, and integrated services.",
+   "purpose": "Creates a new urban growth pole.",
+   "capexCr": 50000,
+   "constructionMonths": 96,
+   "landHa": 5000,
+   "opexCrPerYear": 1500.0,
+   "powerDemandMW": 500,
+   "waterDemandMLD": 75,
+   "constructionJobs": 40000,
+   "operationsJobs": {
+    "unskilled": 20000,
+    "skilled": 15000,
+    "engineer": 3000,
+    "scientist": 200
+   },
+   "outputs": {
+    "housingPersons": 500000,
+    "schoolSeats": 50000,
+    "hospitalBeds": 500,
+    "valueAddedCrPerYear": 6000
+   },
+   "inputs": [],
+   "requires": {
+    "transport": [
+     "road",
+     "rail"
+    ],
+    "supporting": [
+     {
+      "tag": "power_plant",
+      "count": 1,
+      "radiusKm": 300,
+      "why": "A city of 500,000 needs ~500 MW of firm supply"
+     }
+    ]
+   },
+   "emissions": {},
+   "tags": [
+    "housing",
+    "urban_housing",
+    "smart_city",
+    "urban_centre"
+   ],
+   "technologies": [
+    "urban systems",
+    "IoT"
+   ],
+   "risks": [
+    "Very high capital cost",
+    "Historically slow occupancy of greenfield cities",
+    "Land acquisition disputes"
+   ],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative; comparable to large greenfield city projects (e.g. GIFT, Dholera phases)",
+    "source": ""
+   }
+  },
+  {
+   "id": "urban_infrastructure",
+   "name": "Urban infrastructure package",
+   "category": "Residential & Urban",
+   "subcategory": "Urban infrastructure",
+   "industry": "Urban development",
+   "function": "Urban infrastructure",
+   "description": "Storm-water drainage, street upgrades, footpaths, street lighting and utility ducts for an urban district.",
+   "purpose": "Raises liveability and reduces flood losses.",
+   "capexCr": 1000,
+   "constructionMonths": 24,
+   "landHa": 0,
+   "opexCrPerYear": 30.0,
+   "powerDemandMW": 2,
+   "waterDemandMLD": 0,
+   "constructionJobs": 3000,
+   "operationsJobs": {},
+   "outputs": {
+    "valueAddedCrPerYear": 50
+   },
+   "inputs": [],
+   "requires": {
+    "urban": true
+   },
+   "emissions": {},
+   "tags": [
+    "urban_infrastructure"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative AMRUT/Smart City Mission package scale",
+    "source": ""
+   }
+  }
+ ]
+}

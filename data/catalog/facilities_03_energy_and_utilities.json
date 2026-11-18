@@ -1,0 +1,1429 @@
+{
+ "category": "Energy & Utilities",
+ "note": "Indicative modelling assumptions; see provenance on each entry.",
+ "facilities": [
+  {
+   "id": "coal_plant",
+   "name": "Coal power plant (2 x 800 MW supercritical)",
+   "category": "Energy & Utilities",
+   "subcategory": "Thermal",
+   "industry": "Power",
+   "function": "Thermal",
+   "description": "Supercritical pulverised-coal plant with electrostatic precipitators (no flue-gas desulphurisation).",
+   "purpose": "Generates electricity for the grid.",
+   "capexCr": 12800,
+   "constructionMonths": 54,
+   "landHa": 500,
+   "opexCrPerYear": 384.0,
+   "powerDemandMW": 0,
+   "waterDemandMLD": 80,
+   "constructionJobs": 3200,
+   "operationsJobs": {
+    "unskilled": 250,
+    "skilled": 400,
+    "engineer": 150
+   },
+   "outputs": {
+    "generationMW": 1600,
+    "capacityFactor": 0.6,
+    "valueAddedCrPerYear": 16819.0
+   },
+   "inputs": [
+    {
+     "good": "coal",
+     "qtyPerYear": 5466240
+    }
+   ],
+   "requires": {
+    "transport": [
+     "rail"
+    ],
+    "water": true
+   },
+   "emissions": {
+    "pm25": 1261,
+    "pm10": 2523,
+    "nox": 21024,
+    "so2": 54662,
+    "co": 1682,
+    "voc": 300,
+    "co2": 7989120
+   },
+   "tags": [
+    "power_plant",
+    "thermal",
+    "coal_power"
+   ],
+   "technologies": [
+    "supercritical boilers"
+   ],
+   "risks": [
+    "High SO2/NOx/PM and CO2 emissions",
+    "Coal supply logistics",
+    "Stranded-asset risk under climate policy",
+    "Water stress"
+   ],
+   "environmentNote": "Major source of SO2, NOx, PM and CO2.",
+   "economicNote": "Value added assumed ≈₹2 per kWh generated (tariff minus fuel).",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "≈₹8 crore/MW (CEA benchmark range); 0.65 t coal/MWh; 0.95 t CO2/MWh; Indian coal ~0.5% S",
+    "source": ""
+   }
+  },
+  {
+   "id": "coal_plant_fgd",
+   "name": "Coal power plant with FGD (2 x 800 MW)",
+   "category": "Energy & Utilities",
+   "subcategory": "Thermal",
+   "industry": "Power",
+   "function": "Thermal",
+   "description": "Supercritical coal plant fitted with flue-gas desulphurisation and SCR for NOx.",
+   "purpose": "Generates electricity for the grid.",
+   "capexCr": 13600,
+   "constructionMonths": 60,
+   "landHa": 520,
+   "opexCrPerYear": 408.0,
+   "powerDemandMW": 0,
+   "waterDemandMLD": 85,
+   "constructionJobs": 3200,
+   "operationsJobs": {
+    "unskilled": 260,
+    "skilled": 420,
+    "engineer": 160
+   },
+   "outputs": {
+    "generationMW": 1600,
+    "capacityFactor": 0.6,
+    "valueAddedCrPerYear": 16819.0
+   },
+   "inputs": [
+    {
+     "good": "coal",
+     "qtyPerYear": 5550336
+    },
+    {
+     "good": "limestone",
+     "qtyPerYear": 100915
+    }
+   ],
+   "requires": {
+    "transport": [
+     "rail"
+    ],
+    "water": true
+   },
+   "emissions": {
+    "pm25": 841,
+    "pm10": 1682,
+    "nox": 6728,
+    "so2": 5887,
+    "co": 1682,
+    "voc": 300,
+    "co2": 8073216
+   },
+   "tags": [
+    "power_plant",
+    "thermal",
+    "coal_power"
+   ],
+   "technologies": [],
+   "risks": [
+    "High CO2",
+    "Coal and limestone logistics",
+    "Stranded-asset risk"
+   ],
+   "environmentNote": "",
+   "economicNote": "Value added assumed ≈₹2 per kWh generated (tariff minus fuel).",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "FGD+SCR adds ≈₹0.5 crore/MW; ~90% SO2 removal",
+    "source": ""
+   }
+  },
+  {
+   "id": "gas_plant",
+   "name": "Gas combined-cycle plant (750 MW)",
+   "category": "Energy & Utilities",
+   "subcategory": "Thermal",
+   "industry": "Power",
+   "function": "Thermal",
+   "description": "Combined-cycle gas turbine plant; flexible output.",
+   "purpose": "Generates electricity for the grid.",
+   "capexCr": 3750,
+   "constructionMonths": 36,
+   "landHa": 40,
+   "opexCrPerYear": 112.5,
+   "powerDemandMW": 0,
+   "waterDemandMLD": 10,
+   "constructionJobs": 1500,
+   "operationsJobs": {
+    "unskilled": 60,
+    "skilled": 120,
+    "engineer": 60
+   },
+   "outputs": {
+    "generationMW": 750,
+    "capacityFactor": 0.4,
+    "valueAddedCrPerYear": 5256.0
+   },
+   "inputs": [
+    {
+     "good": "natural_gas",
+     "qtyPerYear": 341640
+    }
+   ],
+   "requires": {},
+   "emissions": {
+    "pm25": 50,
+    "pm10": 60,
+    "nox": 1051,
+    "so2": 10,
+    "co": 526,
+    "voc": 50,
+    "co2": 972360
+   },
+   "tags": [
+    "power_plant",
+    "thermal",
+    "gas_power",
+    "flexible"
+   ],
+   "technologies": [],
+   "risks": [
+    "Imported LNG price volatility",
+    "Low utilisation if gas is scarce"
+   ],
+   "environmentNote": "",
+   "economicNote": "Value added assumed ≈₹2 per kWh generated (tariff minus fuel).",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "≈₹5 crore/MW; 0.13 t LNG/MWh; 0.37 t CO2/MWh",
+    "source": ""
+   }
+  },
+  {
+   "id": "nuclear_plant",
+   "name": "Nuclear power plant (2 x 700 MW PHWR)",
+   "category": "Energy & Utilities",
+   "subcategory": "Nuclear",
+   "industry": "Power",
+   "function": "Nuclear",
+   "description": "Pressurised heavy-water reactor units of the indigenous 700 MWe design.",
+   "purpose": "Generates electricity for the grid.",
+   "capexCr": 21000,
+   "constructionMonths": 84,
+   "landHa": 400,
+   "opexCrPerYear": 630.0,
+   "powerDemandMW": 0,
+   "waterDemandMLD": 90,
+   "constructionJobs": 2800,
+   "operationsJobs": {
+    "unskilled": 200,
+    "skilled": 500,
+    "engineer": 450,
+    "scientist": 50
+   },
+   "outputs": {
+    "generationMW": 1400,
+    "capacityFactor": 0.8,
+    "valueAddedCrPerYear": 19622.0
+   },
+   "inputs": [
+    {
+     "good": "uranium",
+     "qtyPerYear": 170
+    }
+   ],
+   "requires": {
+    "water": true,
+    "tech": {
+     "nuclear": 2
+    },
+    "supporting": [
+     {
+      "tag": "research_university",
+      "count": 1,
+      "radiusKm": 0,
+      "why": "Nuclear operations need a deep pool of nuclear engineers and regulators"
+     }
+    ]
+   },
+   "emissions": {
+    "co2": 15000
+   },
+   "tags": [
+    "power_plant",
+    "nuclear",
+    "low_carbon",
+    "firm_power"
+   ],
+   "technologies": [
+    "PHWR"
+   ],
+   "risks": [
+    "Long construction and cost overrun risk",
+    "Spent-fuel management",
+    "Public acceptance and siting",
+    "Uranium import dependence"
+   ],
+   "environmentNote": "",
+   "economicNote": "Value added assumed ≈₹2 per kWh generated (tariff minus fuel).",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indian 700 MWe PHWR fleet-mode projects ≈₹12-15 crore/MW; ~150 t natural U per GWe-year",
+    "source": ""
+   }
+  },
+  {
+   "id": "hydro_plant",
+   "name": "Hydroelectric plant (1,000 MW)",
+   "category": "Energy & Utilities",
+   "subcategory": "Hydro",
+   "industry": "Power",
+   "function": "Hydro",
+   "description": "Storage hydro project with dam and reservoir.",
+   "purpose": "Generates electricity for the grid.",
+   "capexCr": 10000,
+   "constructionMonths": 96,
+   "landHa": 2000,
+   "opexCrPerYear": 300.0,
+   "powerDemandMW": 0,
+   "waterDemandMLD": 0,
+   "constructionJobs": 2000,
+   "operationsJobs": {
+    "unskilled": 150,
+    "skilled": 200,
+    "engineer": 100
+   },
+   "outputs": {
+    "generationMW": 1000,
+    "capacityFactor": 0.4,
+    "valueAddedCrPerYear": 7008.0
+   },
+   "inputs": [],
+   "requires": {
+    "mountain": true,
+    "maxRiverKm": 5,
+    "grid": false
+   },
+   "emissions": {
+    "co2": 30000
+   },
+   "tags": [
+    "power_plant",
+    "hydro",
+    "renewable",
+    "low_carbon",
+    "flexible"
+   ],
+   "technologies": [],
+   "risks": [
+    "Displacement and ecological damage",
+    "Seismic and glacial-lake flood risk",
+    "Long gestation"
+   ],
+   "environmentNote": "Reservoir floods land; alters river flows.",
+   "economicNote": "Value added assumed ≈₹2 per kWh generated (tariff minus fuel).",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "≈₹10 crore/MW for large hydro in India",
+    "source": ""
+   }
+  },
+  {
+   "id": "small_hydro",
+   "name": "Small hydro plant (25 MW)",
+   "category": "Energy & Utilities",
+   "subcategory": "Hydro",
+   "industry": "Power",
+   "function": "Hydro",
+   "description": "Run-of-river small hydro.",
+   "purpose": "Generates electricity for the grid.",
+   "capexCr": 225,
+   "constructionMonths": 36,
+   "landHa": 20,
+   "opexCrPerYear": 6.75,
+   "powerDemandMW": 0,
+   "waterDemandMLD": 0,
+   "constructionJobs": 50,
+   "operationsJobs": {
+    "unskilled": 10,
+    "skilled": 10,
+    "engineer": 5
+   },
+   "outputs": {
+    "generationMW": 25,
+    "capacityFactor": 0.45,
+    "valueAddedCrPerYear": 197.0
+   },
+   "inputs": [],
+   "requires": {
+    "mountain": true,
+    "maxRiverKm": 3,
+    "grid": false
+   },
+   "emissions": {},
+   "tags": [
+    "power_plant",
+    "hydro",
+    "renewable",
+    "low_carbon"
+   ],
+   "technologies": [],
+   "risks": [
+    "Seasonal flow variation"
+   ],
+   "environmentNote": "",
+   "economicNote": "Value added assumed ≈₹2 per kWh generated (tariff minus fuel).",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "≈₹9 crore/MW",
+    "source": ""
+   }
+  },
+  {
+   "id": "solar_farm",
+   "name": "Solar PV farm (500 MW)",
+   "category": "Energy & Utilities",
+   "subcategory": "Solar",
+   "industry": "Power",
+   "function": "Solar",
+   "description": "Utility-scale ground-mounted photovoltaic plant.",
+   "purpose": "Generates electricity for the grid.",
+   "capexCr": 2000,
+   "constructionMonths": 12,
+   "landHa": 1000,
+   "opexCrPerYear": 60.0,
+   "powerDemandMW": 0,
+   "waterDemandMLD": 0.5,
+   "constructionJobs": 1000,
+   "operationsJobs": {
+    "unskilled": 30,
+    "skilled": 20,
+    "engineer": 8
+   },
+   "outputs": {
+    "generationMW": 500,
+    "capacityFactor": 0.2,
+    "valueAddedCrPerYear": 1752.0
+   },
+   "inputs": [
+    {
+     "good": "solar_module",
+     "qtyPerYear": 20.0
+    }
+   ],
+   "requires": {
+    "grid": false,
+    "states": [
+     "Rajasthan",
+     "Gujarat",
+     "Karnataka",
+     "Andhra Pradesh",
+     "Telangana",
+     "Madhya Pradesh",
+     "Maharashtra",
+     "Tamil Nadu",
+     "Uttar Pradesh",
+     "Punjab",
+     "Haryana",
+     "Ladakh",
+     "Odisha",
+     "Chhattisgarh",
+     "Bihar",
+     "Jharkhand",
+     "Delhi"
+    ],
+    "statesSource": "MNRE / NISE solar potential (high-irradiance states, indicative)"
+   },
+   "emissions": {},
+   "tags": [
+    "power_plant",
+    "solar",
+    "renewable",
+    "low_carbon",
+    "variable"
+   ],
+   "technologies": [],
+   "risks": [
+    "Variable output (needs storage/flexible supply)",
+    "Large land footprint",
+    "Module import dependence"
+   ],
+   "environmentNote": "",
+   "economicNote": "Value added assumed ≈₹2 per kWh generated (tariff minus fuel).",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "≈₹4 crore/MW (2023-24 tenders); 19-21% CUF; ~2 ha/MW; module replacement ~4%/yr",
+    "source": ""
+   }
+  },
+  {
+   "id": "rooftop_solar",
+   "name": "Rooftop solar programme (100 MW)",
+   "category": "Energy & Utilities",
+   "subcategory": "Solar",
+   "industry": "Power",
+   "function": "Solar",
+   "description": "Distributed rooftop PV on homes and buildings across a district.",
+   "purpose": "Generates electricity for the grid.",
+   "capexCr": 500,
+   "constructionMonths": 12,
+   "landHa": 0,
+   "opexCrPerYear": 15.0,
+   "powerDemandMW": 0,
+   "waterDemandMLD": 0.05,
+   "constructionJobs": 200,
+   "operationsJobs": {
+    "unskilled": 150,
+    "skilled": 200,
+    "engineer": 20
+   },
+   "outputs": {
+    "generationMW": 100,
+    "capacityFactor": 0.17,
+    "valueAddedCrPerYear": 298.0
+   },
+   "inputs": [
+    {
+     "good": "solar_module",
+     "qtyPerYear": 4
+    }
+   ],
+   "requires": {
+    "grid": false,
+    "urban": true
+   },
+   "emissions": {},
+   "tags": [
+    "power_plant",
+    "solar",
+    "renewable",
+    "low_carbon",
+    "variable",
+    "distributed"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "Value added assumed ≈₹2 per kWh generated (tariff minus fuel).",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "≈₹5 crore/MW (PM Surya Ghar scale)",
+    "source": ""
+   }
+  },
+  {
+   "id": "wind_farm",
+   "name": "Onshore wind farm (300 MW)",
+   "category": "Energy & Utilities",
+   "subcategory": "Wind",
+   "industry": "Power",
+   "function": "Wind",
+   "description": "Onshore wind turbines (3-4 MW class).",
+   "purpose": "Generates electricity for the grid.",
+   "capexCr": 1950,
+   "constructionMonths": 18,
+   "landHa": 600,
+   "opexCrPerYear": 58.5,
+   "powerDemandMW": 0,
+   "waterDemandMLD": 0,
+   "constructionJobs": 600,
+   "operationsJobs": {
+    "unskilled": 30,
+    "skilled": 40,
+    "engineer": 15
+   },
+   "outputs": {
+    "generationMW": 300,
+    "capacityFactor": 0.3,
+    "valueAddedCrPerYear": 1577.0
+   },
+   "inputs": [],
+   "requires": {
+    "grid": false,
+    "states": [
+     "Gujarat",
+     "Tamil Nadu",
+     "Karnataka",
+     "Maharashtra",
+     "Rajasthan",
+     "Andhra Pradesh",
+     "Madhya Pradesh",
+     "Telangana"
+    ],
+    "statesSource": "NIWE wind potential assessment: high-potential states (indicative)"
+   },
+   "emissions": {},
+   "tags": [
+    "power_plant",
+    "wind",
+    "renewable",
+    "low_carbon",
+    "variable"
+   ],
+   "technologies": [],
+   "risks": [
+    "Variable output",
+    "Land and bird-impact concerns"
+   ],
+   "environmentNote": "",
+   "economicNote": "Value added assumed ≈₹2 per kWh generated (tariff minus fuel).",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "≈₹6.5 crore/MW; ~30% CUF in good sites",
+    "source": ""
+   }
+  },
+  {
+   "id": "offshore_wind",
+   "name": "Offshore wind farm (500 MW)",
+   "category": "Energy & Utilities",
+   "subcategory": "Wind",
+   "industry": "Power",
+   "function": "Wind",
+   "description": "Fixed-bottom offshore wind project.",
+   "purpose": "Generates electricity for the grid.",
+   "capexCr": 9000,
+   "constructionMonths": 48,
+   "landHa": 0,
+   "opexCrPerYear": 270.0,
+   "powerDemandMW": 0,
+   "waterDemandMLD": 0,
+   "constructionJobs": 1000,
+   "operationsJobs": {
+    "unskilled": 40,
+    "skilled": 80,
+    "engineer": 40
+   },
+   "outputs": {
+    "generationMW": 500,
+    "capacityFactor": 0.38,
+    "valueAddedCrPerYear": 3329.0
+   },
+   "inputs": [],
+   "requires": {
+    "grid": false,
+    "maxCoastKm": 15,
+    "states": [
+     "Gujarat",
+     "Tamil Nadu"
+    ],
+    "statesSource": "MNRE offshore wind zones (Gujarat, Tamil Nadu)",
+    "tech": {
+     "energy": 3
+    }
+   },
+   "emissions": {},
+   "tags": [
+    "power_plant",
+    "wind",
+    "renewable",
+    "low_carbon",
+    "variable",
+    "offshore"
+   ],
+   "technologies": [],
+   "risks": [
+    "High cost and immature domestic supply chain",
+    "Cyclones"
+   ],
+   "environmentNote": "",
+   "economicNote": "Value added assumed ≈₹2 per kWh generated (tariff minus fuel).",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "≈₹18 crore/MW (MNRE VGF estimates)",
+    "source": ""
+   }
+  },
+  {
+   "id": "geothermal_plant",
+   "name": "Geothermal plant (20 MW)",
+   "category": "Energy & Utilities",
+   "subcategory": "Geothermal",
+   "industry": "Power",
+   "function": "Geothermal",
+   "description": "Binary-cycle geothermal plant.",
+   "purpose": "Generates electricity for the grid.",
+   "capexCr": 500,
+   "constructionMonths": 48,
+   "landHa": 30,
+   "opexCrPerYear": 15.0,
+   "powerDemandMW": 0,
+   "waterDemandMLD": 0.2,
+   "constructionJobs": 40,
+   "operationsJobs": {
+    "unskilled": 10,
+    "skilled": 15,
+    "engineer": 10
+   },
+   "outputs": {
+    "generationMW": 20,
+    "capacityFactor": 0.7,
+    "valueAddedCrPerYear": 245.0
+   },
+   "inputs": [],
+   "requires": {
+    "grid": false,
+    "states": [
+     "Ladakh",
+     "Himachal Pradesh",
+     "Uttarakhand",
+     "Chhattisgarh",
+     "Gujarat",
+     "Maharashtra",
+     "Jharkhand"
+    ],
+    "statesSource": "Geological Survey of India geothermal provinces (indicative)",
+    "tech": {
+     "energy": 2
+    }
+   },
+   "emissions": {},
+   "tags": [
+    "power_plant",
+    "geothermal",
+    "renewable",
+    "low_carbon",
+    "firm_power"
+   ],
+   "technologies": [],
+   "risks": [
+    "Resource uncertainty: India has little proven geothermal capacity",
+    "Drilling risk"
+   ],
+   "environmentNote": "",
+   "economicNote": "Value added assumed ≈₹2 per kWh generated (tariff minus fuel).",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Pilot-scale indicative ₹25 crore/MW",
+    "source": ""
+   }
+  },
+  {
+   "id": "waste_to_energy",
+   "name": "Waste-to-energy plant (1,000 TPD)",
+   "category": "Energy & Utilities",
+   "subcategory": "Waste",
+   "industry": "Waste management",
+   "function": "Waste",
+   "description": "Mass-burn incinerator with energy recovery.",
+   "purpose": "Disposes of municipal waste and generates power.",
+   "capexCr": 450,
+   "constructionMonths": 30,
+   "landHa": 10,
+   "opexCrPerYear": 13.5,
+   "powerDemandMW": 0,
+   "waterDemandMLD": 2,
+   "constructionJobs": 500,
+   "operationsJobs": {
+    "unskilled": 60,
+    "skilled": 50,
+    "engineer": 15
+   },
+   "outputs": {
+    "generationMW": 15,
+    "capacityFactor": 0.6,
+    "wasteTPD": 1000,
+    "valueAddedCrPerYear": 60
+   },
+   "inputs": [],
+   "requires": {},
+   "emissions": {
+    "pm25": 30,
+    "pm10": 40,
+    "nox": 600,
+    "so2": 150,
+    "co": 200,
+    "co2": 350000
+   },
+   "tags": [
+    "waste",
+    "power_plant",
+    "waste_processing"
+   ],
+   "technologies": [],
+   "risks": [
+    "Poor performance with wet unsegregated waste",
+    "Dioxin emissions if poorly operated"
+   ],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative Indian WtE plants",
+    "source": ""
+   }
+  },
+  {
+   "id": "battery_storage",
+   "name": "Battery energy storage (250 MW / 1,000 MWh)",
+   "category": "Energy & Utilities",
+   "subcategory": "Storage",
+   "industry": "Power",
+   "function": "Storage",
+   "description": "Grid-scale lithium-ion battery storage.",
+   "purpose": "Firms variable renewable output and improves grid reliability.",
+   "capexCr": 1800,
+   "constructionMonths": 12,
+   "landHa": 8,
+   "opexCrPerYear": 54.0,
+   "powerDemandMW": 0,
+   "waterDemandMLD": 0,
+   "constructionJobs": 150,
+   "operationsJobs": {
+    "skilled": 15,
+    "engineer": 10
+   },
+   "outputs": {
+    "storageMWh": 1000,
+    "valueAddedCrPerYear": 80
+   },
+   "inputs": [
+    {
+     "good": "battery_cell",
+     "qtyPerYear": 100000.0
+    }
+   ],
+   "requires": {
+    "grid": false
+   },
+   "emissions": {},
+   "tags": [
+    "storage",
+    "battery_storage"
+   ],
+   "technologies": [],
+   "risks": [
+    "Battery degradation (~10-15 year life)",
+    "Imported cell dependence"
+   ],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "≈₹1.8 crore/MWh (2024 BESS tenders)",
+    "source": ""
+   }
+  },
+  {
+   "id": "pumped_hydro",
+   "name": "Pumped hydro storage (1,200 MW / 7,200 MWh)",
+   "category": "Energy & Utilities",
+   "subcategory": "Storage",
+   "industry": "Power",
+   "function": "Storage",
+   "description": "Two-reservoir pumped storage.",
+   "purpose": "Long-duration storage for renewable-heavy grids.",
+   "capexCr": 7200,
+   "constructionMonths": 60,
+   "landHa": 400,
+   "opexCrPerYear": 216.0,
+   "powerDemandMW": 0,
+   "waterDemandMLD": 0,
+   "constructionJobs": 2000,
+   "operationsJobs": {
+    "unskilled": 40,
+    "skilled": 60,
+    "engineer": 30
+   },
+   "outputs": {
+    "storageMWh": 7200,
+    "valueAddedCrPerYear": 300
+   },
+   "inputs": [],
+   "requires": {
+    "mountain": true,
+    "grid": false
+   },
+   "emissions": {},
+   "tags": [
+    "storage",
+    "pumped_hydro",
+    "flexible"
+   ],
+   "technologies": [],
+   "risks": [
+    "Site-specific geology",
+    "Ecological impacts"
+   ],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "≈₹6 crore/MW",
+    "source": ""
+   }
+  },
+  {
+   "id": "green_hydrogen",
+   "name": "Green hydrogen electrolyser (100 MW)",
+   "category": "Energy & Utilities",
+   "subcategory": "Hydrogen",
+   "industry": "Clean energy",
+   "function": "Hydrogen",
+   "description": "PEM/alkaline electrolysers producing hydrogen from renewable electricity.",
+   "purpose": "Decarbonises fertiliser, refining and steel.",
+   "capexCr": 1000,
+   "constructionMonths": 24,
+   "landHa": 10,
+   "opexCrPerYear": 30.0,
+   "powerDemandMW": 100,
+   "waterDemandMLD": 0.6,
+   "constructionJobs": 400,
+   "operationsJobs": {
+    "skilled": 40,
+    "engineer": 30,
+    "scientist": 5
+   },
+   "outputs": {
+    "goods": [
+     {
+      "good": "green_hydrogen",
+      "qtyPerYear": 15000
+     }
+    ],
+    "valueAddedCrPerYear": 200
+   },
+   "inputs": [],
+   "requires": {
+    "tech": {
+     "energy": 2
+    },
+    "minGridReliability": 0.8
+   },
+   "emissions": {},
+   "tags": [
+    "hydrogen",
+    "clean_energy"
+   ],
+   "technologies": [
+    "electrolysers"
+   ],
+   "risks": [
+    "High cost vs grey hydrogen",
+    "Needs cheap renewable power"
+   ],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "≈₹10 crore/MW electrolyser incl. balance of plant; ~55 kWh/kg; ~9 L water/kg",
+    "source": ""
+   }
+  },
+  {
+   "id": "substation",
+   "name": "Electricity substation (400/220 kV)",
+   "category": "Energy & Utilities",
+   "subcategory": "Grid",
+   "industry": "Power",
+   "function": "Grid",
+   "description": "Transformer substation linking transmission to district distribution.",
+   "purpose": "Electricity reaches a district only through a substation or distribution network.",
+   "capexCr": 300,
+   "constructionMonths": 18,
+   "landHa": 20,
+   "opexCrPerYear": 9.0,
+   "powerDemandMW": 0,
+   "waterDemandMLD": 0,
+   "constructionJobs": 200,
+   "operationsJobs": {
+    "skilled": 30,
+    "engineer": 10
+   },
+   "outputs": {
+    "transmissionMW": 1500,
+    "distributionMW": 1000
+   },
+   "inputs": [],
+   "requires": {
+    "grid": false
+   },
+   "emissions": {},
+   "tags": [
+    "substation",
+    "grid"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [
+    "power"
+   ],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative ₹250-400 crore for a 400 kV substation",
+    "source": ""
+   }
+  },
+  {
+   "id": "distribution_network",
+   "name": "District distribution network",
+   "category": "Energy & Utilities",
+   "subcategory": "Grid",
+   "industry": "Power",
+   "function": "Grid",
+   "description": "11 kV/LT distribution lines, transformers and smart meters for a district.",
+   "purpose": "Connects households and businesses to the grid.",
+   "capexCr": 600,
+   "constructionMonths": 24,
+   "landHa": 0,
+   "opexCrPerYear": 18.0,
+   "powerDemandMW": 0,
+   "waterDemandMLD": 0,
+   "constructionJobs": 1500,
+   "operationsJobs": {
+    "unskilled": 200,
+    "skilled": 300,
+    "engineer": 30
+   },
+   "outputs": {
+    "distributionMW": 800
+   },
+   "inputs": [],
+   "requires": {
+    "grid": false
+   },
+   "emissions": {},
+   "tags": [
+    "distribution",
+    "grid"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [
+    "power"
+   ],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative; RDSS-scale district investment",
+    "source": ""
+   }
+  },
+  {
+   "id": "transmission_line",
+   "name": "Transmission line (400 kV)",
+   "category": "Energy & Utilities",
+   "subcategory": "Grid",
+   "industry": "Power",
+   "function": "Grid",
+   "description": "Double-circuit 400 kV overhead line.",
+   "purpose": "Moves bulk power between plants and substations; joins grid islands.",
+   "capexCr": 1.5,
+   "constructionMonths": 18,
+   "landHa": 0.5,
+   "opexCrPerYear": 0.02,
+   "powerDemandMW": 0,
+   "waterDemandMLD": 0,
+   "constructionJobs": 20,
+   "operationsJobs": {},
+   "outputs": {
+    "transmissionMW": 1500
+   },
+   "inputs": [],
+   "requires": {
+    "grid": false
+   },
+   "emissions": {},
+   "tags": [
+    "transmission",
+    "grid"
+   ],
+   "technologies": [],
+   "risks": [
+    "Right-of-way disputes"
+   ],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "line",
+   "network": "power",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "≈₹1-2 crore/km for 400 kV D/C",
+    "source": ""
+   }
+  },
+  {
+   "id": "hvdc_line",
+   "name": "HVDC transmission line (±800 kV)",
+   "category": "Energy & Utilities",
+   "subcategory": "Grid",
+   "industry": "Power",
+   "function": "Grid",
+   "description": "Ultra-high-voltage DC corridor for long-distance bulk transfer.",
+   "purpose": "Low-loss long-distance transfer of renewable power.",
+   "capexCr": 4,
+   "constructionMonths": 36,
+   "landHa": 0.6,
+   "opexCrPerYear": 0.05,
+   "powerDemandMW": 0,
+   "waterDemandMLD": 0,
+   "constructionJobs": 40,
+   "operationsJobs": {},
+   "outputs": {
+    "transmissionMW": 6000
+   },
+   "inputs": [],
+   "requires": {
+    "grid": false,
+    "tech": {
+     "energy": 2
+    }
+   },
+   "emissions": {},
+   "tags": [
+    "transmission",
+    "grid",
+    "hvdc"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "line",
+   "network": "power",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative ₹3-5 crore/km",
+    "source": ""
+   }
+  },
+  {
+   "id": "water_treatment",
+   "name": "Water treatment plant (200 MLD)",
+   "category": "Energy & Utilities",
+   "subcategory": "Water",
+   "industry": "Water",
+   "function": "Water",
+   "description": "Conventional surface-water treatment plant.",
+   "purpose": "Supplies safe drinking water to a district.",
+   "capexCr": 180,
+   "constructionMonths": 24,
+   "landHa": 15,
+   "opexCrPerYear": 5.4,
+   "powerDemandMW": 4,
+   "waterDemandMLD": 0,
+   "constructionJobs": 300,
+   "operationsJobs": {
+    "unskilled": 40,
+    "skilled": 40,
+    "engineer": 8
+   },
+   "outputs": {
+    "waterSupplyMLD": 200
+   },
+   "inputs": [],
+   "requires": {
+    "maxRiverKm": 40
+   },
+   "emissions": {},
+   "tags": [
+    "water",
+    "water_supply"
+   ],
+   "technologies": [],
+   "risks": [
+    "Raw-water source reliability"
+   ],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "≈₹0.9 crore/MLD",
+    "source": ""
+   }
+  },
+  {
+   "id": "desalination",
+   "name": "Desalination plant (100 MLD, RO)",
+   "category": "Energy & Utilities",
+   "subcategory": "Water",
+   "industry": "Water",
+   "function": "Water",
+   "description": "Seawater reverse-osmosis plant.",
+   "purpose": "Drought-proof water for coastal cities.",
+   "capexCr": 900,
+   "constructionMonths": 30,
+   "landHa": 10,
+   "opexCrPerYear": 27.0,
+   "powerDemandMW": 17,
+   "waterDemandMLD": 0,
+   "constructionJobs": 400,
+   "operationsJobs": {
+    "unskilled": 30,
+    "skilled": 40,
+    "engineer": 10
+   },
+   "outputs": {
+    "waterSupplyMLD": 100
+   },
+   "inputs": [],
+   "requires": {
+    "maxCoastKm": 5
+   },
+   "emissions": {
+    "co2": 0
+   },
+   "tags": [
+    "water",
+    "water_supply",
+    "desalination"
+   ],
+   "technologies": [],
+   "risks": [
+    "High electricity use (~4 kWh/m³)",
+    "Brine discharge harms marine ecology"
+   ],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Chennai Nemmeli 150 MLD ≈₹1,259 crore",
+    "source": ""
+   }
+  },
+  {
+   "id": "sewage_treatment",
+   "name": "Sewage treatment plant (100 MLD)",
+   "category": "Energy & Utilities",
+   "subcategory": "Sanitation",
+   "industry": "Water",
+   "function": "Sanitation",
+   "description": "Activated-sludge/SBR sewage treatment plant.",
+   "purpose": "Treats urban sewage; protects rivers and health.",
+   "capexCr": 180,
+   "constructionMonths": 24,
+   "landHa": 12,
+   "opexCrPerYear": 5.4,
+   "powerDemandMW": 3,
+   "waterDemandMLD": 0,
+   "constructionJobs": 250,
+   "operationsJobs": {
+    "unskilled": 30,
+    "skilled": 30,
+    "engineer": 6
+   },
+   "outputs": {
+    "sewageTreatMLD": 100
+   },
+   "inputs": [],
+   "requires": {},
+   "emissions": {},
+   "tags": [
+    "sanitation",
+    "sewage"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "≈₹1.5-2 crore/MLD (Namami Gange STPs)",
+    "source": ""
+   }
+  },
+  {
+   "id": "water_pipeline",
+   "name": "Bulk water pipeline",
+   "category": "Energy & Utilities",
+   "subcategory": "Water",
+   "industry": "Water",
+   "function": "Water",
+   "description": "Trunk water main (≈1.5 m diameter).",
+   "purpose": "Moves treated water between districts (joins water networks).",
+   "capexCr": 8,
+   "constructionMonths": 18,
+   "landHa": 0.3,
+   "opexCrPerYear": 0.1,
+   "powerDemandMW": 0.02,
+   "waterDemandMLD": 0,
+   "constructionJobs": 20,
+   "operationsJobs": {},
+   "outputs": {
+    "waterSupplyMLD": 0
+   },
+   "inputs": [],
+   "requires": {},
+   "emissions": {},
+   "tags": [
+    "water",
+    "pipeline"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "line",
+   "network": "water",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative ₹6-10 crore/km",
+    "source": ""
+   }
+  },
+  {
+   "id": "solid_waste_plant",
+   "name": "Integrated solid-waste processing (1,000 TPD)",
+   "category": "Energy & Utilities",
+   "subcategory": "Waste",
+   "industry": "Waste management",
+   "function": "Waste",
+   "description": "Segregation, composting, material recovery and engineered landfill.",
+   "purpose": "Processes municipal solid waste.",
+   "capexCr": 300,
+   "constructionMonths": 18,
+   "landHa": 40,
+   "opexCrPerYear": 9.0,
+   "powerDemandMW": 2,
+   "waterDemandMLD": 0,
+   "constructionJobs": 300,
+   "operationsJobs": {
+    "unskilled": 300,
+    "skilled": 40,
+    "engineer": 5
+   },
+   "outputs": {
+    "wasteTPD": 1000,
+    "valueAddedCrPerYear": 20
+   },
+   "inputs": [],
+   "requires": {},
+   "emissions": {
+    "pm10": 20,
+    "co2": 50000,
+    "voc": 50
+   },
+   "tags": [
+    "waste",
+    "waste_processing"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative",
+    "source": ""
+   }
+  }
+ ]
+}

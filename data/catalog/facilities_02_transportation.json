@@ -1,0 +1,1056 @@
+{
+ "category": "Transportation",
+ "note": "Indicative modelling assumptions; see provenance on each entry.",
+ "facilities": [
+  {
+   "id": "expressway",
+   "name": "Expressway (6-lane, access-controlled)",
+   "category": "Transportation",
+   "subcategory": "Roads",
+   "industry": "Transport",
+   "function": "Roads",
+   "description": "High-speed access-controlled corridor.",
+   "purpose": "Connects places, facilities and markets; enables freight and passenger movement.",
+   "capexCr": 35,
+   "constructionMonths": 30,
+   "landHa": 9,
+   "opexCrPerYear": 0.525,
+   "powerDemandMW": 0,
+   "waterDemandMLD": 0,
+   "constructionJobs": 60,
+   "operationsJobs": {},
+   "outputs": {
+    "freightCapacityMtpa": 60
+   },
+   "inputs": [],
+   "requires": {},
+   "emissions": {
+    "pm25": 0.8,
+    "pm10": 2.0,
+    "nox": 25,
+    "co": 75,
+    "voc": 10.0,
+    "co2": 3500
+   },
+   "tags": [
+    "road",
+    "transport"
+   ],
+   "technologies": [],
+   "risks": [
+    "Land acquisition along the corridor",
+    "Induced traffic and emissions",
+    "Must bridge rivers it crosses"
+   ],
+   "environmentNote": "Vehicle emissions scale with traffic, which the model scales with population density.",
+   "economicNote": "",
+   "geometry": "line",
+   "network": "road",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "≈₹30-70 crore/km for recent Indian expressways incl. land; 90 m ROW",
+    "source": ""
+   }
+  },
+  {
+   "id": "national_highway",
+   "name": "National highway (4-lane)",
+   "category": "Transportation",
+   "subcategory": "Roads",
+   "industry": "Transport",
+   "function": "Roads",
+   "description": "Four-lane divided national highway.",
+   "purpose": "Connects places, facilities and markets; enables freight and passenger movement.",
+   "capexCr": 15,
+   "constructionMonths": 24,
+   "landHa": 6,
+   "opexCrPerYear": 0.225,
+   "powerDemandMW": 0,
+   "waterDemandMLD": 0,
+   "constructionJobs": 60,
+   "operationsJobs": {},
+   "outputs": {
+    "freightCapacityMtpa": 30
+   },
+   "inputs": [],
+   "requires": {},
+   "emissions": {
+    "pm25": 0.6,
+    "pm10": 1.5,
+    "nox": 18,
+    "co": 54,
+    "voc": 7.2,
+    "co2": 2500
+   },
+   "tags": [
+    "road",
+    "transport"
+   ],
+   "technologies": [],
+   "risks": [
+    "Land acquisition along the corridor",
+    "Induced traffic and emissions",
+    "Must bridge rivers it crosses"
+   ],
+   "environmentNote": "Vehicle emissions scale with traffic, which the model scales with population density.",
+   "economicNote": "",
+   "geometry": "line",
+   "network": "road",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "MoRTH 4-laning ≈₹15-20 crore/km; 60 m ROW",
+    "source": ""
+   }
+  },
+  {
+   "id": "state_highway",
+   "name": "State highway (2-lane)",
+   "category": "Transportation",
+   "subcategory": "Roads",
+   "industry": "Transport",
+   "function": "Roads",
+   "description": "Two-lane state highway.",
+   "purpose": "Connects places, facilities and markets; enables freight and passenger movement.",
+   "capexCr": 6,
+   "constructionMonths": 18,
+   "landHa": 3,
+   "opexCrPerYear": 0.09,
+   "powerDemandMW": 0,
+   "waterDemandMLD": 0,
+   "constructionJobs": 60,
+   "operationsJobs": {},
+   "outputs": {
+    "freightCapacityMtpa": 10
+   },
+   "inputs": [],
+   "requires": {},
+   "emissions": {
+    "pm25": 0.3,
+    "pm10": 0.75,
+    "nox": 8,
+    "co": 24,
+    "voc": 3.2,
+    "co2": 1000
+   },
+   "tags": [
+    "road",
+    "transport"
+   ],
+   "technologies": [],
+   "risks": [
+    "Land acquisition along the corridor",
+    "Induced traffic and emissions",
+    "Must bridge rivers it crosses"
+   ],
+   "environmentNote": "Vehicle emissions scale with traffic, which the model scales with population density.",
+   "economicNote": "",
+   "geometry": "line",
+   "network": "road",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative ₹5-8 crore/km",
+    "source": ""
+   }
+  },
+  {
+   "id": "district_road",
+   "name": "District road",
+   "category": "Transportation",
+   "subcategory": "Roads",
+   "industry": "Transport",
+   "function": "Roads",
+   "description": "Major district road.",
+   "purpose": "Connects places, facilities and markets; enables freight and passenger movement.",
+   "capexCr": 2,
+   "constructionMonths": 12,
+   "landHa": 1.5,
+   "opexCrPerYear": 0.03,
+   "powerDemandMW": 0,
+   "waterDemandMLD": 0,
+   "constructionJobs": 60,
+   "operationsJobs": {},
+   "outputs": {
+    "freightCapacityMtpa": 3
+   },
+   "inputs": [],
+   "requires": {},
+   "emissions": {
+    "pm25": 0.12,
+    "pm10": 0.3,
+    "nox": 3,
+    "co": 9,
+    "voc": 1.2000000000000002,
+    "co2": 350
+   },
+   "tags": [
+    "road",
+    "transport"
+   ],
+   "technologies": [],
+   "risks": [
+    "Land acquisition along the corridor",
+    "Induced traffic and emissions",
+    "Must bridge rivers it crosses"
+   ],
+   "environmentNote": "Vehicle emissions scale with traffic, which the model scales with population density.",
+   "economicNote": "",
+   "geometry": "line",
+   "network": "road",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative ₹1.5-3 crore/km",
+    "source": ""
+   }
+  },
+  {
+   "id": "local_road",
+   "name": "Local / rural road",
+   "category": "Transportation",
+   "subcategory": "Roads",
+   "industry": "Transport",
+   "function": "Roads",
+   "description": "Single-lane rural connectivity road.",
+   "purpose": "Connects places, facilities and markets; enables freight and passenger movement.",
+   "capexCr": 0.7,
+   "constructionMonths": 8,
+   "landHa": 1,
+   "opexCrPerYear": 0.01,
+   "powerDemandMW": 0,
+   "waterDemandMLD": 0,
+   "constructionJobs": 60,
+   "operationsJobs": {},
+   "outputs": {
+    "freightCapacityMtpa": 1
+   },
+   "inputs": [],
+   "requires": {},
+   "emissions": {
+    "pm25": 0.05,
+    "pm10": 0.125,
+    "nox": 1,
+    "co": 3,
+    "voc": 0.4,
+    "co2": 120
+   },
+   "tags": [
+    "road",
+    "transport"
+   ],
+   "technologies": [],
+   "risks": [
+    "Land acquisition along the corridor",
+    "Induced traffic and emissions",
+    "Must bridge rivers it crosses"
+   ],
+   "environmentNote": "Vehicle emissions scale with traffic, which the model scales with population density.",
+   "economicNote": "",
+   "geometry": "line",
+   "network": "road",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "PMGSY-type rural roads ≈₹0.5-0.8 crore/km",
+    "source": ""
+   }
+  },
+  {
+   "id": "bridge",
+   "name": "Major bridge",
+   "category": "Transportation",
+   "subcategory": "Bridges",
+   "industry": "Transport",
+   "function": "Bridges",
+   "description": "Major river bridge (road or rail) completing a network crossing.",
+   "purpose": "Allows road/rail lines to cross rivers; without a bridge the crossing is broken.",
+   "capexCr": 500,
+   "constructionMonths": 30,
+   "landHa": 5,
+   "opexCrPerYear": 15.0,
+   "powerDemandMW": 0,
+   "waterDemandMLD": 0,
+   "constructionJobs": 600,
+   "operationsJobs": {},
+   "outputs": {},
+   "inputs": [],
+   "requires": {
+    "maxRiverKm": 5
+   },
+   "emissions": {},
+   "tags": [
+    "bridge",
+    "transport"
+   ],
+   "technologies": [],
+   "risks": [
+    "Flood and scour risk",
+    "Seismic design needed in Himalayan zones"
+   ],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative ₹300-800 crore for a major bridge",
+    "source": ""
+   }
+  },
+  {
+   "id": "railway_track",
+   "name": "Railway line (double, electrified)",
+   "category": "Transportation",
+   "subcategory": "Railways",
+   "industry": "Railways",
+   "function": "Railways",
+   "description": "Double-track electrified broad-gauge line.",
+   "purpose": "Moves bulk freight and passengers efficiently with low emissions per tonne-km.",
+   "capexCr": 15,
+   "constructionMonths": 36,
+   "landHa": 4,
+   "opexCrPerYear": 0.3,
+   "powerDemandMW": 0.05,
+   "waterDemandMLD": 0,
+   "constructionJobs": 80,
+   "operationsJobs": {},
+   "outputs": {
+    "freightCapacityMtpa": 50
+   },
+   "inputs": [],
+   "requires": {},
+   "emissions": {
+    "co2": 300
+   },
+   "tags": [
+    "rail",
+    "transport"
+   ],
+   "technologies": [],
+   "risks": [
+    "Long gestation",
+    "Land acquisition",
+    "Needs stations/terminals to be useful"
+   ],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "line",
+   "network": "rail",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "New line ≈₹10-20 crore/km",
+    "source": ""
+   }
+  },
+  {
+   "id": "freight_corridor",
+   "name": "Dedicated freight corridor",
+   "category": "Transportation",
+   "subcategory": "Railways",
+   "industry": "Railways",
+   "function": "Railways",
+   "description": "Heavy-haul freight-only double line.",
+   "purpose": "Moves bulk freight and passengers efficiently with low emissions per tonne-km.",
+   "capexCr": 35,
+   "constructionMonths": 48,
+   "landHa": 5,
+   "opexCrPerYear": 0.7,
+   "powerDemandMW": 0.05,
+   "waterDemandMLD": 0,
+   "constructionJobs": 80,
+   "operationsJobs": {},
+   "outputs": {
+    "freightCapacityMtpa": 150
+   },
+   "inputs": [],
+   "requires": {},
+   "emissions": {
+    "co2": 300
+   },
+   "tags": [
+    "rail",
+    "transport"
+   ],
+   "technologies": [],
+   "risks": [
+    "Long gestation",
+    "Land acquisition",
+    "Needs stations/terminals to be useful"
+   ],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "line",
+   "network": "rail",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "EDFC+WDFC ≈₹1.24 lakh crore / 2,843 km incl. land",
+    "source": ""
+   }
+  },
+  {
+   "id": "high_speed_rail",
+   "name": "High-speed rail line",
+   "category": "Transportation",
+   "subcategory": "Railways",
+   "industry": "Railways",
+   "function": "Railways",
+   "description": "Standard-gauge 300+ km/h passenger line.",
+   "purpose": "Moves bulk freight and passengers efficiently with low emissions per tonne-km.",
+   "capexCr": 200,
+   "constructionMonths": 72,
+   "landHa": 4,
+   "opexCrPerYear": 4.0,
+   "powerDemandMW": 0.05,
+   "waterDemandMLD": 0,
+   "constructionJobs": 80,
+   "operationsJobs": {},
+   "outputs": {
+    "freightCapacityMtpa": 0
+   },
+   "inputs": [],
+   "requires": {},
+   "emissions": {
+    "co2": 300
+   },
+   "tags": [
+    "rail",
+    "transport"
+   ],
+   "technologies": [],
+   "risks": [
+    "Long gestation",
+    "Land acquisition",
+    "Needs stations/terminals to be useful"
+   ],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "line",
+   "network": "rail",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "MAHSR ≈₹1.08 lakh crore / 508 km",
+    "source": ""
+   }
+  },
+  {
+   "id": "metro_line",
+   "name": "Metro line (elevated)",
+   "category": "Transportation",
+   "subcategory": "Urban transit",
+   "industry": "Railways",
+   "function": "Urban transit",
+   "description": "Urban mass rapid transit line.",
+   "purpose": "Moves bulk freight and passengers efficiently with low emissions per tonne-km.",
+   "capexCr": 300,
+   "constructionMonths": 48,
+   "landHa": 1,
+   "opexCrPerYear": 6.0,
+   "powerDemandMW": 0.05,
+   "waterDemandMLD": 0,
+   "constructionJobs": 80,
+   "operationsJobs": {},
+   "outputs": {
+    "freightCapacityMtpa": 0
+   },
+   "inputs": [],
+   "requires": {},
+   "emissions": {
+    "co2": 300
+   },
+   "tags": [
+    "metro",
+    "transport",
+    "urban_transit"
+   ],
+   "technologies": [],
+   "risks": [
+    "Long gestation",
+    "Land acquisition",
+    "Needs stations/terminals to be useful"
+   ],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "line",
+   "network": "metro",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indian metro elevated ≈₹200-350 crore/km",
+    "source": ""
+   }
+  },
+  {
+   "id": "inland_waterway",
+   "name": "Inland waterway development",
+   "category": "Transportation",
+   "subcategory": "Waterways",
+   "industry": "Transport",
+   "function": "Waterways",
+   "description": "Dredging, navigation aids and channel works along a navigable river.",
+   "purpose": "Low-cost bulk freight along rivers.",
+   "capexCr": 2,
+   "constructionMonths": 24,
+   "landHa": 0,
+   "opexCrPerYear": 0.06,
+   "powerDemandMW": 0,
+   "waterDemandMLD": 0,
+   "constructionJobs": 30,
+   "operationsJobs": {},
+   "outputs": {
+    "freightCapacityMtpa": 20
+   },
+   "inputs": [],
+   "requires": {
+    "maxRiverKm": 10
+   },
+   "emissions": {
+    "co2": 100,
+    "nox": 1
+   },
+   "tags": [
+    "waterway",
+    "transport"
+   ],
+   "technologies": [],
+   "risks": [
+    "Seasonal draft limitations",
+    "Ecological impact of dredging"
+   ],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "line",
+   "network": "waterway",
+   "nodeOf": [],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "National Waterway-1 (Jal Marg Vikas) ≈₹5,000 crore for ~1,400 km incl. terminals",
+    "source": ""
+   }
+  },
+  {
+   "id": "railway_station",
+   "name": "Railway station",
+   "category": "Transportation",
+   "subcategory": "Railways",
+   "industry": "Railways",
+   "function": "Railways",
+   "description": "Passenger and parcel station.",
+   "purpose": "Connects people and goods to the rail network.",
+   "capexCr": 50,
+   "constructionMonths": 18,
+   "landHa": 5,
+   "opexCrPerYear": 1.5,
+   "powerDemandMW": 1,
+   "waterDemandMLD": 0,
+   "constructionJobs": 200,
+   "operationsJobs": {
+    "unskilled": 60,
+    "skilled": 60,
+    "engineer": 5
+   },
+   "outputs": {
+    "passengerCapacityMpa": 10
+   },
+   "inputs": [],
+   "requires": {
+    "transport": [
+     "road"
+    ]
+   },
+   "emissions": {},
+   "tags": [
+    "rail_node",
+    "station"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [
+    "rail",
+    "road"
+   ],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative order-of-magnitude modelling assumption",
+    "source": ""
+   }
+  },
+  {
+   "id": "rail_junction",
+   "name": "Major railway junction & freight terminal",
+   "category": "Transportation",
+   "subcategory": "Railways",
+   "industry": "Railways",
+   "function": "Railways",
+   "description": "Large junction with freight yards.",
+   "purpose": "Freight interchange hub.",
+   "capexCr": 300,
+   "constructionMonths": 30,
+   "landHa": 60,
+   "opexCrPerYear": 9.0,
+   "powerDemandMW": 4,
+   "waterDemandMLD": 0,
+   "constructionJobs": 800,
+   "operationsJobs": {
+    "unskilled": 300,
+    "skilled": 300,
+    "engineer": 40
+   },
+   "outputs": {
+    "freightCapacityMtpa": 20,
+    "passengerCapacityMpa": 30,
+    "valueAddedCrPerYear": 80
+   },
+   "inputs": [],
+   "requires": {},
+   "emissions": {},
+   "tags": [
+    "rail_node",
+    "freight_terminal",
+    "logistics"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [
+    "rail",
+    "road"
+   ],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative order-of-magnitude modelling assumption",
+    "source": ""
+   }
+  },
+  {
+   "id": "bus_terminal",
+   "name": "Bus terminal",
+   "category": "Transportation",
+   "subcategory": "Road transport",
+   "industry": "Transport",
+   "function": "Road transport",
+   "description": "Intercity bus terminal.",
+   "purpose": "Public transport access.",
+   "capexCr": 80,
+   "constructionMonths": 18,
+   "landHa": 4,
+   "opexCrPerYear": 2.4,
+   "powerDemandMW": 1,
+   "waterDemandMLD": 0,
+   "constructionJobs": 150,
+   "operationsJobs": {
+    "unskilled": 150,
+    "skilled": 60
+   },
+   "outputs": {
+    "passengerCapacityMpa": 15
+   },
+   "inputs": [],
+   "requires": {},
+   "emissions": {},
+   "tags": [
+    "bus",
+    "transit"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [
+    "road"
+   ],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative order-of-magnitude modelling assumption",
+    "source": ""
+   }
+  },
+  {
+   "id": "domestic_airport",
+   "name": "Domestic airport",
+   "category": "Transportation",
+   "subcategory": "Airports",
+   "industry": "Aviation",
+   "function": "Airports",
+   "description": "Regional airport (1 runway, terminal for ~5 Mppa).",
+   "purpose": "Air connectivity for passengers and express cargo.",
+   "capexCr": 1500,
+   "constructionMonths": 36,
+   "landHa": 300,
+   "opexCrPerYear": 45.0,
+   "powerDemandMW": 8,
+   "waterDemandMLD": 0.5,
+   "constructionJobs": 1500,
+   "operationsJobs": {
+    "unskilled": 800,
+    "skilled": 800,
+    "engineer": 150
+   },
+   "outputs": {
+    "passengerCapacityMpa": 5,
+    "valueAddedCrPerYear": 300
+   },
+   "inputs": [],
+   "requires": {
+    "transport": [
+     "road"
+    ]
+   },
+   "emissions": {
+    "nox": 300,
+    "co2": 150000,
+    "pm25": 10,
+    "co": 400
+   },
+   "tags": [
+    "airport"
+   ],
+   "technologies": [],
+   "risks": [
+    "Noise",
+    "Land acquisition"
+   ],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [
+    "air",
+    "road"
+   ],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative greenfield regional airport costs",
+    "source": ""
+   }
+  },
+  {
+   "id": "international_airport",
+   "name": "International airport",
+   "category": "Transportation",
+   "subcategory": "Airports",
+   "industry": "Aviation",
+   "function": "Airports",
+   "description": "Major international hub (2 runways, ~40 Mppa).",
+   "purpose": "Global passenger and air-cargo connectivity.",
+   "capexCr": 20000,
+   "constructionMonths": 60,
+   "landHa": 2000,
+   "opexCrPerYear": 600.0,
+   "powerDemandMW": 60,
+   "waterDemandMLD": 5,
+   "constructionJobs": 10000,
+   "operationsJobs": {
+    "unskilled": 8000,
+    "skilled": 8000,
+    "engineer": 1500
+   },
+   "outputs": {
+    "passengerCapacityMpa": 40,
+    "valueAddedCrPerYear": 4000
+   },
+   "inputs": [],
+   "requires": {
+    "transport": [
+     "road"
+    ]
+   },
+   "emissions": {
+    "nox": 3000,
+    "co2": 1500000,
+    "pm25": 80,
+    "co": 3000
+   },
+   "tags": [
+    "airport",
+    "international_airport"
+   ],
+   "technologies": [],
+   "risks": [
+    "Noise",
+    "Large land take",
+    "Traffic demand risk"
+   ],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [
+    "air",
+    "road"
+   ],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Navi Mumbai / Noida airports ≈₹10,000-17,000 crore for first phases",
+    "source": ""
+   }
+  },
+  {
+   "id": "seaport",
+   "name": "Seaport (major, 50 Mtpa)",
+   "category": "Transportation",
+   "subcategory": "Ports",
+   "industry": "Maritime",
+   "function": "Ports",
+   "description": "Deep-water port with container and bulk berths.",
+   "purpose": "Gateway for exports and imports; anchors coastal industry.",
+   "capexCr": 13000,
+   "constructionMonths": 60,
+   "landHa": 800,
+   "opexCrPerYear": 390.0,
+   "powerDemandMW": 30,
+   "waterDemandMLD": 1,
+   "constructionJobs": 5000,
+   "operationsJobs": {
+    "unskilled": 3000,
+    "skilled": 2000,
+    "engineer": 300
+   },
+   "outputs": {
+    "freightCapacityMtpa": 50,
+    "valueAddedCrPerYear": 2500
+   },
+   "inputs": [],
+   "requires": {
+    "maxCoastKm": 8,
+    "transport": [
+     "road"
+    ]
+   },
+   "emissions": {
+    "pm25": 60,
+    "pm10": 200,
+    "nox": 2500,
+    "so2": 1500,
+    "co": 800,
+    "co2": 200000
+   },
+   "tags": [
+    "seaport",
+    "port",
+    "logistics"
+   ],
+   "technologies": [],
+   "risks": [
+    "Coastal ecosystem impact",
+    "Dredging and siltation",
+    "Cyclone exposure"
+   ],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [
+    "sea",
+    "road",
+    "rail"
+   ],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Vadhavan port ≈₹76,000 crore for ~298 Mtpa → ≈₹250 crore per Mtpa",
+    "source": ""
+   }
+  },
+  {
+   "id": "logistics_hub",
+   "name": "Multimodal logistics park",
+   "category": "Transportation",
+   "subcategory": "Logistics",
+   "industry": "Logistics",
+   "function": "Logistics",
+   "description": "Rail-road freight hub with warehousing and container handling.",
+   "purpose": "Cuts logistics costs by consolidating freight across modes.",
+   "capexCr": 1000,
+   "constructionMonths": 30,
+   "landHa": 100,
+   "opexCrPerYear": 30.0,
+   "powerDemandMW": 5,
+   "waterDemandMLD": 0,
+   "constructionJobs": 1200,
+   "operationsJobs": {
+    "unskilled": 800,
+    "skilled": 500,
+    "engineer": 50
+   },
+   "outputs": {
+    "freightCapacityMtpa": 15,
+    "valueAddedCrPerYear": 400
+   },
+   "inputs": [],
+   "requires": {},
+   "emissions": {},
+   "tags": [
+    "logistics",
+    "logistics_hub",
+    "rail_node"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [
+    "rail",
+    "road"
+   ],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "PM Gati Shakti MMLPs ≈₹1,000-1,500 crore each",
+    "source": ""
+   }
+  },
+  {
+   "id": "dry_port",
+   "name": "Dry port / inland container depot",
+   "category": "Transportation",
+   "subcategory": "Logistics",
+   "industry": "Logistics",
+   "function": "Logistics",
+   "description": "Inland customs-bonded container terminal linked by rail to ports.",
+   "purpose": "Extends port access inland.",
+   "capexCr": 300,
+   "constructionMonths": 24,
+   "landHa": 40,
+   "opexCrPerYear": 9.0,
+   "powerDemandMW": 2,
+   "waterDemandMLD": 0,
+   "constructionJobs": 500,
+   "operationsJobs": {
+    "unskilled": 300,
+    "skilled": 200,
+    "engineer": 20
+   },
+   "outputs": {
+    "freightCapacityMtpa": 5,
+    "valueAddedCrPerYear": 120
+   },
+   "inputs": [],
+   "requires": {},
+   "emissions": {},
+   "tags": [
+    "logistics",
+    "dry_port",
+    "rail_node"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [
+    "rail",
+    "road"
+   ],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative order-of-magnitude modelling assumption",
+    "source": ""
+   }
+  },
+  {
+   "id": "waterway_terminal",
+   "name": "Inland waterway terminal",
+   "category": "Transportation",
+   "subcategory": "Waterways",
+   "industry": "Logistics",
+   "function": "Waterways",
+   "description": "River cargo terminal.",
+   "purpose": "Connects waterway freight to roads.",
+   "capexCr": 150,
+   "constructionMonths": 24,
+   "landHa": 15,
+   "opexCrPerYear": 4.5,
+   "powerDemandMW": 1,
+   "waterDemandMLD": 0,
+   "constructionJobs": 200,
+   "operationsJobs": {
+    "unskilled": 120,
+    "skilled": 60,
+    "engineer": 5
+   },
+   "outputs": {
+    "freightCapacityMtpa": 3
+   },
+   "inputs": [],
+   "requires": {
+    "maxRiverKm": 3
+   },
+   "emissions": {},
+   "tags": [
+    "logistics",
+    "waterway_terminal"
+   ],
+   "technologies": [],
+   "risks": [],
+   "environmentNote": "",
+   "economicNote": "",
+   "geometry": "point",
+   "network": "",
+   "nodeOf": [
+    "waterway",
+    "road"
+   ],
+   "publicOwned": true,
+   "provenance": {
+    "kind": "assumption",
+    "confidence": "low",
+    "basis": "Indicative order-of-magnitude modelling assumption",
+    "source": ""
+   }
+  }
+ ]
+}

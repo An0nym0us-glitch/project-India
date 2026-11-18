@@ -1,0 +1,10 @@
+build*/
+out/
+*.user
+CMakeLists.txt.user*
+*.gguf
+.vs/
+.vscode/
+__pycache__/
+.wb_cache/
+tools/.wb_cache/
