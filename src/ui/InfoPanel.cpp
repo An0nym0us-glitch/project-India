@@ -209,7 +209,6 @@ QString InfoPanel::facilityHtml(const PlacedFacility &f) const
     if (f.lengthKm > 0) h += row(tr("Length"), num(f.lengthKm, 1) + " km");
     if (f.networkBroken) h += row(tr("Network"), "<span style='color:#c0392b'>Broken: river crossing without a bridge</span>");
     h += "</table><hr>";
-    auto ctx = m_app->sim().context();
     return h + definitionHtml(*d, nullptr);
 }
 
