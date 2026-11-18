@@ -63,7 +63,7 @@ int main(int argc, char *argv[])
         SetupWizard wiz(&controller);
         wiz.show();
         wiz.next();
-        QTimer::singleShot(800, [&]() { wiz.grab().save(app.arguments().last()); app.quit(); });
+        QTimer::singleShot(800, [&]() { wiz.grab().save(app.arguments().last()); app.exit(0); });
         return app.exec();
     }
     if (shotPath.isEmpty() && (!AppSettings::firstRunComplete() || app.arguments().contains("--setup"))) {
@@ -97,12 +97,12 @@ int main(int argc, char *argv[])
                 QMetaObject::invokeMethod(&w, "showDashboardTab", Q_ARG(int, dashTab));
                 QTimer::singleShot(3000, [&]() {
                     for (auto *tl : QApplication::topLevelWidgets()) if (tl->isWindow() && tl != &w && tl->isVisible() && tl->windowTitle().startsWith("Dashboard")) tl->grab().save(shotPath);
-                    app.quit();
+                    app.exit(0);
                 });
                 return;
             }
             w.grab().save(shotPath);
-            app.quit();
+            app.exit(0);
         });
     }
     return app.exec();
