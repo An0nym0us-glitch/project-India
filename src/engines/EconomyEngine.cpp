@@ -57,7 +57,8 @@ double EconomyEngine::transportScore(const FacilityDefinition &d, const PlacedFa
     if (d.isLine()) return 1.0;
     QStringList needs = d.transportNeeds;
     // every industrial or service facility needs at least road access to markets
-    if (needs.isEmpty() && (d.tags.contains("manufacturing") || d.tags.contains("mining") || d.tags.contains("logistics") || !d.nodeOf.isEmpty()))
+    if (needs.isEmpty() && (d.tags.contains("manufacturing") || d.tags.contains("mining") || d.tags.contains("logistics") ||
+                            d.nodeOf.contains("road") || d.nodeOf.contains("rail")))
         needs << "road";
     if (needs.isEmpty()) return 1.0;
     int ok = 0;
@@ -322,11 +323,11 @@ void EconomyEngine::finalize(SimContext &ctx, double publicPaid, double privateP
     const double inr = ctx.p("macro.inrPerUsd");
     s.gdpUsd = gdp * 1e7 / inr;
     s.gdpPerCapitaUsd = s.population > 0 ? s.gdpUsd / s.population : 0;
-    if (w.month % 12 == 11 || w.history.isEmpty()) {
-        // annual growth computed against the value 12 months ago
+    {
+        // growth over the last 12 months (history holds one point per month)
         double ago = 0;
-        for (const auto &h : w.history) if (h.month == w.month - 11) ago = h.v.value("gdpCr");
-        s.gdpGrowth = ago > 0 ? (gdp / ago - 1) * 100 : 0;
+        for (int i = w.history.size() - 1; i >= 0; --i) if (w.history[i].month == w.month + (applyBudget ? 1 : 0) - 12) { ago = w.history[i].v.value("gdpCr"); break; }
+        if (ago > 0) s.gdpGrowth = (gdp / ago - 1) * 100;
     }
     Q_UNUSED(prevGdp);
     const double constrTotalVA = std::accumulate(constrVA.begin(), constrVA.end(), 0.0);

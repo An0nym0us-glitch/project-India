@@ -69,7 +69,10 @@ void Simulation::newScenario(const ScenarioSettings &st)
     // --- labour market ---
     const double workingAge = m_w.pop.ages(3, 12);
     const auto lf = ref.valueAt("SL.TLF.TOTL.IN", "IND", refYear);
-    if (lf.available && workingAge > 0) m_p.set("pop.lfpRatio", lf.value / workingAge);
+    if (lf.available && workingAge > 0) {
+        m_p.set("pop.lfpRatio", lf.value / workingAge);
+        m_w.userSettings["param.pop.lfpRatio"] = lf.value / workingAge; // calibrated value travels with the scenario
+    }
     const auto ue = ref.valueAt("SL.UEM.TOTL.ZS", "IND", refYear);
     const double u0 = ue.available ? ue.value / 100.0 : m_p("pop.unemploymentBase");
     const double lfp = m_p("pop.lfpRatio");

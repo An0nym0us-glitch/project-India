@@ -17,6 +17,7 @@ public:
     static double seasonalFactor(const FacilityDefinition &d, int monthOfYear);
 private:
     QVector<PowerIslandBalance> m_islands;
+    QHash<int, double> m_riverKm; // facility uid -> distance to river/coast (static geometry)
 };
 
 } // namespace isim

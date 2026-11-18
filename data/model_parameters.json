@@ -530,7 +530,7 @@
    "key": "water.industrialSelfSupply",
    "value": 0.5,
    "unit": "fraction",
-   "description": "Share of industrial water need met by self-supply (groundwater) where no treatment plant serves the district.",
+   "description": "Share of industrial water need met by groundwater self-supply where no treatment plant serves the district and no river/coast intake is possible.",
    "kind": "assumption",
    "source": "Indicative",
    "confidence": "low",
@@ -973,6 +973,28 @@
    "description": "Recurring non-development government spending (administration, defence, law & order, transfers) that exists regardless of the planner's choices.",
    "kind": "assumption",
    "source": "Indian general government expenditure is ≈28% of GDP (RBI); this greenfield model separates out development capex/opex modelled explicitly",
+   "confidence": "low"
+  },
+  {
+   "key": "water.ownIntakeKm",
+   "value": 25,
+   "low": 15,
+   "high": 40,
+   "unit": "km",
+   "description": "Facilities within this distance of a major river or the coast can build their own raw-water intake.",
+   "kind": "assumption",
+   "source": "Indicative; thermal plants typically draw from nearby rivers/reservoirs or use sea water",
+   "confidence": "low"
+  },
+  {
+   "key": "water.riverIntakeSupply",
+   "value": 0.9,
+   "low": 0.75,
+   "high": 1.0,
+   "unit": "fraction",
+   "description": "Share of water need met by a facility's own river/sea intake when no treated supply serves it.",
+   "kind": "assumption",
+   "source": "Indicative; allows for seasonal low flows",
    "confidence": "low"
   },
   {

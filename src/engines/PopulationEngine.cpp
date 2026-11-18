@@ -80,6 +80,9 @@ void PopulationEngine::step(SimContext &ctx, bool advance)
         s.population = tot; s.workingAgeShare = tot > 0 ? wa / tot : 0; s.dependencyRatio = wa > 0 ? (tot - wa) / wa * 100 : 0;
         double sh = 0, cap = 0; for (const auto &d : w.districts) { sh += std::max(0.0, d.population - d.legacyHousing - d.modernHousing); cap += d.modernHousing; }
         s.housingShortagePersons = sh; s.housingCapacity = cap;
+        // derived district labour force (not stored in scenario files)
+        const double lfpNow = ctx.p("pop.lfpRatio") + ctx.mods.add("lfp");
+        for (auto &d : w.districts) d.labourForce = tot > 0 ? d.population / tot * wa * lfpNow : 0;
         return;
     }
 

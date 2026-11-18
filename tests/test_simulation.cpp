@@ -238,6 +238,9 @@ private slots:
         Simulation s2(res());
         s2.setWorld(w);
         QVERIFY(qAbs(s2.world().stats.population - s.world().stats.population) / s.world().stats.population < 1e-9);
+        // derived state (labour force, GDP) is rebuilt identically after loading
+        QVERIFY2(qAbs(s2.world().stats.gdpCr - s.world().stats.gdpCr) / s.world().stats.gdpCr < 0.02,
+                 qPrintable(QString("%1 vs %2").arg(s2.world().stats.gdpCr).arg(s.world().stats.gdpCr)));
         QHash<QString, QString> meta;
         QVERIFY(ScenarioStore::readMeta(path, meta));
         QCOMPARE(meta.value("schema_version"), QString::number(ScenarioStore::kSchemaVersion));

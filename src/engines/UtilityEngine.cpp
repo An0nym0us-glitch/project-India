@@ -152,7 +152,10 @@ void UtilityEngine::step(SimContext &ctx)
         const auto *d = ctx.def(f);
         if (!d || !d->needsWater || f.district < 0) { f.waterSupply = 1.0; continue; }
         const double fr = waterFrac[f.district];
-        f.waterSupply = fr + (1 - fr) * selfSupply;
+        // self-supply: own raw-water intake near a major river (or sea-water cooling at the coast), else groundwater
+        if (!m_riverKm.contains(f.uid)) m_riverKm.insert(f.uid, std::min(ctx.geo.distanceToRiverKm(f.location), ctx.geo.distanceToCoastKm(f.location)));
+        const double own = m_riverKm.value(f.uid) <= ctx.p("water.ownIntakeKm") ? ctx.p("water.riverIntakeSupply") : selfSupply;
+        f.waterSupply = fr + (1 - fr) * own;
     }
     s.waterDemandMLD = wd; s.waterSuppliedMLD = ws;
     s.sewageTreatedShare = sew > 0 ? sewT / sew : 0;

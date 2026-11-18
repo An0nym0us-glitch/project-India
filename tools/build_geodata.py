@@ -140,7 +140,7 @@ write("physical_regions.geojson", ne(os.path.join(raw, "ne_10m_geography_regions
       ["name", "featurecla", "scalerank"], filt=lambda r: r.get("featurecla") in ("Range/mtn", "Plateau", "Desert", "Plain", "Delta", "Basin", "Lowland", "Valley", "Peninsula", "Coast", "Island group", "Wetlands"),
       clip=india_buf, tol=0.02))
 write("neighbours.geojson", ne(os.path.join(raw, "ne_50m_admin_0_countries/ne_50m_admin_0_countries"),
-      ["name", "iso_a3"], filt=lambda r: r.get("iso_a3") != "IND", clip=BBOX, tol=0.02))
+      ["name", "iso_a3"], filt=lambda r: r.get("iso_a3") != "IND", clip=box(40.0, -15.0, 125.0, 55.0), tol=0.02))
 # India outline (used for coastline distance & land mask)
 write("india_outline.geojson", [{"type": "Feature", "properties": {"name": "India"},
       "geometry": rnd(india.simplify(0.01, preserve_topology=True))}])
