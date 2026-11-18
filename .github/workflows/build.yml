@@ -72,21 +72,29 @@ jobs:
           # make sure the SQLite driver is present (scenario files)
           if (!(Test-Path "$dist/sqldrivers/qsqlite.dll")) { Write-Error "qsqlite.dll missing" }
       - name: Bundle llama.cpp server (CPU and Vulkan builds)
-        continue-on-error: true
         shell: pwsh
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           $dist = "dist/IndiaDevelopmentSimulator"
-          $assets = gh release view --repo ggml-org/llama.cpp --json tagName,assets | ConvertFrom-Json
-          Write-Host "llama.cpp release: $($assets.tagName)"
+          # pick the newest llama.cpp build release (tags b####) that actually has Windows binaries
+          $releases = gh api "repos/ggml-org/llama.cpp/releases?per_page=30" | ConvertFrom-Json
+          $rel = $releases | Where-Object { -not $_.prerelease -and ($_.assets | Where-Object { $_.name -like "*bin-win-cpu-x64.zip" }) } | Select-Object -First 1
+          if ($null -eq $rel) { Write-Error "No llama.cpp release with Windows binaries found"; exit 1 }
+          Write-Host "llama.cpp release: $($rel.tag_name)"
           foreach ($pair in @(@("bin-win-cpu-x64.zip", "llama"), @("bin-win-vulkan-x64.zip", "llama-vulkan"))) {
-            $a = $assets.assets | Where-Object { $_.name -like "*$($pair[0])" } | Select-Object -First 1
-            if ($null -eq $a) { Write-Warning "asset $($pair[0]) not found"; continue }
-            gh release download $assets.tagName --repo ggml-org/llama.cpp --pattern $a.name --dir llama-dl
-            Expand-Archive -Force "llama-dl/$($a.name)" "$dist/$($pair[1])"
+            $a = $rel.assets | Where-Object { $_.name -like "*$($pair[0])" } | Select-Object -First 1
+            if ($null -eq $a) { Write-Warning "asset $($pair[0]) not found in $($rel.tag_name)"; continue }
+            gh release download $rel.tag_name --repo ggml-org/llama.cpp --pattern $a.name --dir llama-dl --clobber
+            $tmp = "llama-x/$($pair[1])"
+            Expand-Archive -Force "llama-dl/$($a.name)" $tmp
+            # flatten: put the folder containing llama-server.exe at dist/<name>
+            $exe = Get-ChildItem -Recurse -Filter llama-server.exe $tmp | Select-Object -First 1
+            if ($null -eq $exe) { Write-Error "llama-server.exe missing in $($a.name)"; exit 1 }
+            Copy-Item -Recurse -Force $exe.Directory.FullName "$dist/$($pair[1])"
           }
-          "llama.cpp $($assets.tagName) from https://github.com/ggml-org/llama.cpp (MIT licence). 'llama' = CPU build (used by default); 'llama-vulkan' = GPU build for NVIDIA/AMD/Intel GPUs: select its llama-server.exe in Settings > AI Providers > Local model." | Out-File "$dist/LLAMA_CPP.txt"
+          if (!(Test-Path "$dist/llama/llama-server.exe")) { Write-Error "llama/llama-server.exe was not bundled"; exit 1 }
+          "llama.cpp $($rel.tag_name) from https://github.com/ggml-org/llama.cpp (MIT licence). 'llama' = CPU build (used by default); 'llama-vulkan' = GPU build for NVIDIA/AMD/Intel GPUs: select its llama-server.exe in Settings > AI Providers > Local model." | Out-File "$dist/LLAMA_CPP.txt"
       - name: Smoke test (start the packaged exe offscreen)
         shell: pwsh
         env:

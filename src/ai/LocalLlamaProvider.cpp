@@ -93,7 +93,7 @@ QString LocalLlamaProvider::findServerExecutable()
     const QString exe = "llama-server";
 #endif
     const QString appDir = QCoreApplication::applicationDirPath();
-    for (const QString &c : {appDir + "/llama/" + exe, appDir + "/" + exe, appDir + "/../llama/" + exe})
+    for (const QString &c : {appDir + "/llama/" + exe, appDir + "/llama-vulkan/" + exe, appDir + "/" + exe, appDir + "/../llama/" + exe})
         if (QFileInfo(c).isExecutable()) return QFileInfo(c).absoluteFilePath();
     return QStandardPaths::findExecutable(exe);
 }
