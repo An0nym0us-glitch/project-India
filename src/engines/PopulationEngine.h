@@ -1,4 +1,5 @@
 #pragma once
+#include <algorithm>
 #include "SimContext.h"
 #include <array>
 

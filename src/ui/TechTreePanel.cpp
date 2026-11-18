@@ -1,3 +1,4 @@
+#include <algorithm>
 #include "TechTreePanel.h"
 #include "Format.h"
 #include "advisor/Suitability.h"

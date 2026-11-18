@@ -1,3 +1,5 @@
+#include <functional>
+#include <numeric>
 #include "ProjectionRunner.h"
 #include <QtConcurrent/QtConcurrent>
 #include <algorithm>

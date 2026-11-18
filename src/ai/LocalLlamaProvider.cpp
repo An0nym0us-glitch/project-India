@@ -1,6 +1,8 @@
+#include <algorithm>
 #include "LocalLlamaProvider.h"
 #include "AppSettings.h"
 #include <QCoreApplication>
+#include <cstring>
 #include <QDataStream>
 #include <QDir>
 #include <QFile>

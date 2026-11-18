@@ -1,3 +1,4 @@
+#include <algorithm>
 #include "NetworkEngine.h"
 #include "catalog/Catalog.h"
 #include "gis/GeoDatabase.h"

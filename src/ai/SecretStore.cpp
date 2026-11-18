@@ -5,6 +5,9 @@
 #include <QJsonObject>
 #include <QStandardPaths>
 #ifdef Q_OS_WIN
+#ifndef NOMINMAX
+#define NOMINMAX
+#endif
 #include <windows.h>
 #include <wincred.h>
 #endif

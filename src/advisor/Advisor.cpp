@@ -1,3 +1,4 @@
+#include <functional>
 #include "Advisor.h"
 #include "catalog/Catalog.h"
 #include "comparison/ReferenceData.h"

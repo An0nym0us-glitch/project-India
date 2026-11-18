@@ -1,0 +1,112 @@
+name: Build
+
+on:
+  push:
+    branches: ["**"]
+    tags: ["v*"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  linux:
+    name: Linux build & tests
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Qt 6 and tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ninja-build qt6-base-dev qt6-base-dev-tools libqt6svg6-dev qt6-charts-dev libqt6sql6-sqlite libgl1-mesa-dev
+      - name: Configure
+        run: cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
+      - name: Build
+        run: cmake --build build --parallel
+      - name: Unit tests
+        run: ctest --test-dir build --output-on-failure
+      - name: Smoke test (render main window offscreen)
+        run: |
+          QT_QPA_PLATFORM=offscreen timeout 120 build/src/IndiaDevelopmentSimulator --screenshot screenshot-linux.png --months 3
+          test -s screenshot-linux.png
+      - uses: actions/upload-artifact@v4
+        with:
+          name: screenshot-linux
+          path: screenshot-linux.png
+
+  windows:
+    name: Windows .exe
+    runs-on: windows-2022
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Qt
+        uses: jurplel/install-qt-action@v4
+        with:
+          version: "6.5.3"
+          host: windows
+          target: desktop
+          arch: win64_msvc2019_64
+          modules: qtcharts
+          cache: true
+      - name: MSVC environment
+        uses: ilammy/msvc-dev-cmd@v1
+      - name: Configure
+        run: cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
+      - name: Build
+        run: cmake --build build --parallel
+      - name: Unit tests
+        env:
+          QT_QPA_PLATFORM: offscreen
+        run: ctest --test-dir build --output-on-failure
+      - name: Package (windeployqt + data)
+        shell: pwsh
+        run: |
+          $dist = "dist/IndiaDevelopmentSimulator"
+          New-Item -ItemType Directory -Force -Path $dist | Out-Null
+          Copy-Item build/src/IndiaDevelopmentSimulator.exe $dist/
+          Copy-Item -Recurse data $dist/data
+          Copy-Item README.md, LICENSE-DATA.md $dist/ -ErrorAction SilentlyContinue
+          Copy-Item docs/USER_GUIDE.md $dist/ -ErrorAction SilentlyContinue
+          windeployqt --release --no-translations --compiler-runtime "$dist/IndiaDevelopmentSimulator.exe"
+          # make sure the SQLite driver is present (scenario files)
+          if (!(Test-Path "$dist/sqldrivers/qsqlite.dll")) { Write-Error "qsqlite.dll missing" }
+      - name: Bundle llama.cpp server (CPU and Vulkan builds)
+        continue-on-error: true
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          $dist = "dist/IndiaDevelopmentSimulator"
+          $assets = gh release view --repo ggml-org/llama.cpp --json tagName,assets | ConvertFrom-Json
+          Write-Host "llama.cpp release: $($assets.tagName)"
+          foreach ($pair in @(@("bin-win-cpu-x64.zip", "llama"), @("bin-win-vulkan-x64.zip", "llama-vulkan"))) {
+            $a = $assets.assets | Where-Object { $_.name -like "*$($pair[0])" } | Select-Object -First 1
+            if ($null -eq $a) { Write-Warning "asset $($pair[0]) not found"; continue }
+            gh release download $assets.tagName --repo ggml-org/llama.cpp --pattern $a.name --dir llama-dl
+            Expand-Archive -Force "llama-dl/$($a.name)" "$dist/$($pair[1])"
+          }
+          "llama.cpp $($assets.tagName) from https://github.com/ggml-org/llama.cpp (MIT licence). 'llama' = CPU build (used by default); 'llama-vulkan' = GPU build for NVIDIA/AMD/Intel GPUs: select its llama-server.exe in Settings > AI Providers > Local model." | Out-File "$dist/LLAMA_CPP.txt"
+      - name: Smoke test (start the packaged exe offscreen)
+        shell: pwsh
+        env:
+          QT_QPA_PLATFORM: offscreen
+        run: |
+          $p = Start-Process -FilePath "dist/IndiaDevelopmentSimulator/IndiaDevelopmentSimulator.exe" -ArgumentList "--screenshot","$pwd/screenshot-windows.png","--months","3" -PassThru -Wait
+          if (!(Test-Path screenshot-windows.png)) { Write-Error "The packaged application did not start correctly (exit code $($p.ExitCode))" }
+      - name: Zip
+        shell: pwsh
+        run: Compress-Archive -Path dist/IndiaDevelopmentSimulator -DestinationPath IndiaDevelopmentSimulator-windows-x64.zip
+      - uses: actions/upload-artifact@v4
+        with:
+          name: IndiaDevelopmentSimulator-windows-x64
+          path: IndiaDevelopmentSimulator-windows-x64.zip
+      - uses: actions/upload-artifact@v4
+        with:
+          name: screenshot-windows
+          path: screenshot-windows.png
+      - name: Publish release (tags only)
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: IndiaDevelopmentSimulator-windows-x64.zip

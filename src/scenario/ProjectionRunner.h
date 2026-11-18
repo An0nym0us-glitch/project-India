@@ -1,4 +1,5 @@
 #pragma once
+#include <functional>
 #include "sim/Simulation.h"
 #include <QStringList>
 #include <QVector>

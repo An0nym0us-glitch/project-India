@@ -1,3 +1,4 @@
+#include <algorithm>
 #include "Aqi.h"
 #include <QFile>
 #include <QJsonArray>

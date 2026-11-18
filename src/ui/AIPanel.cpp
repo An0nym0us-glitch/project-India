@@ -1,3 +1,4 @@
+#include <algorithm>
 #include "AIPanel.h"
 #include "Format.h"
 #include "ai/AIContextBuilder.h"

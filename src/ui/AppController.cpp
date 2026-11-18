@@ -1,3 +1,4 @@
+#include <algorithm>
 #include "AppController.h"
 #include "ai/AppSettings.h"
 #include "scenario/ScenarioStore.h"

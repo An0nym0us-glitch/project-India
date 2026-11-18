@@ -1,3 +1,4 @@
+#include <algorithm>
 #include "GeoDatabase.h"
 #include "GeoMath.h"
 #include <QJsonObject>

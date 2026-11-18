@@ -1,3 +1,4 @@
+#include <functional>
 #include "CloudProviders.h"
 #include "AppSettings.h"
 #include "SecretStore.h"

@@ -1,3 +1,4 @@
+#include <algorithm>
 #include "TimelinePanel.h"
 #include "Format.h"
 #include "catalog/Catalog.h"

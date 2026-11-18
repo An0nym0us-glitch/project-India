@@ -1,3 +1,4 @@
+#include <algorithm>
 #include "MapView.h"
 #include "Format.h"
 #include "catalog/Catalog.h"
