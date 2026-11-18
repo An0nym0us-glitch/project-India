@@ -77,20 +77,25 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           $dist = "dist/IndiaDevelopmentSimulator"
-          # pick the newest llama.cpp build release (tags b####) that actually has Windows binaries
-          $releases = gh api "repos/ggml-org/llama.cpp/releases?per_page=30" | ConvertFrom-Json
-          $rel = $releases | Where-Object { -not $_.prerelease -and ($_.assets | Where-Object { $_.name -like "*bin-win-cpu-x64.zip" }) } | Select-Object -First 1
-          if ($null -eq $rel) { Write-Error "No llama.cpp release with Windows binaries found"; exit 1 }
-          Write-Host "llama.cpp release: $($rel.tag_name)"
-          foreach ($pair in @(@("bin-win-cpu-x64.zip", "llama"), @("bin-win-vulkan-x64.zip", "llama-vulkan"))) {
-            $a = $rel.assets | Where-Object { $_.name -like "*$($pair[0])" } | Select-Object -First 1
-            if ($null -eq $a) { Write-Warning "asset $($pair[0]) not found in $($rel.tag_name)"; continue }
+          # pick the newest llama.cpp release that ships Windows x64 zips (asset naming has changed over time)
+          $releases = gh api "repos/ggml-org/llama.cpp/releases?per_page=40" | ConvertFrom-Json
+          foreach ($r in ($releases | Select-Object -First 3)) { Write-Host "release $($r.tag_name): $(($r.assets | ForEach-Object { $_.name }) -join ', ')" }
+          function Test-Cpu($n)    { $n -match 'win' -and $n -match 'x64|amd64' -and $n -like '*.zip' -and $n -notmatch 'cuda|cudart|vulkan|hip|sycl|opencl|arm64|kompute|radeon' }
+          function Test-Vulkan($n) { $n -match 'win' -and $n -match 'vulkan' -and $n -like '*.zip' -and $n -notmatch 'arm64' }
+          $rel = $releases | Where-Object { -not $_.draft -and ($_.assets | Where-Object { Test-Cpu $_.name }) } | Select-Object -First 1
+          if ($null -eq $rel) { Write-Error "No llama.cpp release with Windows x64 binaries found"; exit 1 }
+          Write-Host "Using llama.cpp release: $($rel.tag_name)"
+          $picks = @(@(($rel.assets | Where-Object { Test-Cpu $_.name } | Select-Object -First 1), "llama"),
+                     @(($rel.assets | Where-Object { Test-Vulkan $_.name } | Select-Object -First 1), "llama-vulkan"))
+          foreach ($pair in $picks) {
+            $a = $pair[0]
+            if ($null -eq $a) { Write-Warning "no asset for $($pair[1])"; continue }
+            Write-Host "Downloading $($a.name) -> $($pair[1])"
             gh release download $rel.tag_name --repo ggml-org/llama.cpp --pattern $a.name --dir llama-dl --clobber
             $tmp = "llama-x/$($pair[1])"
             Expand-Archive -Force "llama-dl/$($a.name)" $tmp
-            # flatten: put the folder containing llama-server.exe at dist/<name>
             $exe = Get-ChildItem -Recurse -Filter llama-server.exe $tmp | Select-Object -First 1
-            if ($null -eq $exe) { Write-Error "llama-server.exe missing in $($a.name)"; exit 1 }
+            if ($null -eq $exe) { Write-Warning "llama-server.exe missing in $($a.name)"; continue }
             Copy-Item -Recurse -Force $exe.Directory.FullName "$dist/$($pair[1])"
           }
           if (!(Test-Path "$dist/llama/llama-server.exe")) { Write-Error "llama/llama-server.exe was not bundled"; exit 1 }
